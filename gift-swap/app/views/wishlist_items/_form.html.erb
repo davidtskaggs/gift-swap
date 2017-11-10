@@ -1,0 +1,27 @@
+<%= form_with(model: wishlist_item, local: true) do |form| %>
+  <% if wishlist_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wishlist_item.errors.count, "error") %> prohibited this wishlist_item from being saved:</h2>
+
+      <ul>
+      <% wishlist_item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :wishlist_id %>
+    <%= form.number_field :wishlist_id, id: :wishlist_item_wishlist_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gift_id %>
+    <%= form.number_field :gift_id, id: :wishlist_item_gift_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
