@@ -1,5 +1,11 @@
 # README
 
+#Gift Swap
+#Members: David, Andres, Catherine, Thierry
+#User Stories:
+#Built with Ruby on Rails, React.js
+#Idea by: Andres Arias
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 

@@ -18,3 +18,16 @@
  footer { margin-top: 100px; }
  table, td, th { vertical-align: middle; border: none; }
  th { border-bottom: 1px solid #DDD; }
+
+#giftshare {
+  text-align: center;
+}
+
+img {
+  width: 50%;
+}
+
+#gift {
+  position: absolute;
+  margin: auto;
+}

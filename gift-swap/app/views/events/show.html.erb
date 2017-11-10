@@ -22,13 +22,19 @@
 
 <p>
   <strong>Suggested budget:</strong>
-  <%= @event.suggested_budget %>
+  $<%= @event.suggested_budget %>
 </p>
 
 <p>
   <strong>Creator:</strong>
-  <%= @event.creator_id %>
+  <%= @creator.email %>
 </p>
 
+<p>
+  <strong>Participants</strong>
+  <%@participants.each do |participant|%>
+  <%=participant.email%>
+  <%end%>
+<p>You've been assigned to buy a gift for: </p>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
