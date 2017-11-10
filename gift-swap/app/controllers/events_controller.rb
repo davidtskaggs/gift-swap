@@ -10,6 +10,9 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+
+    @creator = User.find_by(id: @event[:creator_id])
+    @participants = @event.participants
   end
 
   # GET /events/new
