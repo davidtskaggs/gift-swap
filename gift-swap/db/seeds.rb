@@ -21,6 +21,7 @@ e2 = Event.create(name: "Yankee Swap", description: Faker::Lorem.paragraph(2, fa
 e3 = Event.create(name: "Gift Swap-a-roo", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 4)
 e4 = Event.create(name: "Office Secret Santa", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 6)
 e5 = Event.create(name: "DBC Secret Santa", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 8)
+e6 = Event.create(name: "Secret Hannukah", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 8)
 
 p1 = Participation.create(participant_id: 2, event_id: 1)
 p2 = Participation.create(participant_id: 3, event_id: 2)
