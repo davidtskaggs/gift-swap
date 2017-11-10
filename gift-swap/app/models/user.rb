@@ -6,4 +6,5 @@ class User < ApplicationRecord
 
   has_many :participations, foreign_key: :participant_id
   has_many :events, through: :participations
+  has_many :wishlists
 end

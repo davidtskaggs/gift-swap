@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :wishlists
   devise_for :admins
   resources :events
   devise_for :users

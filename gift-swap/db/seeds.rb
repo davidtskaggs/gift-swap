@@ -1,8 +1,10 @@
 require 'faker'
 
+Participation.delete_all
 Event.delete_all
 Admin.delete_all
 User.delete_all
+Wishlist.delete_all
 
 thierry = User.create(email: "thierry@gmail.com", password: "123456")
 catherine = User.create(email: "catherine@gmail.com", password: "123456")
@@ -39,3 +41,6 @@ p12 = Participation.create(participant_id: 3, event_id: 1)
 p13 = Participation.create(participant_id: 3, event_id: 2)
 p14 = Participation.create(participant_id: 3, event_id: 3)
 p15 = Participation.create(participant_id: 4, event_id: 4)
+
+w1 = Wishlist.create(name: "thierry's wishlist 1", user_id: thierry.id)
+w2 = Wishlist.create(name: "catherine's wishlist 1", user_id: catherine.id)
