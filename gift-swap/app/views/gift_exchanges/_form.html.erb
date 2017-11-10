@@ -1,0 +1,37 @@
+<%= form_with(model: gift_exchange, local: true) do |form| %>
+  <% if gift_exchange.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gift_exchange.errors.count, "error") %> prohibited this gift_exchange from being saved:</h2>
+
+      <ul>
+      <% gift_exchange.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :recipient_id %>
+    <%= form.number_field :recipient_id, id: :gift_exchange_recipient_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sender_id %>
+    <%= form.number_field :sender_id, id: :gift_exchange_sender_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :event_id %>
+    <%= form.number_field :event_id, id: :gift_exchange_event_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wishlist_item_id %>
+    <%= form.number_field :wishlist_item_id, id: :gift_exchange_wishlist_item_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

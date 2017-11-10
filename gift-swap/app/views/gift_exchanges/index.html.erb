@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gift Exchanges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Recipient</th>
+      <th>Sender</th>
+      <th>Event</th>
+      <th>Wishlist item</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gift_exchanges.each do |gift_exchange| %>
+      <tr>
+        <td><%= gift_exchange.recipient_id %></td>
+        <td><%= gift_exchange.sender_id %></td>
+        <td><%= gift_exchange.event_id %></td>
+        <td><%= gift_exchange.wishlist_item_id %></td>
+        <td><%= link_to 'Show', gift_exchange %></td>
+        <td><%= link_to 'Edit', edit_gift_exchange_path(gift_exchange) %></td>
+        <td><%= link_to 'Destroy', gift_exchange, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gift Exchange', new_gift_exchange_path %>

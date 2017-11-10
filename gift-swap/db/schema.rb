@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110213907) do
+ActiveRecord::Schema.define(version: 20171110221623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,15 @@ ActiveRecord::Schema.define(version: 20171110213907) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["creator_id"], name: "index_events_on_creator_id"
+  end
+
+  create_table "gift_exchanges", force: :cascade do |t|
+    t.integer "recipient_id", null: false
+    t.integer "sender_id", null: false
+    t.integer "event_id", null: false
+    t.integer "wishlist_item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "gifts", force: :cascade do |t|

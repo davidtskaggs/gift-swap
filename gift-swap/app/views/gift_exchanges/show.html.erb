@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recipient:</strong>
+  <%= @gift_exchange.recipient_id %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @gift_exchange.sender_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @gift_exchange.event_id %>
+</p>
+
+<p>
+  <strong>Wishlist item:</strong>
+  <%= @gift_exchange.wishlist_item_id %>
+</p>
+
+<%= link_to 'Edit', edit_gift_exchange_path(@gift_exchange) %> |
+<%= link_to 'Back', gift_exchanges_path %>

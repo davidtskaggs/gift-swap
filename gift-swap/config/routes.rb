@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :gift_exchanges
   resources :wishlist_items
   resources :gifts
   resources :wishlists
