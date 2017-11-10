@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110210613) do
+ActiveRecord::Schema.define(version: 20171110213907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,15 @@ ActiveRecord::Schema.define(version: 20171110210613) do
     t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
+  create_table "gifts", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.string "url"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "participations", force: :cascade do |t|
     t.integer "participant_id", null: false
     t.bigint "event_id", null: false
@@ -68,6 +77,13 @@ ActiveRecord::Schema.define(version: 20171110210613) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "wishlist_items", force: :cascade do |t|
+    t.integer "wishlist_id"
+    t.integer "gift_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "wishlists", force: :cascade do |t|
