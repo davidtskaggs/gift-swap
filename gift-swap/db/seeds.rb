@@ -1,8 +1,12 @@
 require 'faker'
 
+Participation.delete_all
 Event.delete_all
 Admin.delete_all
 User.delete_all
+Wishlist.delete_all
+Gift.delete_all
+WishlistItem.delete_all
 
 thierry = User.create(email: "thierry@gmail.com", password: "123456")
 catherine = User.create(email: "catherine@gmail.com", password: "123456")
@@ -39,3 +43,16 @@ p12 = Participation.create(participant_id: 3, event_id: 1)
 p13 = Participation.create(participant_id: 3, event_id: 2)
 p14 = Participation.create(participant_id: 3, event_id: 3)
 p15 = Participation.create(participant_id: 4, event_id: 4)
+
+w1 = Wishlist.create(name: "thierry's wishlist 1", user_id: thierry.id)
+w2 = Wishlist.create(name: "catherine's wishlist 1", user_id: catherine.id)
+w3 = Wishlist.create(name: "david's wishlist 1", user_id: david.id)
+
+g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.example.com", category: "kitchen")
+g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.example.com", category: "kitchen")
+g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.example.com", category: "kitchen")
+
+wi1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
+wi2 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
+wi3 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
+
