@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Wishlist:</strong>
+  <%= @wishlist_item.wishlist_id %>
+</p>
+
+<p>
+  <strong>Gift:</strong>
+  <%= @wishlist_item.gift_id %>
+</p>
+
+<%= link_to 'Edit', edit_wishlist_item_path(@wishlist_item) %> |
+<%= link_to 'Back', wishlist_items_path %>
