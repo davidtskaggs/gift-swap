@@ -24,20 +24,17 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/events">View Your Events</a></li>
-
-
             <p class="navbar-text pull-right">
             <% if user_signed_in? %>
               Logged in as <strong><%= current_user.email %></strong>
-              <li class="active"><%= link_to "My Events", user_path(current_user), :class => 'navbar-link' %></li>
-              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-              <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+              <li class="nav-link"><%= link_to "My Events", user_path(current_user.id), :class => 'navbar-link' %></li>
+              <li class="nav-link"><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li class="nav-link" align="right"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 
 
             <% else %>
-              <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-              <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+              <li class="nav-link"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+              <li class="nav-link"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
 
             <% end %>
             </p>

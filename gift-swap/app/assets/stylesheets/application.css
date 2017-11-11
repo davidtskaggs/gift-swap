@@ -14,10 +14,23 @@
  *= require_self
  */
 
- body { padding-top: 60px; }
- footer { margin-top: 100px; }
- table, td, th { vertical-align: middle; border: none; }
- th { border-bottom: 1px solid #DDD; }
+ body {
+   padding-top: 60px;
+   background: #f2f2f2;
+   font-family: 'Open Sans', sans-serif;
+ }
+
+ footer {
+   margin-top: 100px;
+ }
+
+ table, td, th {
+   vertical-align: middle; border: none;
+ }
+
+ th {
+   border-bottom: 1px solid #DDD;
+ }
 
 #giftshare {
   text-align: center;
