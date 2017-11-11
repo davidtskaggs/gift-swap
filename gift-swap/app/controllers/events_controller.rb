@@ -19,6 +19,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    5.times { @event.participants.build  }
   end
 
   # GET /events/1/edit

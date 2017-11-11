@@ -7,6 +7,7 @@ User.delete_all
 Wishlist.delete_all
 Gift.delete_all
 WishlistItem.delete_all
+GiftExchange.delete_all
 
 thierry = User.create(email: "thierry@gmail.com", password: "123456")
 catherine = User.create(email: "catherine@gmail.com", password: "123456")
@@ -56,3 +57,4 @@ wi1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
 wi2 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
 wi3 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
 
+ge1 = GiftExchange.create(recipient_id: 1, sender_id: 2, event_id: 1, wishlist_item_id: 1)
