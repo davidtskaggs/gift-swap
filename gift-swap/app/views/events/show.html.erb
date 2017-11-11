@@ -35,6 +35,8 @@
   <%@participants.each do |participant|%>
   <%=participant.email%>
   <%end%>
-<p>You've been assigned to buy a gift for: </p>
+<p>You've been assigned to buy a gift for: <%=@recipient%></p>
+
+<%form_with(model: event)
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

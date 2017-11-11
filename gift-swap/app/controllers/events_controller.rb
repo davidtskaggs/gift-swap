@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
     @creator = User.find_by(id: @event[:creator_id])
     @participants = @event.participants
+
   end
 
   # GET /events/new
