@@ -3,13 +3,7 @@ require 'uri'
 require 'openssl'
 require 'base64'
 
-class Wishlist < ApplicationRecord
-	belongs_to :user 
-	has_many :wishlist_items 
-	has_many :gifts, through: :wishlist_items  
-
-
-
+class AmazonAPI
 
 	#AWS API
 	ENDPOINT = "webservices.amazon.com"
@@ -33,7 +27,7 @@ class Wishlist < ApplicationRecord
 		generate_request_url(params)
 	 end
 
-	 def by_category(category)
+	 def by_cateogry(category)
 	 	params = {
 		  "Service" => "AWSECommerceService",
 		  "Operation" => "ItemSearch",
@@ -42,7 +36,7 @@ class Wishlist < ApplicationRecord
 		  "SearchIndex" => category,
 		  "ResponseGroup" => "Images,ItemAttributes,Offers,Small"
 		}
-		generate_request_url(params)
+		generate_request_ur(params)
 	 end
 
 	 def generate_request_url(params)
@@ -55,16 +49,15 @@ class Wishlist < ApplicationRecord
 		# Generate the string to be signed
 		string_to_sign = "GET\n#{ENDPOINT}\n#{REQUEST_URI}\n#{canonical_query_string}"
 		# Generate the signature required by the Product Advertising API
+		p '******'
+		p SECRET_KEY
+		p '******'
 		signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha256'), SECRET_KEY, string_to_sign)).strip()
 		# Generate the signed URL
 		request_url = "http://#{ENDPOINT}#{REQUEST_URI}?#{canonical_query_string}&Signature=#{URI.escape(signature, Regexp.new("[^#{URI::PATTERN::UNRESERVED}]"))}"
-		# puts "Signed URL: \"#{request_url}\""
-		# puts HTTParty.get(request_url)
-		return_results(request_url)
-	 end
-
-	 def return_results(url)
-	 	results = HTTParty.get(url)
+		puts "Signed URL: \"#{request_url}\""
 	 end
 
 end
+
+
