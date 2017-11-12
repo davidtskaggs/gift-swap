@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20171110221623) do
     t.integer "recipient_id", null: false
     t.integer "sender_id", null: false
     t.integer "event_id", null: false
-    t.integer "wishlist_item_id", null: false
+    t.integer "wishlist_item_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

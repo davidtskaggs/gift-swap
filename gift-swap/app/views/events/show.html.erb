@@ -27,13 +27,13 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= @creator.email %>
+  <%= @event.creator.email %>
 </p>
 
 <p>
   <strong>Participants</strong>
-  <%@participants.each do |participant|%>
-  <%=participant.email%>
+  <% @participants.each do |participant| %>
+    <%=participant.email%>
   <%end%>
 <p>You've been assigned to buy a gift for: <%=@recipient%></p>
 

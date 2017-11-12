@@ -28,7 +28,7 @@
             <% if user_signed_in? %>
               Logged in as <strong><%= current_user.email %></strong>
               <li class="nav-link"><%= link_to "My Events", user_path(current_user.id), :class => 'navbar-link' %></li>
-              <li class="nav-link"><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li class="nav-link"><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to 'All Events', events_path, :class => 'navbar-link' %></li>
               <li class="nav-link" align="right"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 

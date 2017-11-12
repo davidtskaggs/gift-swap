@@ -14,8 +14,6 @@ catherine = User.create(email: "catherine@gmail.com", password: "123456")
 david = User.create(email: "david@gmail.com", password: "123456")
 andres = User.create(email: "andres@gmail.com", password: "123456")
 
-dave = Admin.create(email: "davidtest@test.com", password: 123456)
-
 30.times do
   User.create(email: Faker::Internet.email, password: Faker::Internet.password(6, 15))
 end
@@ -36,7 +34,6 @@ p4 = Participation.create(participant_id: 4, event_id: 1)
 p5 = Participation.create(participant_id: 3, event_id: 2)
 p6 = Participation.create(participant_id: 2, event_id: 3)
 p7 = Participation.create(participant_id: 1, event_id: 4)
-p8 = Participation.create(participant_id: 2, event_id: 1)
 p9 = Participation.create(participant_id: 3, event_id: 2)
 p10 = Participation.create(participant_id: 4, event_id: 3)
 p11 = Participation.create(participant_id: 5, event_id: 5)
