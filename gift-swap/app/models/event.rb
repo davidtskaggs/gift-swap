@@ -6,7 +6,6 @@ class Event < ApplicationRecord
   has_many :participants, through: :participations
   accepts_nested_attributes_for :participants
 
-def gift_exchange
 
 
 
