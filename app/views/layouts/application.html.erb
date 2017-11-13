@@ -33,8 +33,7 @@
               Logged in as <strong><%= current_user.email %></strong>
               <!-- Change path to show events user participates in -->
               <li class="nav-link"><%= link_to 'All Events', events_path, :class => 'navbar-link' %></li>
-              <!-- change path to my wishlist to show user's wishlist -->
-              <li class="active"><%= link_to 'My Wishlist', wishlists_path, :class => 'navbar-link' %></li>
+              <li class="active"><a href="/wishlists/<%=current_user.id %>">Wishlist</a></li>
               <li class="active"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 
