@@ -5030,3 +5030,36 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-13 15:03:22 -0500
+  [1m[35m (37.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-13 15:03:23 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (36.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 1140ms (Views: 924.7ms | ActiveRecord: 60.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-13 15:03:39 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (17.1ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (146.5ms)
+Completed 500 Internal Server Error in 201ms (ActiveRecord: 23.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for #<User:0x00007f8eafba9218>):
+    23:         <td><%= event.start_date %></td>
+    24:         <td><%= event.end_date %></td>
+    25:         <td>$<%= event.suggested_budget %></td>
+    26:         <td><%= event.creator.first_name %></td>
+    27:         <td><%= link_to 'Details', event %></td>
+    28:         <td><%= link_to 'Edit event', edit_event_path(event) %></td>
+    29:         <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/events/index.html.erb:26:in `block in _app_views_events_index_html_erb___4294070867368725060_70125408310900'
+app/views/events/index.html.erb:19:in `_app_views_events_index_html_erb___4294070867368725060_70125408310900'
