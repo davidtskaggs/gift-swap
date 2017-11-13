@@ -1,4 +1,4 @@
-<%= form_with(model: event, local: true) do |form| %>
+<%= form_for @event do |form| %>
   <% if event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
@@ -35,14 +35,17 @@
     <%= form.label :suggested_budget %>
     <%= form.text_field :suggested_budget, id: :event_suggested_budget %>
   </div>
+  <%= form.hidden_field :creator_id, value: current_user.id%>
 
-  <div class="field">
+  <p><strong>Participants:</strong></p>
 
-    <%= form.label :creator_id %>
-    <%= form.number_field :current_user, id: :event_current_user %>
-  </div>
+    <%= form_tag("/events", method: "get") do %>
+      <%= label_tag(:email, "Search for:") %>
+      <%= text_field_tag(:email) %>
+      <%= submit_tag("Search") %>
+    <%end%>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+  <%= form.submit %>
 <% end %>
+
+

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171110213907) do
+ActiveRecord::Schema.define(version: 20171110221623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,6 +18,8 @@ ActiveRecord::Schema.define(version: 20171110213907) do
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -44,6 +46,15 @@ ActiveRecord::Schema.define(version: 20171110213907) do
     t.index ["creator_id"], name: "index_events_on_creator_id"
   end
 
+  create_table "gift_exchanges", force: :cascade do |t|
+    t.integer "recipient_id", null: false
+    t.integer "sender_id", null: false
+    t.integer "event_id", null: false
+    t.integer "wishlist_item_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "gifts", force: :cascade do |t|
     t.string "name"
     t.float "price"
@@ -65,6 +76,8 @@ ActiveRecord::Schema.define(version: 20171110213907) do
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "first_name", default: ""
+    t.string "last_name", default: ""
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -91,6 +104,7 @@ ActiveRecord::Schema.define(version: 20171110213907) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_wishlists_on_user_id"
   end
 
   add_foreign_key "participations", "events"

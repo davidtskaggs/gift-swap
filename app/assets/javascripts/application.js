@@ -13,3 +13,20 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+	$('.create_gift').click(function(e){
+		e.preventDefault();
+
+		$.ajax({
+			url: '/gifts',
+			type: 'POST',
+			data: {
+				'authenticity_token': $('input[name=authenticity_token]').val(),
+				'gift': {
+					name: 'camera',
+					category: 'camera'
+				}
+			}
+		})
+}	)
+})

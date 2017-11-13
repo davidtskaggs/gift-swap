@@ -5,14 +5,16 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+
+    # binding.pry
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-
-    @creator = User.find_by(id: @event[:creator_id])
     @participants = @event.participants
+    @gift_exchange = GiftExchange.find(params[:id])
+    @wishlist = Wishlist.find_by(user_id: @gift_exchange.sender.id)
   end
 
   # GET /events/new
@@ -28,7 +30,8 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.create_pairs
+    1.times { @event.participants << User.find_by(email: params[:email]) }
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -39,6 +42,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
@@ -58,6 +62,7 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
+
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
@@ -66,12 +71,13 @@ class EventsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
     def set_event
       @event = Event.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :start_date, :end_date, :suggested_budget, :creator_id)
+      params.require(:event).permit(:name, :description, :start_date, :end_date, :suggested_budget, :creator_id, participants_attributes: [:id,:email])
     end
 end

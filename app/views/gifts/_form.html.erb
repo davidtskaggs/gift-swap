@@ -11,19 +11,11 @@
     </div>
   <% end %>
 
+  <p>You can search for your new gift by <b>keyword</b> or by <b>category</b></p>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :gift_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price, id: :gift_price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :url %>
-    <%= form.text_field :url, id: :gift_url %>
   </div>
 
   <div class="field">
@@ -32,6 +24,8 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: 'create_gift'%>
   </div>
 <% end %>
+<div class='res'>
+</div>
