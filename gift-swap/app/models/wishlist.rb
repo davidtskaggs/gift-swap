@@ -9,8 +9,6 @@ class Wishlist < ApplicationRecord
 	has_many :gifts, through: :wishlist_items  
 
 
-
-
 	#AWS API
 	ENDPOINT = "webservices.amazon.com"
 	REQUEST_URI = "/onca/xml"
@@ -66,5 +64,33 @@ class Wishlist < ApplicationRecord
 	 def return_results(url)
 	 	results = HTTParty.get(url)
 	 end
+
+	 def parsed_info_by_keyword(keyword)
+	 	result_hash = self.by_keyword(keyword)
+	 	returned_hash = {names: [], prices: [], urls: [], 
+	 		images: [], categories: []}
+	 	result_hash["ItemSearchResponse"]["Items"]["Item"].map do |elt|
+	 		returned_hash[:names] << elt["ItemAttributes"]["Title"]
+	 		returned_hash[:prices] << elt["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]
+	 		returned_hash[:urls] << elt["DetailPageURL"].split("?").first
+	 		returned_hash[:images] << elt["SmallImage"]["URL"]
+	 		returned_hash[:categories] << keyword 
+	 	end
+	 	return returned_hash
+	 end 
+
+	 def parsed_info_by_category(category)
+	 	result_hash = self.by_category(category)
+	 	returned_hash = {names: [], prices: [], urls: [], 
+	 		images: [], categories: []}
+	 	result_hash["ItemSearchResponse"]["Items"]["Item"].map do |elt|
+	 		returned_hash[:names] << elt["ItemAttributes"]["Title"]
+	 		returned_hash[:prices] << elt["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]
+	 		returned_hash[:urls] << elt["DetailPageURL"].split("?").first
+	 		returned_hash[:images] << elt["SmallImage"]["URL"]
+	 		returned_hash[:categories] << category 
+	 	end
+	 	return returned_hash
+	 end 
 
 end
