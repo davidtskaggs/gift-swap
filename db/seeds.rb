@@ -52,7 +52,9 @@ g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.example.com", categ
 g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.example.com", category: "kitchen")
 g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.example.com", category: "kitchen")
 
-wi1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
-wi2 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
-wi3 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
+wi1_1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
+wi2_1 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
+wi3_1 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
+wi1_2 = WishlistItem.create(wishlist_id: w1.id, gift_id: g2.id)
+wi1_3 = WishlistItem.create(wishlist_id: w1.id, gift_id: g3.id)
 
