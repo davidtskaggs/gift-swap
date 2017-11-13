@@ -24,18 +24,31 @@ class GiftsController < ApplicationController
   # POST /gifts
   # POST /gifts.json
   def create
-    @gift = Gift.new(gift_params)
+    
+    p gift_params["name"]
+    p gift_params["category"]
 
-    respond_to do |format|
-      if @gift.save
-        format.html { redirect_to @gift, notice: 'Gift was successfully created.' }
-        format.json { render :show, status: :created, location: @gift }
-      else
-        format.html { render :new }
-        format.json { render json: @gift.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+    # submit the form 
+
+    # go to the page with the list of results of the search
+
+    # select one link, save the url into the database
+
+    # Gift.new(name: gift_params, price: 19.99, url: "www.example.com", category: "kitchen")
+
+    #@gift = Gift.new(name: gift_params["name"], price: 19.99, url: "www.example.com", category: gift_params["name"])
+
+     respond_to do |format|
+       #if @gift.save
+        format.js
+        # format.html { redirect_to @gift, notice: 'Gift was successfully created.' }
+        # format.json { render :show, status: :created, location: @gift }
+       #else
+         # format.html { render :new }
+         # format.json { render json: @gift.errors, status: :unprocessable_entity }
+       #end
+     end
+   end
 
   # PATCH/PUT /gifts/1
   # PATCH/PUT /gifts/1.json
