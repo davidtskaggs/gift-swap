@@ -15,6 +15,7 @@ class WishlistsController < ApplicationController
   # GET /wishlists/new
   def new
     @wishlist = Wishlist.new
+    1.times {@wishlist.gifts.build}
   end
 
   # GET /wishlists/1/edit
@@ -24,7 +25,14 @@ class WishlistsController < ApplicationController
   # POST /wishlists
   # POST /wishlists.json
   def create
+    @user = current_user
     @wishlist = Wishlist.new(wishlist_params)
+    if @wishlist.save
+      params["wishlist"]["gifts_attributes"].each do |i|
+        gift_values = params['wishlist']['gifts_attributes']["#{i}"].values
+        Gift.create(name: gift_values[0], price: gift_values[1], url: gift_values[2], category: gift_values[3], wishlist_id: @wishlist.id)
+      end
+    end
 
     respond_to do |format|
       if @wishlist.save
@@ -35,7 +43,8 @@ class WishlistsController < ApplicationController
         format.json { render json: @wishlist.errors, status: :unprocessable_entity }
       end
     end
-  end
+end
+
 
   # PATCH/PUT /wishlists/1
   # PATCH/PUT /wishlists/1.json
@@ -69,6 +78,6 @@ class WishlistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wishlist_params
-      params.require(:wishlist).permit(:name, :user_id)
+      params.require(:wishlist).permit(:name, :user_id, gifts_attributes: [:name, :price, :url, :category])
     end
 end
