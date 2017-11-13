@@ -6,6 +6,8 @@ class CreateGiftExchanges < ActiveRecord::Migration[5.1]
       t.integer :event_id, foreign_key: true, null: false
       t.integer :wishlist_item_id, foreign_key: true
 
+
+
       t.timestamps
     end
   end
