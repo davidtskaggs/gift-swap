@@ -37,13 +37,12 @@
   </div>
   <%= form.hidden_field :creator_id, value: current_user.id%>
 
+  <ul class="add-participant-container">
   <p><strong>Participants:</strong></p>
+  <label>Participant</label>
 
-    <%= form_tag("/events", method: "get") do %>
-      <%= label_tag(:email, "Search for:") %>
-      <%= text_field_tag(:email) %>
-      <%= submit_tag("Search") %>
-    <%end%>
+
+
 
   <%= form.submit %>
 <% end %>
