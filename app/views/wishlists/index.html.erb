@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1> <%= current_user.email%>'s Wishlists</h1>
+
+<% current_user_wishlist = current_user.wishlists[0] %>
+<% wishlist_gifts = current_user_wishlist.gifts %>
+
+<br>
+
+<h3> <%= current_user_wishlist.name %> | <a href="gifts/new">Add new item</a> </h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Gift</th>
+      <th>Url</th>
+      <th>Category</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% wishlist_gifts.each do |gift| %>
+      <tr>
+        <td><%= gift.name %></td>
+        <td><%= gift.price %></td>
+        <td><%= gift.url %></td>
+        <td><%= gift.category %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
