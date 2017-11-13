@@ -27,15 +27,18 @@
 
 <p>
   <strong>Creator:</strong>
-  <%= @event.creator.email %>
+  <%= @event.creator.first_name %>
 </p>
 
 <p>
-  <strong>Participants</strong>
+  <strong>Participants:</strong>
+  <ul>
   <% @participants.each do |participant| %>
-    <%=participant.email%>
+    <li><%=participant.first_name%></li>
   <%end%>
-<p>You've been assigned to buy a gift for: <%=@recipient%></p>
+</ul>
+
+<p><strong>Your Secret Santa: </strong> <%=@gift_exchange.sender.first_name%></p>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

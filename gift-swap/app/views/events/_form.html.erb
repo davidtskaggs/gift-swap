@@ -39,16 +39,12 @@
 
   <p><strong>Participants:</strong></p>
 
-    <%=form.fields_for :participants do |participants_form| %>
+    <%= form_tag("/events", method: "get") do %>
+      <%= label_tag(:email, "Search for:") %>
+      <%= text_field_tag(:email) %>
+      <%= submit_tag("Search") %>
+    <%end%>
 
-        <%=participants_form.label :email %>
-        <%=participants_form.text_field :email %>
-
-
-   <div class="actions">
-    <%= participants_form.submit "Add new member" %>
-  </div>
-  <% end %>
   <%= form.submit %>
 <% end %>
 

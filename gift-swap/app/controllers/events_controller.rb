@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+
     # binding.pry
   end
 
@@ -12,12 +13,12 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     @participants = @event.participants
+    @gift_exchange = GiftExchange.find(params[:id])
   end
 
   # GET /events/new
   def new
     @event = Event.new
-    1.times { @event.participants.build  }
   end
 
   # GET /events/1/edit
@@ -28,7 +29,8 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    @event.assign
+    1.times { @event.participants << User.find_by(email: params[:email]) }
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -39,6 +41,7 @@ class EventsController < ApplicationController
       end
     end
   end
+
 
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
@@ -58,6 +61,7 @@ class EventsController < ApplicationController
   # DELETE /events/1.json
   def destroy
     @event.destroy
+
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
