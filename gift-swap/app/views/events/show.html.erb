@@ -38,7 +38,7 @@
   <%end%>
 </ul>
 
-<p><strong>Your Secret Santa: </strong> <%=@gift_exchange.sender.first_name%></p>
+<p><strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></p>
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

@@ -18,7 +18,7 @@
         <td><%= wishlist_item.gift_id %></td>
         <td><%= link_to 'Show', wishlist_item %></td>
         <td><%= link_to 'Edit', edit_wishlist_item_path(wishlist_item) %></td>
-        <td><%= link_to 'Destroy', wishlist_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', wishlist_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

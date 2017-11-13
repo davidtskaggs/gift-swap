@@ -50,10 +50,12 @@ w4 = Wishlist.create(name: "andres' wishlist1", user_id: andres.id)
 g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.example.com", category: "kitchen")
 g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.example.com", category: "kitchen")
 g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.example.com", category: "kitchen")
+g4 = Gift.create(name: "something pan", price: 17.99, url: "www.example.com", category: " kitchen")
 
 wi1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
 wi2 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
 wi3 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
+wi4 = WishlistItem.create(wishlidst_id: w4.id, gift_id: g4.id)
 
 ge1 = GiftExchange.create(recipient_id: 1, sender_id: 2, event_id: 1, wishlist_item_id: 1)
 ge2 = GiftExchange.create(recipient_id: 2, sender_id: 3, event_id: 1, wishlist_item_id: 1)

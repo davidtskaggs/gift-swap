@@ -14,6 +14,7 @@ class EventsController < ApplicationController
   def show
     @participants = @event.participants
     @gift_exchange = GiftExchange.find(params[:id])
+    @wishlist = Wishlist.find_by(user_id: @gift_exchange.sender.id)
   end
 
   # GET /events/new
@@ -29,7 +30,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.assign
+    @event.create_pairs
     1.times { @event.participants << User.find_by(email: params[:email]) }
     respond_to do |format|
       if @event.save
