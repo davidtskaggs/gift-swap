@@ -1,13 +1,13 @@
 require 'faker'
 
+GiftExchange.delete_all
+WishlistItem.delete_all
+Gift.delete_all
+Wishlist.delete_all
 Participation.delete_all
 Event.delete_all
 Admin.delete_all
 User.delete_all
-Wishlist.delete_all
-Gift.delete_all
-WishlistItem.delete_all
-GiftExchange.delete_all
 
 thierry = User.create(first_name: "Thierry", last_name: "test", email: "thierry@gmail.com", password: "123456")
 catherine = User.create(first_name: "Catherine", last_name: "test", email: "catherine@gmail.com", password: "123456")
@@ -55,9 +55,9 @@ g4 = Gift.create(name: "something pan", price: 17.99, url: "www.example.com", ca
 wi1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
 wi2 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
 wi3 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
-wi4 = WishlistItem.create(wishlidst_id: w4.id, gift_id: g4.id)
+wi4 = WishlistItem.create(wishlist_id: w4.id, gift_id: g4.id)
 
-ge1 = GiftExchange.create(recipient_id: 1, sender_id: 2, event_id: 1, wishlist_item_id: 1)
-ge2 = GiftExchange.create(recipient_id: 2, sender_id: 3, event_id: 1, wishlist_item_id: 1)
-ge3 = GiftExchange.create(recipient_id: 3, sender_id: 4, event_id: 1, wishlist_item_id: 1)
-ge4 = GiftExchange.create(recipient_id: 4, sender_id: 1, event_id: 1, wishlist_item_id: 1)
+ge1 = GiftExchange.create(recipient_id: 1, sender_id: 4, event_id: 1, wishlist_item_id: 1)
+ge2 = GiftExchange.create(recipient_id: 3, sender_id: 2, event_id: 1, wishlist_item_id: 1)
+ge3 = GiftExchange.create(recipient_id: 4, sender_id: 3, event_id: 1, wishlist_item_id: 1)
+ge4 = GiftExchange.create(recipient_id: 2, sender_id: 1, event_id: 1, wishlist_item_id: 1)

@@ -26,7 +26,7 @@
 </p>
 
 <p>
-  <strong>Creator:</strong>
+  <strong>Owner:</strong>
   <%= @event.creator.first_name %>
 </p>
 
@@ -39,6 +39,8 @@
 </ul>
 
 <p><strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></p>
+
+
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

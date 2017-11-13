@@ -14,7 +14,7 @@ class Event < ApplicationRecord
     participants.each_with_index do |elt, index|
       assignees[index] = participants[index+1]
     end
-    assignees[(nb_participants - 1)] = temp
+    assignees[(nb_participants-1)] = temp
     pairs = assignees.zip(participants)
     pairs.each_with_index do |elt, index|
 
