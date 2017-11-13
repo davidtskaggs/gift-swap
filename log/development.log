@@ -5030,3 +5030,31 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-13 14:37:11 -0500
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-13 14:37:11 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 505ms (Views: 450.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2017-11-13 14:37:13 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 41ms (Views: 34.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/edit" for 127.0.0.1 at 2017-11-13 14:37:15 -0500
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/registrations/edit.html.erb within layouts/application
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/registrations/edit.html.erb within layouts/application (841.6ms)
+Completed 200 OK in 892ms (Views: 888.0ms | ActiveRecord: 0.5ms)
+
+
