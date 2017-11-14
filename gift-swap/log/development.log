@@ -1,0 +1,29 @@
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 14:59:46 -0500
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1803ms (Views: 1728.7ms | ActiveRecord: 10.8ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:59:51 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (64.1ms)
+Completed 200 OK in 157ms (Views: 124.0ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 14:59:52 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (1096.1ms)
+  Rendered events/new.html.erb within layouts/application (1100.2ms)
+Completed 200 OK in 1226ms (Views: 1165.8ms | ActiveRecord: 0.4ms)
+
+
