@@ -5643,3 +5643,73 @@ Processing by WishlistsController#index as HTML
 Completed 200 OK in 143ms (Views: 42.7ms | ActiveRecord: 2.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-13 19:13:30 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-13 19:13:30 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 921ms (Views: 778.4ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/wishlists/8" for 127.0.0.1 at 2017-11-13 19:13:41 -0500
+Processing by WishlistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering wishlists/show.html.erb within layouts/application
+  Rendered wishlists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 213ms (Views: 85.1ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-13 19:14:14 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-13 19:14:14 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 39.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-13 19:14:35 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (17.2ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 195ms (Views: 160.2ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-13 19:14:41 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (1305.0ms)
+  Rendered events/new.html.erb within layouts/application (1321.8ms)
+Completed 200 OK in 1412ms (Views: 1378.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-13 19:15:08 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (19.9ms)
+  Rendered events/new.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 182ms (Views: 148.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-13 19:16:13 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7YVjKNXIgXMTqDzi0sdHpxKf63zTFxS7yxMq6QeYQ4AVOtgcMCe/nQukbbZE1yRBrf9huLckdmoR4YdRYZqo+A==", "event"=>{"name"=>"New", "description"=>"B;ah", "start_date(1i)"=>"2018", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"00", "start_date(5i)"=>"15", "end_date(1i)"=>"2019", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"00", "end_date(5i)"=>"15", "suggested_budget"=>"30", "creator_id"=>"8"}, "email"=>"david@gmail.com", "commit"=>"Search"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 153ms (ActiveRecord: 0.7ms)
+
+
+  
+IndexError (index -1 too small for array; minimum: 0):
+  
+app/models/event.rb:17:in `create_pairs'
+app/controllers/events_controller.rb:33:in `create'
