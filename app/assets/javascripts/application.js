@@ -16,18 +16,18 @@
 $(document).ready(function(){
 	$('.create_gift').click(function(e){
 		e.preventDefault();
-
 		$.ajax({
-			url: '/gifts',
+			url: '/search',
 			type: 'POST',
 			data: {
 				'authenticity_token': $('input[name=authenticity_token]').val(),
 				'gift': {
-					name: 'camera',
-					category: 'camera'
+					keyword: $('input#gift_name').val()
 				}
 			}
 		})
+
+
 	})
 
 	$('#carousel').carousel({
