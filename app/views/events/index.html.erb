@@ -60,7 +60,7 @@
   <tbody>
     <div>
     <% @events.each do |event| %>
-    <!-- <% if @user_events_participations.participant_id == current_user.id %> -->
+
     <% if event.creator_id == current_user.id %>
       <tr>
         <td><%= event.name %></td>
@@ -74,7 +74,7 @@
         <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
-      <% end %>
+
     <% end %>
   </div>
   </tbody>

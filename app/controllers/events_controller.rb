@@ -27,6 +27,9 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    3.times do
+      @event.participants.new
+    end
   end
 
   # GET /events/1/edit
@@ -38,7 +41,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.create_pairs
-    1.times { @event.participants << User.find_by(email: params[:email]) }
+    3.times { @event.participants << User.find_by(email: params[:email]) }
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }

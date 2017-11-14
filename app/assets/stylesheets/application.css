@@ -54,7 +54,7 @@ img {
 }
 
 .nav-link:hover {
-  background-color: Green;
+  background-color: rgba(55,165,8,0.8);
   color: white;
 }
 
@@ -72,6 +72,17 @@ img {
 }
 
 .carousel-inner {
-  background-color: rgba(206, 6, 34, 0.8);
+  background-color: ivory;
   border-radius: 20px;
 }
+
+.btn {
+  outline: 0;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: inset 2px -3px rgba(0,0,0,0.15);
+}
+
