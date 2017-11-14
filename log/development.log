@@ -3578,3 +3578,378 @@ Completed 500 Internal Server Error in 794932ms (ActiveRecord: 0.6ms)
 SystemExit (exit):
   
 app/controllers/gifts_controller.rb:60:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:43:56 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (64.3ms)
+  Rendered gifts/new.html.erb within layouts/application (111.7ms)
+Completed 200 OK in 1487ms (Views: 1388.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:44:21 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"KyYvM0aiquB9cbVIRXG37CKZpBJEd2cxgjEWimMGIFXWM5q0ijGZW7KyHPsMv9RDhtpwcXVNDFTqCkf5UPmDdQ==", "gift"=>{"keyword"=>"battery"}}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:44:24 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"KyYvM0aiquB9cbVIRXG37CKZpBJEd2cxgjEWimMGIFXWM5q0ijGZW7KyHPsMv9RDhtpwcXVNDFTqCkf5UPmDdQ==", "gift"=>{"keyword"=>"battery"}}
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (76.5ms)
+  Rendered gifts/search.js.erb (213.3ms)
+  [1m[36mUser Load (17.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 200 OK in 5233ms (Views: 394.7ms | ActiveRecord: 3.2ms)
+
+
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (57.2ms)
+  Rendered gifts/search.js.erb (83.5ms)
+Completed 200 OK in 6535ms (Views: 136.2ms | ActiveRecord: 758.6ms)
+
+
+  [1m[36mWishlist Load (0.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWishlist Load (1.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 8], ["LIMIT", 11]]
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 15:59:57 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (3.2ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[36mGift Load (3.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 8]]
+  Rendered wishlists/index.html.erb within layouts/application (482.3ms)
+Completed 200 OK in 1714ms (Views: 1578.3ms | ActiveRecord: 34.0ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:03:04 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (134.0ms)
+  Rendered gifts/new.html.erb within layouts/application (158.4ms)
+Completed 200 OK in 2527ms (Views: 1447.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:11:12 -0500
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:11:19 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (137.1ms)
+  Rendered gifts/new.html.erb within layouts/application (161.8ms)
+Completed 200 OK in 2740ms (Views: 1607.9ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:11:32 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"z6P/zQ1CYp4PZxDY9mIzj0Al07pAlwgGcVv1Mi0Mk2YytkpKwdFRJcCkuWu/rFAg5GYH2XGtY2MZYKRBHvMwRg==", "gift"=>{"keyword"=>"charger"}}
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"z6P/zQ1CYp4PZxDY9mIzj0Al07pAlwgGcVv1Mi0Mk2YytkpKwdFRJcCkuWu/rFAg5GYH2XGtY2MZYKRBHvMwRg==", "gift"=>{"keyword"=>"charger"}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mUser Load (324.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (71.1ms)
+  Rendered gifts/search.js.erb (157.8ms)
+Completed 200 OK in 13557ms (Views: 550.1ms | ActiveRecord: 3.7ms)
+
+
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (46.1ms)
+  Rendered gifts/search.js.erb (86.7ms)
+Completed 200 OK in 13669ms (Views: 210.1ms | ActiveRecord: 819.6ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:12:02 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (104.7ms)
+  Rendered gifts/new.html.erb within layouts/application (131.0ms)
+Completed 200 OK in 1779ms (Views: 1318.0ms | ActiveRecord: 3.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:12:11 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"NK2+l5QmmHFXHNr/2x3DhzgWCb7BuVQkFDsBV9MEsYfJuAsQWLWrypjfc0yS06AonFXd3fCDP0F8AFAk4PsSpw==", "gift"=>{"keyword"=>"charger"}}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (61.2ms)
+  Rendered gifts/search.js.erb (95.5ms)
+Completed 200 OK in 5426ms (Views: 165.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:12:35 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"d4/i9aPhEIvWO5iAi5SYXgBUSbNgxztNrFsNETZX0lCKmldyb3IjMBn4MTPCWvvxpBed0FH9UCjEYFxiBahxcA==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Anker", "price"=>"$10.99/", "url"=>"https://www.amazon.com/Anker-Charger-PowerPort-PowerIQ-Foldable/dp/B071YMZ4LD/"}, "1"=>{"name"=>"GANJOY", "price"=>"$7.72/", "url"=>"https://www.amazon.com/GANJOY-Charger-Braided-Charging-Compatible/dp/B06XDKGVDT/"}, "2"=>{"name"=>"Anker", "price"=>"$25.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-speed-Technology/dp/B0194WDVHI/"}, "3"=>{"name"=>"iPhone", "price"=>"$11.99/", "url"=>"https://www.amazon.com/iPhone-Charger-Atill-Lightning-Compatible/dp/B075F8LFRW/"}, "4"=>{"name"=>"iXCC", "price"=>"$5.99/", "url"=>"https://www.amazon.com/iXCC-Durable-Charging-Android-Windows/dp/B00DYWC26G/"}, "5"=>{"name"=>"Micro", "price"=>"$9.99/", "url"=>"https://www.amazon.com/Charger-Fasgear-Tangle-Free-colorful-Connectors/dp/B01HSTOIA8/"}, "6"=>{"name"=>"iClever", "price"=>"$10.99/", "url"=>"https://www.amazon.com/iClever-BoostCube-Technology-Blackberry-Bluetooth/dp/B00QTE09SY/"}, "7"=>{"name"=>"Anker", "price"=>"$6.49/", "url"=>"https://www.amazon.com/Anker-Lightning-Charging-Charger-Certified/dp/B00K4VQZCM/"}, "8"=>{"name"=>"USB", "price"=>"$16.99/", "url"=>"https://www.amazon.com/USB-Charger-Port-Wall-Identification/dp/B073P7PFP9/"}, "9"=>{"want"=>"on", "name"=>"Anker", "price"=>"$13.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Lipstick-Sized-Generation-Batteries/dp/B005X1Y7I2/"}}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6735ms (ActiveRecord: 3.5ms)
+
+
+  
+NoMethodError (undefined method `add_wanted_gifts' for #<GiftsController:0x007fdbd03d6608>):
+  
+app/controllers/gifts_controller.rb:43:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:13:32 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (156.9ms)
+  Rendered gifts/new.html.erb within layouts/application (191.5ms)
+Completed 200 OK in 2857ms (Views: 1442.0ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:13:51 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"W8EbvUjWJxcJXX2N6iwWyJqRWfuAha6gHVyt8c93T1Gm1K46hEUUrMae1D6j4nVnPtKNmLG/xcV1Z/yC/IjscQ==", "gift"=>{"keyword"=>"charger"}}
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (91.4ms)
+  Rendered gifts/search.js.erb (130.9ms)
+Completed 200 OK in 5637ms (Views: 233.8ms | ActiveRecord: 34.0ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:14:02 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"SEx/NWJWA1KVeAra3zyCj6EqVT/Alu977Rf5j+8PQH61WcqyrsUw6Vq7o2mW8uEgBWmBXPGshB6FLKj83PDjXg==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Anker", "price"=>"$10.99/", "url"=>"https://www.amazon.com/Anker-Charger-PowerPort-PowerIQ-Foldable/dp/B071YMZ4LD/"}, "1"=>{"name"=>"GANJOY", "price"=>"$7.72/", "url"=>"https://www.amazon.com/GANJOY-Charger-Braided-Charging-Compatible/dp/B06XDKGVDT/"}, "2"=>{"name"=>"Anker", "price"=>"$25.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-speed-Technology/dp/B0194WDVHI/"}, "3"=>{"name"=>"iPhone", "price"=>"$11.99/", "url"=>"https://www.amazon.com/iPhone-Charger-Atill-Lightning-Compatible/dp/B075F8LFRW/"}, "4"=>{"name"=>"iXCC", "price"=>"$5.99/", "url"=>"https://www.amazon.com/iXCC-Durable-Charging-Android-Windows/dp/B00DYWC26G/"}, "5"=>{"name"=>"Micro", "price"=>"$9.99/", "url"=>"https://www.amazon.com/Charger-Fasgear-Tangle-Free-colorful-Connectors/dp/B01HSTOIA8/"}, "6"=>{"name"=>"iClever", "price"=>"$10.99/", "url"=>"https://www.amazon.com/iClever-BoostCube-Technology-Blackberry-Bluetooth/dp/B00QTE09SY/"}, "7"=>{"name"=>"Anker", "price"=>"$6.49/", "url"=>"https://www.amazon.com/Anker-Lightning-Charging-Charger-Certified/dp/B00K4VQZCM/"}, "8"=>{"name"=>"USB", "price"=>"$16.99/", "url"=>"https://www.amazon.com/USB-Charger-Port-Wall-Identification/dp/B073P7PFP9/"}, "9"=>{"want"=>"on", "name"=>"Anker", "price"=>"$13.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Lipstick-Sized-Generation-Batteries/dp/B005X1Y7I2/"}}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 302263ms (ActiveRecord: 3.5ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:46:in `block in create'
+app/controllers/gifts_controller.rb:44:in `each'
+app/controllers/gifts_controller.rb:44:in `create'
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:19:14 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"SEx/NWJWA1KVeAra3zyCj6EqVT/Alu977Rf5j+8PQH61WcqyrsUw6Vq7o2mW8uEgBWmBXPGshB6FLKj83PDjXg==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Anker", "price"=>"$10.99/", "url"=>"https://www.amazon.com/Anker-Charger-PowerPort-PowerIQ-Foldable/dp/B071YMZ4LD/"}, "1"=>{"name"=>"GANJOY", "price"=>"$7.72/", "url"=>"https://www.amazon.com/GANJOY-Charger-Braided-Charging-Compatible/dp/B06XDKGVDT/"}, "2"=>{"name"=>"Anker", "price"=>"$25.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-speed-Technology/dp/B0194WDVHI/"}, "3"=>{"name"=>"iPhone", "price"=>"$11.99/", "url"=>"https://www.amazon.com/iPhone-Charger-Atill-Lightning-Compatible/dp/B075F8LFRW/"}, "4"=>{"name"=>"iXCC", "price"=>"$5.99/", "url"=>"https://www.amazon.com/iXCC-Durable-Charging-Android-Windows/dp/B00DYWC26G/"}, "5"=>{"name"=>"Micro", "price"=>"$9.99/", "url"=>"https://www.amazon.com/Charger-Fasgear-Tangle-Free-colorful-Connectors/dp/B01HSTOIA8/"}, "6"=>{"name"=>"iClever", "price"=>"$10.99/", "url"=>"https://www.amazon.com/iClever-BoostCube-Technology-Blackberry-Bluetooth/dp/B00QTE09SY/"}, "7"=>{"name"=>"Anker", "price"=>"$6.49/", "url"=>"https://www.amazon.com/Anker-Lightning-Charging-Charger-Certified/dp/B00K4VQZCM/"}, "8"=>{"name"=>"USB", "price"=>"$16.99/", "url"=>"https://www.amazon.com/USB-Charger-Port-Wall-Identification/dp/B073P7PFP9/"}, "9"=>{"want"=>"on", "name"=>"Anker", "price"=>"$13.99/", "url"=>"https://www.amazon.com/Anker-PowerCore-Lipstick-Sized-Generation-Batteries/dp/B005X1Y7I2/"}}}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (2.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (9.2ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anker"], ["price", 0.0], ["url", "https://www.amazon.com/Anker-Charger-PowerPort-PowerIQ-Foldable/dp/B071YMZ4LD/"], ["created_at", "2017-11-14 21:19:24.137750"], ["updated_at", "2017-11-14 21:19:24.137750"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (7.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "GANJOY"], ["price", 0.0], ["url", "https://www.amazon.com/GANJOY-Charger-Braided-Charging-Compatible/dp/B06XDKGVDT/"], ["created_at", "2017-11-14 21:19:24.383136"], ["updated_at", "2017-11-14 21:19:24.383136"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anker"], ["price", 0.0], ["url", "https://www.amazon.com/Anker-PowerCore-Ultra-Compact-High-speed-Technology/dp/B0194WDVHI/"], ["created_at", "2017-11-14 21:19:24.516771"], ["updated_at", "2017-11-14 21:19:24.516771"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "iPhone"], ["price", 0.0], ["url", "https://www.amazon.com/iPhone-Charger-Atill-Lightning-Compatible/dp/B075F8LFRW/"], ["created_at", "2017-11-14 21:19:24.659320"], ["updated_at", "2017-11-14 21:19:24.659320"]]
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "iXCC"], ["price", 0.0], ["url", "https://www.amazon.com/iXCC-Durable-Charging-Android-Windows/dp/B00DYWC26G/"], ["created_at", "2017-11-14 21:19:24.772413"], ["updated_at", "2017-11-14 21:19:24.772413"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (5.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Micro"], ["price", 0.0], ["url", "https://www.amazon.com/Charger-Fasgear-Tangle-Free-colorful-Connectors/dp/B01HSTOIA8/"], ["created_at", "2017-11-14 21:19:24.911847"], ["updated_at", "2017-11-14 21:19:24.911847"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "iClever"], ["price", 0.0], ["url", "https://www.amazon.com/iClever-BoostCube-Technology-Blackberry-Bluetooth/dp/B00QTE09SY/"], ["created_at", "2017-11-14 21:19:25.054737"], ["updated_at", "2017-11-14 21:19:25.054737"]]
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (3.8ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anker"], ["price", 0.0], ["url", "https://www.amazon.com/Anker-Lightning-Charging-Charger-Certified/dp/B00K4VQZCM/"], ["created_at", "2017-11-14 21:19:25.163747"], ["updated_at", "2017-11-14 21:19:25.163747"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "USB"], ["price", 0.0], ["url", "https://www.amazon.com/USB-Charger-Port-Wall-Identification/dp/B073P7PFP9/"], ["created_at", "2017-11-14 21:19:25.307141"], ["updated_at", "2017-11-14 21:19:25.307141"]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.7ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "Anker"], ["price", 0.0], ["url", "https://www.amazon.com/Anker-PowerCore-Lipstick-Sized-Generation-Batteries/dp/B005X1Y7I2/"], ["created_at", "2017-11-14 21:19:25.409375"], ["updated_at", "2017-11-14 21:19:25.409375"]]
+  [1m[35m (73.8ms)[0m  [1m[35mCOMMIT[0m
+No template found for GiftsController#create, rendering head :no_content
+Completed 204 No Content in 3080ms (ActiveRecord: 199.4ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:19:37 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (5.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (132.5ms)
+  Rendered gifts/new.html.erb within layouts/application (157.7ms)
+Completed 200 OK in 1869ms (Views: 1769.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:20:08 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (105.3ms)
+  Rendered gifts/new.html.erb within layouts/application (130.1ms)
+Completed 200 OK in 2750ms (Views: 1643.1ms | ActiveRecord: 42.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:20:30 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"xjvBZANsQYLDvYWiXQt2yFM0Ba3RYPS5PCScalyy9bs7LnTjz/9yOQx+LBEUxRVn93fRzuBan9xUH80Zb01Wmw==", "gift"=>{"keyword"=>"plate"}}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (246.1ms)
+  Rendered gifts/search.js.erb (292.4ms)
+Completed 200 OK in 5840ms (Views: 374.7ms | ActiveRecord: 22.4ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:20:46 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"ZRRcPvWnBmoGe87TMI3VJfUGhuRwY+OtVqkSQQ6hn3KYAem5OTQ10cm4Z2B5Q7aKUUVSh0FZiMg+kkMyPV48Ug==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Gibson", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Gibson-Lounge-16-Piece-Reactive-Dinnerware/dp/B0038JDEOO/", "category"=>"plate/"}, "1"=>{"want"=>"on", "name"=>"Dixie", "price"=>"$9.36/", "url"=>"https://www.amazon.com/Dixie-Everyday-Disposable-Plates-Designs/dp/B008R6LO5O/", "category"=>"plate/"}, "2"=>{"name"=>"Nordic", "price"=>"$15.10/", "url"=>"https://www.amazon.com/Nordic-Ware-Microwave-Piece-Dinnerware/dp/B003CFBRTS/", "category"=>"plate/"}, "3"=>{"name"=>"Corelle", "price"=>"$4.13/", "url"=>"https://www.amazon.com/Corelle-Livingware-6-Piece-Dinner-Winter/dp/B00F39GAMK/", "category"=>"plate/"}, "4"=>{"name"=>"Ikea", "price"=>"$2.99/", "url"=>"https://www.amazon.com/Ikea-501-929-59-BPA-Free-Assorted-Colors/dp/B00Q4O5PUG/", "category"=>"plate/"}, "5"=>{"name"=>"AmazonBasics", "price"=>"$31.99/", "url"=>"https://www.amazon.com/AmazonBasics-18-Piece-Dinnerware-Set-Service/dp/B019EEUQ2O/", "category"=>"plate/"}, "6"=>{"name"=>"Nordic", "price"=>"$8.99/", "url"=>"https://www.amazon.com/Nordic-Ware-Everyday-Plates-White/dp/B009SB0RJG/", "category"=>"plate/"}, "7"=>{"name"=>"Chinet", "price"=>"$13.20/", "url"=>"https://www.amazon.com/Chinet-Dinner-Plate-100-count-Box/dp/B002YD8GBG/", "category"=>"plate/"}, "8"=>{"name"=>"Royal", "price"=>"$21.99/", "url"=>"https://www.amazon.com/Royal-Doulton-Pacific-Plates-6-3-Inch/dp/B00SLLG1TE/", "category"=>"plate/"}, "9"=>{"name"=>"AmazonBasics", "price"=>"$19.98/", "url"=>"https://www.amazon.com/AmazonBasics-6-Piece-Dinner-Plate-Set/dp/B0157FD9MS/", "category"=>"plate/"}}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 98001ms (ActiveRecord: 3.4ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:45:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:22:30 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (98.8ms)
+  Rendered gifts/new.html.erb within layouts/application (152.7ms)
+Completed 200 OK in 2425ms (Views: 1433.2ms | ActiveRecord: 3.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:22:55 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"CsObmRpzQzEikPABZHXSd0jTL7i0aJmlVqV1aaYRY9n31i4e1uBwiu1TWbItu7HY7JD724VS8sA+niQale7A+Q==", "gift"=>{"keyword"=>"potty trainer"}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (66.6ms)
+  Rendered gifts/search.js.erb (103.0ms)
+Completed 200 OK in 6047ms (Views: 282.3ms | ActiveRecord: 19.6ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:23:10 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"xtXp/Ssu2/RFAHDvMZxM8ETidjusvFtzUillnDUu7707wFx6573oT4rD2Vx4Ui9f4KGiWJ2GMBY6EjTvBtFMnQ==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Summer", "price"=>"$9.99/", "url"=>"https://www.amazon.com/Summer-Infant-Potty-White-Teal/dp/B00A0ID90A/", "category"=>"potty"}, "1"=>{"name"=>"BABYBJORN", "price"=>"$21.99/", "url"=>"https://www.amazon.com/BABYBJORN-Toilet-Trainer-White-Black/dp/B0009PAN7Q/", "category"=>"potty"}, "2"=>{"name"=>"Primo", "price"=>"$31.50/", "url"=>"https://www.amazon.com/Primo-Toilet-Trainer-Stool-Pastel/dp/B000BXKTMA/", "category"=>"potty"}, "3"=>{"name"=>"Artificial", "price"=>"$19.30/", "url"=>"https://www.amazon.com/Artificial-Bathroom-Portable-PETMAKER-Essentials/dp/B00ICVHY5I/", "category"=>"potty"}, "4"=>{"name"=>"Summer", "price"=>"$24.86/", "url"=>"https://www.amazon.com/Summer-Infant-My-Size-Potty/dp/B0154FF8OS/", "category"=>"potty"}, "5"=>{"name"=>"The", "price"=>"$23.50/", "url"=>"https://www.amazon.com/First-Years-Disney-Mickey-Graphics/dp/B008HRJKEU/", "category"=>"potty"}, "6"=>{"name"=>"Potty", "price"=>"$15.89/", "url"=>"https://www.amazon.com/Training-Toilets-Toddlers-Portable-Vicsou/dp/B073QSBGVQ/", "category"=>"potty"}, "7"=>{"name"=>"The", "price"=>"$6.99/", "url"=>"https://www.amazon.com/First-Years-Soft-Grip-Trainer/dp/B006I0R0XQ/", "category"=>"potty"}, "8"=>{"name"=>"Fisher-Price", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Fisher-Price-Stepstool-Potty-Royal-White/dp/B014GSGAA0/", "category"=>"potty"}, "9"=>{"name"=>"Mommy's", "price"=>"$29.78/", "url"=>"https://www.amazon.com/Mommys-Helper-Contoured-Cushie-Count/dp/B000AV5LZ8/", "category"=>"potty"}}}
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 129604ms (ActiveRecord: 4.4ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:45:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:25:37 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (101.1ms)
+  Rendered gifts/new.html.erb within layouts/application (125.4ms)
+Completed 200 OK in 2275ms (Views: 1305.2ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:25:52 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"8cZoWKjYRLwK57z1Bm9lRNhHNOfMVZVT7UNNtMxTYL8M093fZEt3B8UkFUZPoQbrfATghP1v/jaFeBzH/6zDnw==", "gift"=>{"keyword"=>"catherer"}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3748ms (ActiveRecord: 24.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/wishlist.rb:76:in `block in parsed_info_by_keyword'
+app/models/wishlist.rb:72:in `map'
+app/models/wishlist.rb:72:in `parsed_info_by_keyword'
+app/controllers/gifts_controller.rb:25:in `search'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:26:05 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (169.6ms)
+  Rendered gifts/new.html.erb within layouts/application (207.8ms)
+Completed 200 OK in 1901ms (Views: 1693.1ms | ActiveRecord: 6.2ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:26:12 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"L1qm8rR1spwJYPKIT2ONVonieBSvGYjn0m+zNmMuOdXSTxN1eOaBJ8ajWzsGre75LaGsd54j44K6VOJFUNGa9Q==", "gift"=>{"keyword"=>"mug"}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (93.1ms)
+  Rendered gifts/search.js.erb (125.9ms)
+Completed 200 OK in 4117ms (Views: 193.7ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:26:22 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"dmv5cSd/fdpTMBSBz4X9NJeW/qSTTz3U0HMLFtDy08GLfkz26+xOYZzzvTKGS56bM9Uqx6J1VrG4SFpl4w1w4Q==", "gift"=>{"0"=>{"name"=>"Heat", "price"=>"$15.95/", "url"=>"https://www.amazon.com/Changing-Constellation-Unemployed-Philosophers-Guild/dp/B00B7LUVZK/", "category"=>"mug/"}, "1"=>{"want"=>"on", "name"=>"Coffee", "price"=>"$10.99/", "url"=>"https://www.amazon.com/Coffee-Mug-Stainless-Insulated-Bonus_uHome/dp/B0195ZRPAI/", "category"=>"mug/"}, "2"=>{"name"=>"Coffee", "price"=>"$31.95/", "url"=>"https://www.amazon.com/Coffee-Large-sized-Ceramic-Restaurant-Bruntmor/dp/B076T8X7YR/", "category"=>"mug/"}, "3"=>{"name"=>"MyHomeIdeas", "price"=>"$16.59/", "url"=>"https://www.amazon.com/MyHomeIdeas-Stainless-Steel-Bamboo-Handle/dp/B01N2QK89G/", "category"=>"mug/"}, "4"=>{"name"=>"Anchor", "price"=>"$15.99/", "url"=>"https://www.amazon.com/Anchor-Hocking-Caf%C3%A9-Glass-Coffee/dp/B001CFQUGA/", "category"=>"mug/"}, "5"=>{"name"=>"Harry", "price"=>"$7.00/", "url"=>"https://www.amazon.com/Harry-Potter-Ceramic-Cauldron-Mug/dp/B017AL70W2/", "category"=>"mug/"}, "6"=>{"name"=>"Kitchen", "price"=>"$23.99/", "url"=>"https://www.amazon.com/Kitchen-Science-Moscow-Hammered-Drinking/dp/B074DLM39Q/", "category"=>"mug/"}, "7"=>{"name"=>"Coleman", "price"=>"$0.12/", "url"=>"https://www.amazon.com/Coleman-12-oz-Enamel-Mug/dp/B0009PUR72/", "category"=>"mug/"}, "8"=>{"name"=>"Sweese", "price"=>"$29.99/", "url"=>"https://www.amazon.com/Sweese-6201-Porcelain-Mugs-Coffee/dp/B073WTW5FM/", "category"=>"mug/"}, "9"=>{"name"=>"GUND", "price"=>"$9.99/", "url"=>"https://www.amazon.com/GUND-Pusheen-12-oz-Mug/dp/B00SUVRNYW/", "category"=>"mug/"}}}
+  [1m[36mUser Load (7.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 298859ms (ActiveRecord: 7.0ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:45:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:31:26 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (122.5ms)
+  Rendered gifts/new.html.erb within layouts/application (147.2ms)
+Completed 200 OK in 2239ms (Views: 1303.9ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:31:46 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"8PVYNnKM7LZKrb3y/6qLvVl4L4FkExJr79rNKObeG58N4O2xvh/fDYVuFEG2ZOgS/Tv74lUpeQ6H4Zxb1SG4vw==", "gift"=>{"keyword"=>"headphones"}}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (64.3ms)
+  Rendered gifts/search.js.erb (97.1ms)
+Completed 200 OK in 5158ms (Views: 187.0ms | ActiveRecord: 20.2ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:32:02 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"vLL74HgvVpqlYIC7LkZcWNIN4vBJHgERqeveFAYy/dtBp05ntLxlIWqjKQhniD/3dk42k3gkanTB0I9nNc1e+w==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Mpow", "price"=>"$33.99/", "url"=>"https://www.amazon.com/Mpow-Bluetooth-Headphones-Wireless-Memory-Protein/dp/B01NAJGGA2/", "category"=>"headphones/"}, "1"=>{"want"=>"on", "name"=>"AILIHEN", "price"=>"$19.98/", "url"=>"https://www.amazon.com/AILIHEN-C8-Headphones-Lightweight-Smartphones/dp/B01EF5DBYM/", "category"=>"headphones/"}, "2"=>{"name"=>"In", "price"=>"$13.99/", "url"=>"https://www.amazon.com/Earphone-Isolating-Sweatproof-Headphones-Microphone/dp/B0775N5C2G/", "category"=>"headphones/"}, "3"=>{"name"=>"Betron", "price"=>"$11.95/", "url"=>"https://www.amazon.com/Betron-Earphones-Headphones-Definition-Isolating/dp/B00XBZY0EI/", "category"=>"headphones/"}, "4"=>{"name"=>"Apple", "price"=>"$9.99/", "url"=>"https://www.amazon.com/Apple-Earphones-MD827LL-A-White/dp/B0097BEG1C/", "category"=>"headphones/"}, "5"=>{"name"=>"On", "price"=>"$12.99/", "url"=>"https://www.amazon.com/Headphones-Jelly-Comb-Foldable-Microphone/dp/B071DG6CNS/", "category"=>"headphones/"}, "6"=>{"name"=>"Bluetooth", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Headphones-Otium-Waterproof-Sweatproof-Cancelling/dp/B018APC4LE/", "category"=>"headphones/"}, "7"=>{"name"=>"Headphones,", "price"=>"$16.99/", "url"=>"https://www.amazon.com/Headphones-Woitech-Premium-Earphones-Compatible/dp/B074QNXRJM/", "category"=>"headphones/"}, "8"=>{"name"=>"Vomercy", "price"=>"$24.99/", "url"=>"https://www.amazon.com/Vomercy-Headphones-Microphone-Adjustable-Smartphones/dp/B076C8SGJY/", "category"=>"headphones/"}, "9"=>{"name"=>"Betron", "price"=>"$9.95/", "url"=>"https://www.amazon.com/Betron-Earphones-Headphones-Balanced-Isolating/dp/B01M8G5K8V/", "category"=>"headphones/"}}}
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 9486ms (ActiveRecord: 3.5ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:45:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 16:32:21 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (97.7ms)
+  Rendered gifts/new.html.erb within layouts/application (121.4ms)
+Completed 200 OK in 2283ms (Views: 1324.6ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 16:32:46 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"bDJz/X4FjrVqQLgLJr1ERGJwWIlOpiE3qo6AKg4sreeRJ8Z6spa9DqWDEbhvcyfrxjOM6n+cSlLCtdFZPdMOxw==", "gift"=>{"keyword"=>"watch"}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (68.4ms)
+  Rendered gifts/search.js.erb (129.6ms)
+Completed 200 OK in 5363ms (Views: 196.6ms | ActiveRecord: 20.3ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 16:32:59 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"pAPs0OyceT43dEES2bwZ+IKrbs7CScKn3FJWnJkrYKNZFllXIA9Khfi36KGQcnpXJui6rfNzqcK0aQfvqtTDgw==", "gift"=>{"0"=>{"name"=>"Men's", "price"=>"$14.99/", "url"=>"https://www.amazon.com/Business-Calendar-Waterproof-Resistant-Comfortable/dp/B01CM9T16U/", "category"=>"watch/"}, "1"=>{"want"=>"on", "name"=>"Timsty", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Timsty-Electronic-Backlight-Resistant-Digital/dp/B0183UDXHA/", "category"=>"watch/"}, "2"=>{"name"=>"Casio", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Casio-W800H-1AV-Classic-Sport-Watch/dp/B001AWZDA4/", "category"=>"watch/"}, "3"=>{"name"=>"SMTSMT", "price"=>"$4.99/", "url"=>"https://www.amazon.com/SMTSMT-Popular-Wristwatch-Minimalist-Connotation/dp/B075DBQ719/", "category"=>"watch/"}, "4"=>{"name"=>"Padgene", "price"=>"$15.99/", "url"=>"https://www.amazon.com/Padgene-Bluetooth-Smart-Watch-Camera/dp/B00X9L90RG/", "category"=>"watch/"}, "5"=>{"name"=>"Casio", "price"=>"$10.30/", "url"=>"https://www.amazon.com/Casio-MQ24-1E-Black-Resin-Watch/dp/B000GAWSHM/", "category"=>"watch/"}, "6"=>{"name"=>"FOVICN", "price"=>"$29.99/", "url"=>"https://www.amazon.com/FOVICN-Fashion-Business-Chronograph-Waterproof/dp/B071DFXK5K/", "category"=>"watch/"}, "7"=>{"name"=>"Watches", "price"=>"$29.99/", "url"=>"https://www.amazon.com/Watches-Luxury-Chronograph-Sports-Waterproof/dp/B074WZHQYF/", "category"=>"watch/"}, "8"=>{"name"=>"Voeons", "price"=>"$15.99/", "url"=>"https://www.amazon.com/Voeons-Watches-Classic-Quartz-Analog/dp/B0132NANCG/", "category"=>"watch/"}, "9"=>{"name"=>"Men's", "price"=>"$12.99/", "url"=>"https://www.amazon.com/Aposon-Military-Electronic-Stopwatch-Waterproof/dp/B01BA77L12/", "category"=>"watch/"}}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (4.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Timsty"], ["price", 0.0], ["url", "https://www.amazon.com/Timsty-Electronic-Backlight-Resistant-Digital/dp/B0183UDXHA/"], ["category", "watch/"], ["created_at", "2017-11-14 21:32:59.382808"], ["updated_at", "2017-11-14 21:32:59.382808"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for GiftsController#create, rendering head :no_content
+Completed 204 No Content in 578ms (ActiveRecord: 15.7ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 16:33:35 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (3.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (3.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 8]]
+  [1m[36mGift Load (7.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 8]]
+  Rendered wishlists/index.html.erb within layouts/application (858.9ms)
+Completed 200 OK in 2280ms (Views: 2084.1ms | ActiveRecord: 32.5ms)
+
+

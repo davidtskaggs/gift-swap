@@ -64,7 +64,7 @@ class Wishlist < ApplicationRecord
 	 def return_results(url)
 	 	results = HTTParty.get(url)
 	 end
-
+#need to modify parsing methods to remove need to use .each_with_index
 	 def parsed_info_by_keyword(keyword)
 	 	result_hash = self.by_keyword(keyword)
 	 	returned_hash = {names: [], prices: [], urls: [],

@@ -39,7 +39,15 @@ class GiftsController < ApplicationController
   # POST /gifts.json
    def create
     p '*'*10
-    binding.pry
+
+    items = Gift.new.add_wanted_gifts(params)
+    items.each do |item|
+      p "******saved*****"
+      Gift.create(name: item[:name], price: item[:price], url: item[:url], category:item[:category])
+    end
+
+
+
     # p params
     # binding.pry
     # p params["gift"]["keyword"]
