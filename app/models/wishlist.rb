@@ -73,7 +73,7 @@ class Wishlist < ApplicationRecord
 	 		returned_hash[:names] << elt["ItemAttributes"]["Title"]
 	 		returned_hash[:prices] << elt["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]
 	 		returned_hash[:urls] << elt["DetailPageURL"].split("?").first
-	 		returned_hash[:images] << elt["LargeImage"]["URL"]
+	 		returned_hash[:images] << elt["LargeImage"]["URL"] ? elt["SmallImage"] : "https://cdn.browshot.com/static/images/not-found.png"
 	 		returned_hash[:categories] << keyword
 	 	end
 	 	return returned_hash

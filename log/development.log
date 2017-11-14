@@ -2859,3 +2859,722 @@ Processing by GiftsController#create as */*
 Completed 200 OK in 319ms (Views: 25.2ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 14:37:44 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 67ms (Views: 59.0ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 14:37:57 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"mOZqko4dJk8DtvzaT5/ujNADmvjOYDvyUaYIYcx/oHpl898VQo4V9Mx1VWkGUY0jdEBOm/9aUJc5nVkS/4ADWg==", "gift"=>{"keyword"=>"mouse"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/create.js.erb (5.8ms)
+Completed 200 OK in 530ms (Views: 25.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 14:38:12 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.8ms)
+  Rendered gifts/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 68ms (Views: 59.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 14:39:39 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.7ms)
+  Rendered gifts/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 66ms (Views: 59.0ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 14:39:44 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"ZGXVtCxlfFHVUbzm52IhdsoOEJWY92USZ1B2Etm6w/eZcGAz4PZP6hqSFVWurELZbk3E9qnNDncPaydh6kVg1w==", "gift"=>{"keyword"=>"battery"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (2.8ms)
+  Rendered gifts/create.js.erb (8.4ms)
+Completed 200 OK in 474ms (Views: 33.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:09:03 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 75ms (Views: 67.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:09:08 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"M1iKDaf13aI8hU7Ze1nDi2KPDTc52S2BjkAozIRD2gnOTT+Ka2buGfNG52oyl6AkxszZVAjjRuTme3m/t7x5KQ==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (1.2ms)
+  Rendered gifts/create.js.erb (5.8ms)
+Completed 200 OK in 330ms (Views: 24.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:10:07 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.8ms)
+  Rendered gifts/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 82ms (Views: 70.1ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:10:12 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"/MY2i/stNEWxPw9oxP3EhuoVrEym3qRmNRwO2p9QC8sB04MMN74H/n78ptuNM6cpTlZ4L5fkzwNdJ1+prK+o6w==", "gift"=>{"keyword"=>"batteries"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/create.js.erb (6.4ms)
+Completed 200 OK in 529ms (Views: 26.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:10:32 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:10:34 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"L9p9Ow/GUwn/p+Pp8XKxl0X6Tg9oZPS0bXVKacVGTIfSz8i8w1VgsjBkSlq4vNI44bmabFlen9EFThsa9rnvpw==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/create.js.erb (6.8ms)
+Completed 200 OK in 271ms (Views: 26.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:12:51 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.5ms)
+  Rendered gifts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 70ms (Views: 62.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:13:08 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"vcAcAIoUnA8/4mL98Bt1v4NflHZUYsqfxZ2RQHqX6mFA1amHRoevtPAhy0651RYQJxxAFWVYofqtpsAzSWhJQQ==", "gift"=>{"keyword"=>"plane"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (21.0ms)
+  Rendered gifts/create.js.erb (25.3ms)
+Completed 500 Internal Server Error in 403ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     8: 
+     9:       <input type="hidden" name='gift[<%=index%>][image]' value=<%=image%>/>
+    10:       <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
+    11:       <input type="hidden" name='gift[<%=index%>][@result[:prices][index]]' value=<%=@result[:prices][index]%>/>
+    12: 
+    13:       <li><img src=<%=image%>><br><a href=<%=link%>>Item Details</a></li>
+    14:       <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
+  
+app/views/gifts/_results.html.erb:11:in `block in _app_views_gifts__results_html_erb___2672322470133869591_70291097680740'
+app/views/gifts/_results.html.erb:4:in `each'
+app/views/gifts/_results.html.erb:4:in `each_with_index'
+app/views/gifts/_results.html.erb:4:in `_app_views_gifts__results_html_erb___2672322470133869591_70291097680740'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb___2601614489594278592_70291024285620'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:13:45 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.5ms)
+  Rendered gifts/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 77ms (Views: 68.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:13:54 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"7lRdDl+9x2vtiXjk8MM4UuuUGLfIfUu2uDktE5Wxfk4TQeiJky700CJK0Ve5DVv9T9fM1PlHINPQAnxgpk7dbg==", "gift"=>{"keyword"=>"yaht"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 354ms (ActiveRecord: 1.3ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/wishlist.rb:76:in `block in parsed_info_by_keyword'
+app/models/wishlist.rb:72:in `map'
+app/models/wishlist.rb:72:in `parsed_info_by_keyword'
+app/controllers/gifts_controller.rb:32:in `create'
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:16:07 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"7lRdDl+9x2vtiXjk8MM4UuuUGLfIfUu2uDktE5Wxfk4TQeiJky700CJK0Ve5DVv9T9fM1PlHINPQAnxgpk7dbg==", "gift"=>{"keyword"=>"yaht"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 274ms (ActiveRecord: 16.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/wishlist.rb:76:in `block in parsed_info_by_keyword'
+app/models/wishlist.rb:72:in `map'
+app/models/wishlist.rb:72:in `parsed_info_by_keyword'
+app/controllers/gifts_controller.rb:32:in `create'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:16:53 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (7.2ms)
+  Rendered gifts/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 284ms (Views: 114.6ms | ActiveRecord: 23.3ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:16:58 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"6FcXPMlNrXnZyM0yqQ3ocrL4ROn+mBi16r/o4rGVh1kVQqK7Bd6ewhYLZIHgw4vdFruQis+ic9CChLmRgmokeQ==", "gift"=>{"keyword"=>"yaht"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 188ms (ActiveRecord: 8.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/models/wishlist.rb:76:in `block in parsed_info_by_keyword'
+app/models/wishlist.rb:72:in `map'
+app/models/wishlist.rb:72:in `parsed_info_by_keyword'
+app/controllers/gifts_controller.rb:32:in `create'
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:17:19 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"6FcXPMlNrXnZyM0yqQ3ocrL4ROn+mBi16r/o4rGVh1kVQqK7Bd6ewhYLZIHgw4vdFruQis+ic9CChLmRgmokeQ==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (7.9ms)
+  Rendered gifts/create.js.erb (12.2ms)
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+     8: 
+     9:       <input type="hidden" name='gift[<%=index%>][image]' value=<%=image%>/>
+    10:       <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
+    11:       <input type="hidden" name='gift[<%=index%>][price]' value=<%=@result[:prices][index]%>/>
+    12: 
+    13:       <li><img src=<%=image%>><br><a href=<%=link%>>Item Details</a></li>
+    14:       <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
+  
+app/views/gifts/_results.html.erb:11:in `block in _app_views_gifts__results_html_erb___2672322470133869591_70291098100100'
+app/views/gifts/_results.html.erb:4:in `each'
+app/views/gifts/_results.html.erb:4:in `each_with_index'
+app/views/gifts/_results.html.erb:4:in `_app_views_gifts__results_html_erb___2672322470133869591_70291098100100'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb___2601614489594278592_70291082212660'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:18:23 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (4.2ms)
+  Rendered gifts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 79ms (Views: 71.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:18:25 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"2IRDkYh86LbC9WDNcMKtEK47p+mZeSOFwuZ3gVGQGW8lkfYWRO/bDQ02yX45DM6/CnhziqhDSOCq3SbyYm+6Tw==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (1.9ms)
+  Rendered gifts/create.js.erb (7.0ms)
+Completed 200 OK in 364ms (Views: 27.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:22:08 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (11.7ms)
+  Rendered gifts/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 250ms (Views: 117.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:22:44 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (5.5ms)
+  Rendered gifts/new.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 170ms (Views: 71.3ms | ActiveRecord: 24.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:22:49 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/search"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:23:05 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (7.2ms)
+  Rendered gifts/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 276ms (Views: 91.9ms | ActiveRecord: 62.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:23:09 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"01JuitlUW17kw+K8m5uK7Zl26W3Bdgz8Cw/kFDDAX6cuR9sNFcdo5SsASw/SVelCPTU9DvBMZ5ljNLVnAz/8hw==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+No template found for GiftsController#search, rendering head :no_content
+Completed 204 No Content in 574ms (ActiveRecord: 6.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:23:11 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"01JuitlUW17kw+K8m5uK7Zl26W3Bdgz8Cw/kFDDAX6cuR9sNFcdo5SsASw/SVelCPTU9DvBMZ5ljNLVnAz/8hw==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+No template found for GiftsController#search, rendering head :no_content
+Completed 204 No Content in 584ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:24:05 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.9ms)
+  Rendered gifts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 81ms (Views: 71.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:24:07 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"cHnQyODGuuGAr/5iFrw8/VcRk+WhDJ1nhoRXY0tlVoeNbGVPLFWJWk9sV9Ffcl9S81JHhpA29gLuvwYQeJr1pw==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (2.1ms)
+  Rendered gifts/search.js.erb (11.6ms)
+Completed 200 OK in 327ms (Views: 32.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gifts?gift%5B0%5D%5Bwant%5D=on&gift%5B0%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51Mqjosfv0L.jpg%2F&gift%5B0%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FMpow-Washable-Strong-One-Touch-Dashboard%2Fdp%2FB06XC5DRS4%2F&gift%5B0%5D%5Bprice%5D=%249.69%2F&gift%5B1%5D%5Bwant%5D=on&gift%5B1%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41hivUTsQYL.jpg%2F&gift%5B1%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FConcept-6-volt-Electric-Ride-White%2Fdp%2FB00QM8IBF0%2F&gift%5B1%5D%5Bprice%5D=%24169.99%2F&gift%5B2%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41fC0VicrkL.jpg%2F&gift%5B2%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FBZseed-HUD-Navigation-Reflector-Universal%2Fdp%2FB01DJXD4HK%2F&gift%5B2%5D%5Bprice%5D=%2411.99%2F&gift%5B3%5D%5Bwant%5D=on&gift%5B3%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41sEk6BLolL.jpg%2F&gift%5B3%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FNulaxy-Wireless-Bluetooth-Transmitter-Smartphones%2Fdp%2FB018E0I01I%2F&gift%5B3%5D%5Bprice%5D=%2418.99%2F&gift%5B4%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51NWdxUGbDL.jpg%2F&gift%5B4%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FRW-Lamborghini-Veneno-Remote-Control%2Fdp%2FB01A5NZAE2%2F&gift%5B4%5D%5Bprice%5D=%2414.78%2F&gift%5B5%5D%5Bwant%5D=on&gift%5B5%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51B60mfHYEL.jpg%2F&gift%5B5%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FWizGear-Universal-Swift-Snap-Technology-Smartphones%2Fdp%2FB00PGJWYJ0%2F&gift%5B5%5D%5Bprice%5D=%246.99%2F&gift%5B6%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51ad6iy-p8L.jpg%2F&gift%5B6%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FDocooler-Interior-Atmosphere-Lights-Decoration%2Fdp%2FB00KGSPQDM%2F&gift%5B6%5D%5Bprice%5D=%249.99%2F&gift%5B7%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41FPC%252B4L2rL.jpg%2F&gift%5B7%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FAnker-Charger-PowerDrive-iPhone-Galaxy%2Fdp%2FB00VH84L5E%2F&gift%5B7%5D%5Bprice%5D=%249.99%2F&gift%5B8%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41f1Z8I80DL.jpg%2F&gift%5B8%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FRASTAR-Ferrari-Laferrari-Remote-Control%2Fdp%2FB00L1WDOIQ%2F&gift%5B8%5D%5Bprice%5D=%2423.16%2F&gift%5B9%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F61unPaD9urL.jpg%2F&gift%5B9%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FAutoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002%2Fdp%2FB00XR36WVI%2F&gift%5B9%5D%5Bprice%5D=%247.99%2F" for 127.0.0.1 at 2017-11-14 15:24:36 -0500
+Processing by GiftsController#index as HTML
+  Parameters: {"gift"=>{"0"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/index.html.erb within layouts/application
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  Rendered gifts/index.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 193ms (Views: 88.3ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:24:52 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (5.3ms)
+  Rendered gifts/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 80ms (Views: 71.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:24:55 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"T7X/Qq/xtMZ1ZxQJ26TaxabEmVTLJlEX1daTTtMLM/myoErFY2KHfbqkvbqSarlqAodNN/ocOnK97cI94PSQ2Q==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (2.2ms)
+  Rendered gifts/search.js.erb (7.7ms)
+Completed 200 OK in 1117ms (Views: 27.9ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/gifts?gift%5B0%5D%5Bwant%5D=on&gift%5B0%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51Mqjosfv0L.jpg%2F&gift%5B0%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FMpow-Washable-Strong-One-Touch-Dashboard%2Fdp%2FB06XC5DRS4%2F&gift%5B0%5D%5Bprice%5D=%249.69%2F&gift%5B1%5D%5Bwant%5D=on&gift%5B1%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41hivUTsQYL.jpg%2F&gift%5B1%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FConcept-6-volt-Electric-Ride-White%2Fdp%2FB00QM8IBF0%2F&gift%5B1%5D%5Bprice%5D=%24169.99%2F&gift%5B2%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41fC0VicrkL.jpg%2F&gift%5B2%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FBZseed-HUD-Navigation-Reflector-Universal%2Fdp%2FB01DJXD4HK%2F&gift%5B2%5D%5Bprice%5D=%2411.99%2F&gift%5B3%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41sEk6BLolL.jpg%2F&gift%5B3%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FNulaxy-Wireless-Bluetooth-Transmitter-Smartphones%2Fdp%2FB018E0I01I%2F&gift%5B3%5D%5Bprice%5D=%2418.99%2F&gift%5B4%5D%5Bwant%5D=on&gift%5B4%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51NWdxUGbDL.jpg%2F&gift%5B4%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FRW-Lamborghini-Veneno-Remote-Control%2Fdp%2FB01A5NZAE2%2F&gift%5B4%5D%5Bprice%5D=%2414.78%2F&gift%5B5%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51B60mfHYEL.jpg%2F&gift%5B5%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FWizGear-Universal-Swift-Snap-Technology-Smartphones%2Fdp%2FB00PGJWYJ0%2F&gift%5B5%5D%5Bprice%5D=%246.99%2F&gift%5B6%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F51ad6iy-p8L.jpg%2F&gift%5B6%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FDocooler-Interior-Atmosphere-Lights-Decoration%2Fdp%2FB00KGSPQDM%2F&gift%5B6%5D%5Bprice%5D=%249.99%2F&gift%5B7%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41FPC%252B4L2rL.jpg%2F&gift%5B7%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FAnker-Charger-PowerDrive-iPhone-Galaxy%2Fdp%2FB00VH84L5E%2F&gift%5B7%5D%5Bprice%5D=%249.99%2F&gift%5B8%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F41f1Z8I80DL.jpg%2F&gift%5B8%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FRASTAR-Ferrari-Laferrari-Remote-Control%2Fdp%2FB00L1WDOIQ%2F&gift%5B8%5D%5Bprice%5D=%2423.16%2F&gift%5B9%5D%5Bimage%5D=https%3A%2F%2Fimages-na.ssl-images-amazon.com%2Fimages%2FI%2F61unPaD9urL.jpg%2F&gift%5B9%5D%5Burl%5D=https%3A%2F%2Fwww.amazon.com%2FAutoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002%2Fdp%2FB00XR36WVI%2F&gift%5B9%5D%5Bprice%5D=%247.99%2F" for 127.0.0.1 at 2017-11-14 15:25:15 -0500
+Processing by GiftsController#index as HTML
+  Parameters: {"gift"=>{"0"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/index.html.erb within layouts/application
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts"[0m
+  Rendered gifts/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 75ms (Views: 66.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:27:26 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (4.0ms)
+  Rendered gifts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 78ms (Views: 67.8ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:27:29 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"nsGHp8C6VRrmhNq/4SSottDqz/OafVx7o5/LFSEr3nxj1DIgDClmoSlHcwyo6ssZdKkbkKtHNx7LpJpmEtR9XA==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (2.5ms)
+  Rendered gifts/search.js.erb (8.6ms)
+Completed 200 OK in 450ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:27:34 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"gift"=>{"0"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.3.0) lib/devise/controllers/helpers.rb:253:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:28:13 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"gift"=>{"0"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.3.0) lib/devise/controllers/helpers.rb:253:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:28:18 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.5ms)
+  Rendered gifts/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 73ms (Views: 61.7ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:28:21 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"M/vC/CmDVu1eozRfM8enVvLYMdA+lKHvjZbj76aaEKnO7nd75RBlVpFgnex6CcT5Vpvlsw+uyorlrbKclWWziQ==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (549.7ms)
+  Rendered gifts/search.js.erb (554.5ms)
+Completed 500 Internal Server Error in 834ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `authenticity_token' for #<#<Class:0x007fdbd7bc4e30>:0x007fdbd02e3ac0>):
+    1: <h3>Results</h3>
+    2: 
+    3: <form action="/gifts" method="POST">
+    4:   <input type="hidden" value=<%= authenticity_token %>>
+    5:   <ul><% @results[:names].each_with_index do |item, index| %>
+    6:     <div class = "aws_results">
+    7:       <% image = @results[:images][index] %>
+  
+app/views/gifts/_results.html.erb:4:in `_app_views_gifts__results_html_erb___2672322470133869591_70291070125920'
+app/views/gifts/search.js.erb:1:in `_app_views_gifts_search_js_erb___1848454969536668382_70291080947140'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:28:53 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 73ms (Views: 65.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:29:00 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"kv9Ata7szzOb5XiI/wb8O00ZkD/3kVpYHMe7Jn4HJE1v6vUyYn/8iFQm0Tu2yJ+U6VpEXMarMT10/OpVTfiHbQ==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (1.8ms)
+  Rendered gifts/search.js.erb (6.7ms)
+Completed 200 OK in 296ms (Views: 26.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:29:13 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"gift"=>{"0"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+devise (4.3.0) lib/devise/controllers/helpers.rb:253:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-14 15:29:42 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.7ms)
+  Rendered gifts/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 68ms (Views: 60.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-14 15:29:44 -0500
+Processing by GiftsController#search as */*
+  Parameters: {"authenticity_token"=>"cUGT2h93tRKEXCS7PhcEfmHEzqwIyK7mWXK+SwnUBJGMVCZd0+SGqUufjQh32WfRxYcazznyxYMxSe84OiunsQ==", "gift"=>{"keyword"=>"car"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering gifts/search.js.erb
+  Rendered gifts/_results.html.erb (2.0ms)
+  Rendered gifts/search.js.erb (6.9ms)
+Completed 200 OK in 1035ms (Views: 26.3ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-14 15:29:48 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"uXlybzq+ke+36dsgiEtNF0xYQTe/IDnnP1kX8PebucxEbMfo9i2iVHgqcpPBhS646BuVVI4aUoJXYkaDxGQa7A==", "gift"=>{"0"=>{"want"=>"on", "image"=>"https://images-na.ssl-images-amazon.com/images/I/51Mqjosfv0L.jpg/", "url"=>"https://www.amazon.com/Mpow-Washable-Strong-One-Touch-Dashboard/dp/B06XC5DRS4/", "price"=>"$9.69/"}, "1"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41hivUTsQYL.jpg/", "url"=>"https://www.amazon.com/Concept-6-volt-Electric-Ride-White/dp/B00QM8IBF0/", "price"=>"$169.99/"}, "2"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41fC0VicrkL.jpg/", "url"=>"https://www.amazon.com/BZseed-HUD-Navigation-Reflector-Universal/dp/B01DJXD4HK/", "price"=>"$11.99/"}, "3"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41sEk6BLolL.jpg/", "url"=>"https://www.amazon.com/Nulaxy-Wireless-Bluetooth-Transmitter-Smartphones/dp/B018E0I01I/", "price"=>"$18.99/"}, "4"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51NWdxUGbDL.jpg/", "url"=>"https://www.amazon.com/RW-Lamborghini-Veneno-Remote-Control/dp/B01A5NZAE2/", "price"=>"$14.78/"}, "5"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51B60mfHYEL.jpg/", "url"=>"https://www.amazon.com/WizGear-Universal-Swift-Snap-Technology-Smartphones/dp/B00PGJWYJ0/", "price"=>"$6.99/"}, "6"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/51ad6iy-p8L.jpg/", "url"=>"https://www.amazon.com/Docooler-Interior-Atmosphere-Lights-Decoration/dp/B00KGSPQDM/", "price"=>"$9.99/"}, "7"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41FPC%2B4L2rL.jpg/", "url"=>"https://www.amazon.com/Anker-Charger-PowerDrive-iPhone-Galaxy/dp/B00VH84L5E/", "price"=>"$9.99/"}, "8"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/41f1Z8I80DL.jpg/", "url"=>"https://www.amazon.com/RASTAR-Ferrari-Laferrari-Remote-Control/dp/B00L1WDOIQ/", "price"=>"$23.16/"}, "9"=>{"image"=>"https://images-na.ssl-images-amazon.com/images/I/61unPaD9urL.jpg/", "url"=>"https://www.amazon.com/Autoark-Organizer-Multi-Pocket-Heat-Preservation-AK-002/dp/B00XR36WVI/", "price"=>"$7.99/"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 794932ms (ActiveRecord: 0.6ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:60:in `create'

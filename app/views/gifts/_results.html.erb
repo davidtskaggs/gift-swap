@@ -1,8 +1,20 @@
 <h3>Results</h3>
-<ul><% @results[:names].each_with_index do |item, index| %>
-  <% link = @results[:images][index] %>
-  <li><img src=<%=link%>><br><a href=<%=link%>>Item Details</a></li>
-  <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
-  <% end %>
-</ul>
+
+<form action="/gifts" method="POST">
+  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+  <ul><% @results[:names].each_with_index do |item, index| %>
+    <div class = "aws_results">
+      <% image = @results[:images][index] %>
+      <% link = @results[:urls][index] %>
+        <input type='checkbox' name='gift[<%=index%>][want]'/>
+        <input type="hidden" name='gift[<%=index%>][image]' value=<%=image%>/>
+        <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
+        <input type="hidden" name='gift[<%=index%>][price]' value=<%=@results[:prices][index]%>/>
+      <li><img src=<%=image%>><br><a href=<%=link%>>Item Details</a></li>
+      <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
+      <% end %>
+    </div>
+  </ul>
+  <input type='submit' value="YEAAHAHH">
+</form>
 
