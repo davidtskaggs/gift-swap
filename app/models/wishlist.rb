@@ -8,7 +8,7 @@ class Wishlist < ApplicationRecord
 	has_many :wishlist_items 
 	has_many :gifts, through: :wishlist_items  
 
-
+	accepts_nested_attributes_for :gifts, allow_destroy: true
 	#AWS API
 	ENDPOINT = "webservices.amazon.com"
 	REQUEST_URI = "/onca/xml"
