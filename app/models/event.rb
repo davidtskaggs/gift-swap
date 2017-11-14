@@ -4,7 +4,7 @@ class Event < ApplicationRecord
   belongs_to :creator, class_name: "User", foreign_key: :creator_id
   has_many :participations, dependent: :destroy
   has_many :participants, through: :participations, dependent: :destroy
-  accepts_nested_attributes_for :participants
+  accepts_nested_attributes_for :participations
 
   def create_pairs
     participants = self.participants.shuffle
