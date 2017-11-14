@@ -38,9 +38,40 @@
 
 img {
   width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 #gift {
   position: absolute;
   margin: auto;
+}
+
+#all-events tr th, #all-events tr td {
+  border: 2px solid DarkBlue;
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav-link:hover {
+  background-color: Green;
+  color: white;
+}
+
+.navbar .nav-link .navbar-link:hover {
+  color: white;
+}
+.navbar-header .navbar-brand:hover {
+  background-color: red;
+  color: white;
+
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.carousel-inner {
+  background-color: rgba(206, 6, 34, 0.8);
+  border-radius: 20px;
 }
