@@ -8353,3 +8353,1675 @@ SystemExit (exit):
   
 app/controllers/events_controller.rb:45:in `create'
 Started POST "/events" for 127.0.0.1 at 2017-11-14 16:13:18 -0500
+Started GET "/" for 127.0.0.1 at 2017-11-14 16:16:54 -0500
+  [1m[35m (7.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 16:16:54 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 557ms (Views: 505.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 16:16:58 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 152ms (Views: 75.4ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:16:59 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (695.2ms)
+  Rendered events/new.html.erb within layouts/application (699.7ms)
+Completed 200 OK in 735ms (Views: 728.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:18:19 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (10.5ms)
+  Rendered events/new.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 60ms (Views: 54.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:18:36 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (18.2ms)
+  Rendered events/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 128ms (Views: 51.8ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:20:03 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (26.0ms)
+  Rendered events/new.html.erb within layouts/application (29.6ms)
+Completed 500 Internal Server Error in 162ms (ActiveRecord: 12.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `first_name' for #<Participation:0x007f7f77b4e3a0>):
+    53:       <%= form.fields_for :participations do |participations_form| %>
+    54:         <div>
+    55:           <div>
+    56:             <%= participations_form.text_field :first_name, placeholder: "first name", class: 'form-control'%>
+    57:           </div>
+    58:           <div>
+    59:             <%= participations_form.text_field :last_name, placeholder: "last name", class: 'form-control' %>
+  
+app/views/events/_form.html.erb:56:in `block (2 levels) in _app_views_events__form_html_erb__3883304797271317749_70092657018880'
+app/views/events/_form.html.erb:53:in `block in _app_views_events__form_html_erb__3883304797271317749_70092657018880'
+app/views/events/_form.html.erb:1:in `_app_views_events__form_html_erb__3883304797271317749_70092657018880'
+app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb__2275548142958385301_70092664664180'
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:30:31 -0500
+  
+SyntaxError (/Users/catherinerice/Desktop/gift-swap/app/controllers/events_controller.rb:46: syntax error, unexpected '}', expecting ')'
+/Users/catherinerice/Desktop/gift-swap/app/controllers/events_controller.rb:57: syntax error, unexpected keyword_end, expecting '}'
+/Users/catherinerice/Desktop/gift-swap/app/controllers/events_controller.rb:96: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/controllers/events_controller.rb:46: syntax error, unexpected '}', expecting ')'
+app/controllers/events_controller.rb:57: syntax error, unexpected keyword_end, expecting '}'
+app/controllers/events_controller.rb:96: syntax error, unexpected keyword_end, expecting '}'
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:30:47 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (28.2ms)
+  Rendered events/new.html.erb within layouts/application (32.9ms)
+Completed 500 Internal Server Error in 271ms (ActiveRecord: 29.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<Participation:0x007f7f754a1cc0>):
+    54:         <div>
+    55:           <div>
+    56: 
+    57:             <%= participations_form.text_field :email, placeholder: "email", class: 'form-control' %>
+    58:           </div>
+    59:           <div>
+    60:             <button type="button" class="btn btn-danger hide-participation part">Remove</button>
+  
+app/views/events/_form.html.erb:57:in `block (2 levels) in _app_views_events__form_html_erb__3883304797271317749_70092734941320'
+app/views/events/_form.html.erb:53:in `block in _app_views_events__form_html_erb__3883304797271317749_70092734941320'
+app/views/events/_form.html.erb:1:in `_app_views_events__form_html_erb__3883304797271317749_70092734941320'
+app/views/events/new.html.erb:3:in `_app_views_events_new_html_erb__2275548142958385301_70092734989720'
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 16:50:01 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (13.8ms)
+  Rendered events/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 201ms (Views: 71.5ms | ActiveRecord: 16.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-14 16:50:07 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yauuaA8iy/NbhgqanWBfkUCdXF4n6vi0hqb7yZqrgqhvFbBdCtYntF4yRKM0ipdLhWt+tKgs4kRA+mYwj+K9Vg==", "event"=>{"name"=>"test", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"21", "start_date(5i)"=>"50", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"21", "end_date(5i)"=>"50", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.0ms)
+
+
+  
+IndexError (index -1 too small for array; minimum: 0):
+  
+app/models/event.rb:17:in `create_pairs'
+app/controllers/events_controller.rb:42:in `create'
+Started POST "/events" for 127.0.0.1 at 2017-11-14 16:50:56 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yauuaA8iy/NbhgqanWBfkUCdXF4n6vi0hqb7yZqrgqhvFbBdCtYntF4yRKM0ipdLhWt+tKgs4kRA+mYwj+K9Vg==", "event"=>{"name"=>"test", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"21", "start_date(5i)"=>"50", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"21", "end_date(5i)"=>"50", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+IndexError (index -1 too small for array; minimum: 0):
+  
+app/models/event.rb:17:in `create_pairs'
+app/controllers/events_controller.rb:42:in `create'
+Started POST "/events" for 127.0.0.1 at 2017-11-14 16:51:02 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yauuaA8iy/NbhgqanWBfkUCdXF4n6vi0hqb7yZqrgqhvFbBdCtYntF4yRKM0ipdLhWt+tKgs4kRA+mYwj+K9Vg==", "event"=>{"name"=>"test", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"21", "start_date(5i)"=>"50", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"21", "end_date(5i)"=>"50", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 11.7ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/events_controller.rb:45:in `create'
+Started POST "/events" for 127.0.0.1 at 2017-11-14 16:51:19 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yauuaA8iy/NbhgqanWBfkUCdXF4n6vi0hqb7yZqrgqhvFbBdCtYntF4yRKM0ipdLhWt+tKgs4kRA+mYwj+K9Vg==", "event"=>{"name"=>"test", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"21", "start_date(5i)"=>"50", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"21", "end_date(5i)"=>"50", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (50.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test"], ["description", "test"], ["start_date", "2017-11-14"], ["end_date", "2017-11-14"], ["suggested_budget", "34"], ["creator_id", 2], ["created_at", "2017-11-14 21:51:19.203043"], ["updated_at", "2017-11-14 21:51:19.203043"]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 58.7ms)
+
+
+  
+ActiveRecord::RecordNotUnique (PG::UniqueViolation: ERROR:  duplicate key value violates unique constraint "events_pkey"
+DETAIL:  Key (id)=(1) already exists.
+: INSERT INTO "events" ("name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"):
+  
+app/controllers/events_controller.rb:44:in `block in create'
+app/controllers/events_controller.rb:43:in `create'
+Started POST "/events" for 127.0.0.1 at 2017-11-14 16:51:40 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yauuaA8iy/NbhgqanWBfkUCdXF4n6vi0hqb7yZqrgqhvFbBdCtYntF4yRKM0ipdLhWt+tKgs4kRA+mYwj+K9Vg==", "event"=>{"name"=>"test", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"21", "start_date(5i)"=>"50", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"21", "end_date(5i)"=>"50", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "test"], ["description", "test"], ["start_date", "2017-11-14"], ["end_date", "2017-11-14"], ["suggested_budget", "34"], ["creator_id", 2], ["created_at", "2017-11-14 21:51:40.296455"], ["updated_at", "2017-11-14 21:51:40.296455"]]
+  [1m[35m (18.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 42ms (ActiveRecord: 27.5ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2017-11-14 16:51:40 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.7ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 131ms (Views: 48.3ms | ActiveRecord: 11.5ms)
+
+
+Started GET "/wishlists/2" for 127.0.0.1 at 2017-11-14 16:51:53 -0500
+Processing by WishlistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/show.html.erb within layouts/application
+  Rendered wishlists/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 45ms (Views: 34.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2017-11-14 16:52:22 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 62ms (Views: 50.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2017-11-14 17:09:18 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.4ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 210ms (Views: 59.5ms | ActiveRecord: 19.9ms)
+
+
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:09:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:09:42 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:09:58 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:10:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:11:30 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:11:55 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events/events/participants/new" for 127.0.0.1 at 2017-11-14 17:13:00 -0500
+  [1m[35m (6.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/events/events/participants/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2017-11-14 17:13:30 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 17:13:30 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 438ms (Views: 388.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:13:33 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 175ms (Views: 92.6ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 17:13:43 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (664.2ms)
+  Rendered events/new.html.erb within layouts/application (667.0ms)
+Completed 200 OK in 712ms (Views: 702.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:13:50 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.5ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  Rendered events/show.html.erb within layouts/application (171.0ms)
+Completed 500 Internal Server Error in 256ms (ActiveRecord: 14.1ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_participations_path' for #<#<Class:0x007ff036b54040>:0x007ff0332f2738>):
+    31: </p>
+    32: 
+    33: <p>
+    34: <%= link_to "Add participants", new_participations_path %>
+    35: 
+    36: <p><strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></p>
+    37: 
+  
+app/views/events/show.html.erb:34:in `_app_views_events_show_html_erb__4406239728280536270_70334813783100'
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:14:21 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.2ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 55ms (Views: 44.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:14:23 -0500
+  
+SyntaxError (/Users/catherinerice/Desktop/gift-swap/app/controllers/participations_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/participations_controller.rb:12: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:14:34 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 217ms (ActiveRecord: 7.1ms)
+
+
+  
+ActionController::UnknownFormat (ParticipationsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:15:14 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 225ms (ActiveRecord: 6.9ms)
+
+
+  
+ActionController::UnknownFormat (ParticipationsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:15:38 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 224ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionController::UnknownFormat (ParticipationsController#new is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.):
+  
+actionpack (5.1.4) lib/action_controller/metal/implicit_render.rb:53:in `default_render'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `block in send_action'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `tap'
+actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:16:10 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 109ms (Views: 102.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:16:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 90ms (Views: 54.8ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:16:18 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 93ms (Views: 38.6ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:16:23 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 60ms (Views: 48.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:18:07 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (5.8ms)
+  Rendered participations/new.html.erb within layouts/application (9.0ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<Participation:0x007ff03a6c1b00>):
+    2: <%= form_for @participation do |form| %>
+    3:   <div class="field">
+    4:     <%=form.label :email %>
+    5:     <%=form.text_field :email, id: :email %>
+    6:   </div>
+    7: 
+    8:   <%=form.submit 'Add participant' %>
+  
+app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___670533770697958338_70334797970020'
+app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___670533770697958338_70334797970020'
+app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___21809352369799563_70334874518240'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:18:24 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (3.6ms)
+  Rendered participations/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `email' for #<Participation:0x007ff03a8f99b8>):
+    2: <%= form_for @participation do |form| %>
+    3:   <div class="field">
+    4:     <%=form.label :email %>
+    5:     <%=form.text_field :email  %>
+    6:   </div>
+    7: 
+    8:   <%=form.submit 'Add participant' %>
+  
+app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___670533770697958338_70334794518860'
+app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___670533770697958338_70334794518860'
+app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___21809352369799563_70334875681320'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:21:18 -0500
+  
+SyntaxError (/Users/catherinerice/Desktop/gift-swap/app/controllers/participations_controller.rb:8: `@' without identifiers is not allowed as an instance variable name
+/Users/catherinerice/Desktop/gift-swap/app/controllers/participations_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/participations_controller.rb:8: `@' without identifiers is not allowed as an instance variable name
+app/controllers/participations_controller.rb:8: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:21:24 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (4.5ms)
+  Rendered participations/new.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 10.2ms)
+
+
+  
+ActionView::Template::Error (no implicit conversion of Symbol into Integer):
+    2: <%= form_for @participation do |form| %>
+    3:   <div class="field">
+    4:     <%=form.label :email %>
+    5:     <%=form.text_field [:user][:email]  %>
+    6:   </div>
+    7: 
+    8:   <%=form.submit 'Add participant' %>
+  
+app/views/participations/_form.html.erb:5:in `[]'
+app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___670533770697958338_70334798033560'
+app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___670533770697958338_70334798033560'
+app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___21809352369799563_70334873103100'
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:23:14 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 152ms (Views: 62.5ms | ActiveRecord: 14.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:23:16 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.6ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 120ms (Views: 50.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:23:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 74ms (Views: 58.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 17:23:20 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (14.8ms)
+  Rendered events/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 58ms (Views: 50.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-14 17:23:26 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZxgyhjZTCutyGc4KtkrK7HwClyvwcKJqIl47HR/P4HWvwhDucL+veNzTsSeo/Axpk/08S7DF5jBOqwLnoBa+uA==", "event"=>{"name"=>"New event", "description"=>"test", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"14", "start_date(4i)"=>"22", "start_date(5i)"=>"23", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"14", "end_date(4i)"=>"22", "end_date(5i)"=>"23", "suggested_budget"=>"34", "creator_id"=>"2"}, "commit"=>"Create event"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (7.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "New event"], ["description", "test"], ["start_date", "2017-11-14"], ["end_date", "2017-11-14"], ["suggested_budget", "34"], ["creator_id", 2], ["created_at", "2017-11-14 22:23:26.373508"], ["updated_at", "2017-11-14 22:23:26.373508"]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/3
+Completed 302 Found in 26ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/events/3" for 127.0.0.1 at 2017-11-14 17:23:26 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 74ms (Views: 61.7ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:23:28 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (4.3ms)
+  Rendered participations/new.html.erb within layouts/application (7.3ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2)):
+    2: <%= form_for @participation do |form| %>
+    3:   <div class="field">
+    4:     <%=form.label :email %>
+    5:     <%=form.text_field %>
+    6:   </div>
+    7: 
+    8:   <%=form.submit 'Add participant' %>
+  
+app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___670533770697958338_70334865784540'
+app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___670533770697958338_70334865784540'
+app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___21809352369799563_70334875268940'
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:24:08 -0500
+  [1m[35m (6.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (786.7ms)
+  Rendered participations/new.html.erb within layouts/application (790.4ms)
+Completed 500 Internal Server Error in 878ms (ActiveRecord: 10.1ms)
+
+
+
+ArgumentError - wrong number of arguments (given 0, expected 1..2):
+  app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___3499663216967537938_70219087436400'
+  app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___3499663216967537938_70219087436400'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___926044246573139979_70219093747280'
+
+Started POST "/__better_errors/8711b1861f45a7fe/variables" for 127.0.0.1 at 2017-11-14 17:24:09 -0500
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:25:35 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (15.4ms)
+  Rendered participations/new.html.erb within layouts/application (19.8ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.8ms)
+
+
+
+NoMethodError - undefined method `email' for #<Participation:0x007fba559a0e18>:
+  app/views/participations/_form.html.erb:5:in `block in _app_views_participations__form_html_erb___3499663216967537938_70219081002440'
+  app/views/participations/_form.html.erb:2:in `_app_views_participations__form_html_erb___3499663216967537938_70219081002440'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___926044246573139979_70219139703220'
+
+Started POST "/__better_errors/a7418c6258e18686/variables" for 127.0.0.1 at 2017-11-14 17:25:36 -0500
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:28:51 -0500
+Processing by ParticipationsController#new as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (2.8ms)
+  Rendered participations/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 540ms (Views: 478.1ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/participations/new" for 127.0.0.1 at 2017-11-14 17:31:59 -0500
+  [1m[35m (7.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/participations/new"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:32:05 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 555ms (Views: 440.5ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:32:13 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.2ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 10.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"new", :controller=>"participations", :id=>"1"}, missing required keys: [:event_id]:
+  app/views/events/show.html.erb:34:in `_app_views_events_show_html_erb__210882374828198989_70357526899280'
+
+Started POST "/__better_errors/965c331659d05bb7/variables" for 127.0.0.1 at 2017-11-14 17:32:13 -0500
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:34:10 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.4ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"new", :controller=>"participations", :id=>"1"}, missing required keys: [:event_id]:
+  app/views/events/show.html.erb:34:in `_app_views_events_show_html_erb__210882374828198989_70357588010780'
+
+Started POST "/__better_errors/fd583b8128e4cb10/variables" for 127.0.0.1 at 2017-11-14 17:34:10 -0500
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:34:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 173ms (Views: 62.9ms | ActiveRecord: 20.2ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:34:20 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1 LIMIT $2[0m  [["event_id", 1], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 107883ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:36:08 -0500
+
+SystemExit - exit:
+  (byebug):1:in `exit'
+  (byebug):1:in `show'
+  app/controllers/events_controller.rb:24:in `show'
+
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.2ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (70.4ms)
+Completed 500 Internal Server Error in 954ms (ActiveRecord: 36.0ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"new", :controller=>"participations", :id=>"1"}, missing required keys: [:event_id]:
+  app/views/events/show.html.erb:34:in `_app_views_events_show_html_erb__210882374828198989_70357609487060'
+
+Started POST "/__better_errors/c61deeaba24bc354/variables" for 127.0.0.1 at 2017-11-14 17:36:13 -0500
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:36:13 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (1.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (307.1ms)
+Completed 200 OK in 1286ms (Views: 897.5ms | ActiveRecord: 22.7ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:36:18 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.5ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (2.1ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (55.9ms)
+Completed 500 Internal Server Error in 220ms (ActiveRecord: 10.2ms)
+
+
+
+ActionController::UrlGenerationError - No route matches {:action=>"new", :controller=>"participations", :id=>"1"}, missing required keys: [:event_id]:
+  app/views/events/show.html.erb:34:in `_app_views_events_show_html_erb__210882374828198989_70357589452980'
+
+Started POST "/__better_errors/c0fe6fc5112d5a0c/variables" for 127.0.0.1 at 2017-11-14 17:36:18 -0500
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:36:54 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (2.0ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (57.2ms)
+Completed 200 OK in 798ms (Views: 660.6ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:38:02 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.7ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (140738.4ms)
+Completed 500 Internal Server Error in 140944ms (ActiveRecord: 13.6ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `exit'
+  (byebug):1:in `_app_views_events_show_html_erb__210882374828198989_70357593913820'
+  app/views/events/show.html.erb:35:in `_app_views_events_show_html_erb__210882374828198989_70357593913820'
+
+Started POST "/__better_errors/38e0186e4bf51cb0/variables" for 127.0.0.1 at 2017-11-14 17:40:24 -0500
+Started GET "/events" for 127.0.0.1 at 2017-11-14 17:40:27 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (1.8ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.2ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (346.1ms)
+Completed 200 OK in 1816ms (Views: 1008.1ms | ActiveRecord: 38.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:40:36 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.4ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 1208ms (Views: 663.8ms | ActiveRecord: 21.2ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:40:39 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (2.7ms)
+  Rendered participations/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 674ms (Views: 609.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:42:53 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (13.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 606ms (ActiveRecord: 41.9ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/participations_controller.rb:8:in `new'
+
+Started POST "/__better_errors/1ed2662142aa0667/variables" for 127.0.0.1 at 2017-11-14 17:42:57 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:43:23 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 82342ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:44:49 -0500
+
+SystemExit - exit:
+  (byebug):1:in `exit'
+  (byebug):1:in `new'
+  app/controllers/participations_controller.rb:9:in `new'
+
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.9ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 3392ms (ActiveRecord: 28.6ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `exit'
+  (byebug):1:in `new'
+  app/controllers/participations_controller.rb:9:in `new'
+
+Started POST "/__better_errors/18f62f71f33b278a/variables" for 127.0.0.1 at 2017-11-14 17:44:53 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:45:00 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 628ms (ActiveRecord: 21.2ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/participations_controller.rb:9:in `new'
+
+Started POST "/__better_errors/68a05a99d85584ec/variables" for 127.0.0.1 at 2017-11-14 17:45:05 -0500
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:45:12 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.4ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (86.6ms)
+Completed 200 OK in 1328ms (Views: 734.9ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:45:16 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 2.8ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/participations_controller.rb:9:in `new'
+
+Started POST "/__better_errors/acc778ad6fc1fc04/variables" for 127.0.0.1 at 2017-11-14 17:45:16 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:45:54 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 3.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/participations_controller.rb:9:in `new'
+
+Started POST "/__better_errors/ea13b1725210d719/variables" for 127.0.0.1 at 2017-11-14 17:45:54 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:46:08 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.1ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (3.9ms)
+  Rendered participations/new.html.erb within layouts/application (14.0ms)
+Completed 200 OK in 1317ms (Views: 671.3ms | ActiveRecord: 17.8ms)
+
+
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:46:24 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"catherine@gmail.com"}, "event_id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 29ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/d070fd7d542db649/variables" for 127.0.0.1 at 2017-11-14 17:46:25 -0500
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:48:03 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"user"=>{"email"=>"catherine@gmail.com"}, "event_id"=>"1"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 17ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::InvalidAuthenticityToken - ActionController::InvalidAuthenticityToken:
+
+Started POST "/__better_errors/55631ec7c5793e28/variables" for 127.0.0.1 at 2017-11-14 17:48:03 -0500
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:48:08 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (2.0ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (2.0ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 1327ms (Views: 742.5ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:48:11 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (8.3ms)
+  Rendered participations/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 758ms (Views: 682.4ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:48:15 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"cnISqAs564c6eMLgtRydQZMf9bWN6d6N57p224do1IzUzAydDs0HwD/MjNkc9lWbVunXXwIvxH0h5usikiHrcg==", "user"=>{"email"=>"david@gmail.com"}, "event_id"=>"1"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 6.5ms)
+
+
+
+NoMethodError - undefined method `participations' for nil:NilClass:
+  app/controllers/participations_controller.rb:14:in `create'
+
+Started POST "/__better_errors/7d5cfdc19880391d/variables" for 127.0.0.1 at 2017-11-14 17:48:16 -0500
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:48:36 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"cnISqAs564c6eMLgtRydQZMf9bWN6d6N57p224do1IzUzAydDs0HwD/MjNkc9lWbVunXXwIvxH0h5usikiHrcg==", "user"=>{"email"=>"david@gmail.com"}, "event_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (13.7ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 1], ["created_at", "2017-11-14 22:48:40.640930"], ["updated_at", "2017-11-14 22:48:40.640930"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ParticipationsController#create, rendering head :no_content
+Completed 204 No Content in 1096ms (ActiveRecord: 46.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 17:48:45 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.7ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 1691ms (Views: 655.8ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:48:48 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (5.8ms)
+  Rendered participations/new.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 773ms (Views: 699.8ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:48:53 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"dvN7lmVs8Y2ILJsnBacRIXEwz7Ao89pS430A9JhVyInQTWWjYJgdyo2Y1R6sTdn7tMbtWqc1wKIlIZ0NjRz3dw==", "user"=>{"email"=>"david@gmail.com"}, "event_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 1], ["created_at", "2017-11-14 22:48:53.722160"], ["updated_at", "2017-11-14 22:48:53.722160"]]
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+No template found for ParticipationsController#create, rendering head :no_content
+Completed 204 No Content in 385ms (ActiveRecord: 14.7ms)
+
+
+Started POST "/events/1/participations" for 127.0.0.1 at 2017-11-14 17:48:55 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"dvN7lmVs8Y2ILJsnBacRIXEwz7Ao89pS430A9JhVyInQTWWjYJgdyo2Y1R6sTdn7tMbtWqc1wKIlIZ0NjRz3dw==", "user"=>{"email"=>"david@gmail.com"}, "event_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "david@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 1], ["created_at", "2017-11-14 22:48:56.061664"], ["updated_at", "2017-11-14 22:48:56.061664"]]
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+No template found for ParticipationsController#create, rendering head :no_content
+Completed 204 No Content in 409ms (ActiveRecord: 14.0ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:52:01 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  Rendered participations/_form.html.erb (3.6ms)
+  Rendered participations/new.html.erb within layouts/application (14.6ms)
+Completed 500 Internal Server Error in 627ms (ActiveRecord: 3.9ms)
+
+
+
+SyntaxError - syntax error, unexpected keyword_ensure, expecting end-of-input:
+  app/views/participations/_form.html.erb:13:in `'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___1518227508814423161_70357534082280'
+
+Started POST "/__better_errors/3764f45dd3eacaef/variables" for 127.0.0.1 at 2017-11-14 17:52:06 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:52:29 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (3.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (237.6ms)
+  Rendered participations/new.html.erb within layouts/application (247.8ms)
+Completed 500 Internal Server Error in 360ms (ActiveRecord: 11.2ms)
+
+
+
+NoMethodError - undefined method `participant' for #<User:0x007ffac69ed6f8>:
+  app/views/participations/_form.html.erb:10:in `block in _app_views_participations__form_html_erb__3006016700074460623_70357610421820'
+  app/views/participations/_form.html.erb:9:in `_app_views_participations__form_html_erb__3006016700074460623_70357610421820'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___1518227508814423161_70357610089200'
+
+Started POST "/__better_errors/92ac44bc5773444c/variables" for 127.0.0.1 at 2017-11-14 17:52:30 -0500
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:52:51 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (99.0ms)
+  Rendered participations/new.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 841ms (Views: 745.0ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:55:05 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (69.6ms)
+  Rendered participations/new.html.erb within layouts/application (78.9ms)
+Completed 200 OK in 749ms (Views: 676.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 17:56:48 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (847.1ms)
+  Rendered participations/new.html.erb within layouts/application (858.2ms)
+Completed 500 Internal Server Error in 956ms (ActiveRecord: 6.2ms)
+
+
+
+NoMethodError - undefined method `to' for #<#<Class:0x007ffacb243bf0>:0x007ffac6defe68>:
+  app/views/participations/_form.html.erb:15:in `_app_views_participations__form_html_erb__3006016700074460623_70357594035140'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___1518227508814423161_70357536890240'
+
+Started POST "/__better_errors/6343637c0b640480/variables" for 127.0.0.1 at 2017-11-14 17:56:50 -0500
+Started GET "/" for 127.0.0.1 at 2017-11-14 17:59:40 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 17:59:40 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 683ms (Views: 625.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:00:16 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (1.7ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (290.4ms)
+Completed 200 OK in 1071ms (Views: 869.3ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:01:20 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (2.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (2.0ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.8ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (216.9ms)
+Completed 200 OK in 1447ms (Views: 809.2ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:01:24 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (1.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (1.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 1198ms (Views: 669.7ms | ActiveRecord: 23.6ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:01:27 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (2.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (1163.9ms)
+  Rendered participations/new.html.erb within layouts/application (1174.8ms)
+Completed 500 Internal Server Error in 1271ms (ActiveRecord: 6.3ms)
+
+
+
+NoMethodError - undefined method `to' for #<#<Class:0x007ffacb243bf0>:0x007ffad1123a58>:
+  app/views/participations/_form.html.erb:15:in `_app_views_participations__form_html_erb__3006016700074460623_70357604145720'
+  app/views/participations/new.html.erb:1:in `_app_views_participations_new_html_erb___1518227508814423161_70357606729020'
+
+Started POST "/__better_errors/cd824170d5c6e7ae/variables" for 127.0.0.1 at 2017-11-14 18:01:29 -0500

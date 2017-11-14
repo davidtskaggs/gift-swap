@@ -37,42 +37,6 @@
   </div>
   <%= form.hidden_field :creator_id, value: current_user.id%>
 
-  <div class="add-participant-container">
-
-   <!--  <div class="col-sm-4">
-      <label>First Name:</label>
-    </div>
-    <div class="col-sm-3">
-      <label>Last Name:</label>
-    </div>
-    <div class="col-sm-3">
-      <label>Email:</label>
-    </div> -->
-
-  <p><strong>Participants:</strong></p>
-      <%= form.fields_for :participations do |participants_form| %>
-        <div>
-          <div>
-            <%= participations_form.text_field :first_name, placeholder: "first name", class: 'form-control'%>
-          </div>
-          <div>
-            <%= participations_form.text_field :last_name, placeholder: "last name", class: 'form-control' %>
-          </div>
-          <div>
-            <%= participations_form.text_field :email, placeholder: "email", class: 'form-control' %>
-          </div>
-          <div>
-            <button type="button" class="btn btn-danger hide-participant part">Remove</button>
-          </div>
-        </div>
-      <% end %>
-
-      <button type="button" class="btn btn-success show-participant part outside">Add Participant</button>
-
-      <br />
-
-      </div>
-      <br />
       <%= form.submit 'Create event', class: "btn btn-primary btn-lg btn-default" %>
       <% end %>
     </div>

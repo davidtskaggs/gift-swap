@@ -19,7 +19,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    @participants = @event.participants
+
+    # @participants = @event.participants
     @gift_exchange = GiftExchange.find(params[:id])
     @wishlist = Wishlist.find_by(user_id: @gift_exchange.sender.id)
   end
@@ -39,10 +40,6 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-    @event.create_pairs
-    @event.participations.new
-     # binding.pry
-    1.times { Participation.create(email: params[:participations_attributes][:email]) }
 
     respond_to do |format|
       if @event.save
@@ -90,6 +87,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:name, :description, :start_date, :end_date, :suggested_budget, :creator_id, participants_attributes: [:id,:email])
+      params.require(:event).permit(:name, :description, :start_date, :end_date, :suggested_budget, :creator_id)
     end
 end
