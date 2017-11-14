@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+<script type="text/javascript">
+
 $(document).ready(function(){
 	$('.create_gift').click(function(e){
 		e.preventDefault();
@@ -31,6 +33,6 @@ $(document).ready(function(){
 	})
 
 	$('.carousel').carousel({
-		interval: 2000
+		interval: 1000
 	})
 })
