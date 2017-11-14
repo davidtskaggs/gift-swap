@@ -7579,3 +7579,774 @@ Processing by GiftsController#create as */*
 Completed 200 OK in 19ms (Views: 11.0ms | ActiveRecord: 0.3ms)
 
 
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mWishlist Load (0.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" ORDER BY "wishlists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWishlist Load (0.7ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" ORDER BY "wishlists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mWishlist Load (0.8ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mWishlist Load (0.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" ORDER BY "wishlists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/gifts/new" for ::1 at 2017-11-13 21:50:50 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.6ms)
+  Rendered gifts/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 64ms (Views: 57.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 21:51:06 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"3MKptphtoKgV9E2k9PZQjBRZIUBGvgUC/kcAlPemxiLiENSUJYBO/sO2lao/JpKpEAKfdVmy/37dEENlAGaBVw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.3ms)
+  Rendered gifts/create.js.erb (3.8ms)
+Completed 200 OK in 19ms (Views: 12.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 21:51:08 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.6ms)
+  Rendered gifts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 21:51:10 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"toQHxkpiu27nVAl1fB4xJoU5DJuFKrD7iA+T/zQwAXmIVnrk949VODEW0Xu3zvMDgWKyrpomSoerWNAOw/BGDA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.3ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 24ms (Views: 15.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:12:51 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (522.0ms)
+  Rendered gifts/new.html.erb within layouts/application (527.2ms)
+Completed 200 OK in 909ms (Views: 858.6ms | ActiveRecord: 6.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:12:54 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"syfqzV2P9OEhc7YScK1SnkoJy/U75LT/FhVw1VU9hr6N9Zfv4GIat/cxbhy7fZC7TlJ1wCToToM1QjMkov3Byw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (350.2ms)
+  Rendered gifts/create.js.erb (352.6ms)
+Completed 500 Internal Server Error in 370ms (ActiveRecord: 4.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gift_params' for #<#<Class:0x00007fa815b1fd40>:0x00007fa816fe6440>
+Did you mean?  gift_path):
+    1: <%  wishlist_obj = Wishlist.new %>
+    2: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["category"]) %>
+  
+app/views/gifts/_results.html.erb:2:in `_app_views_gifts__results_html_erb___1517982776289497547_70179915899700'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179958503140'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:14:12 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.0ms)
+  Rendered gifts/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 55ms (Views: 48.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:14:22 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"0VCr5/20hp7rpoLDbQ53RWGq0w2HmB2a45HQMIVF787vgtbFQFloyD3kWs2m3rVgZfFtOJiU5+bAxpPBcoWouw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (297.9ms)
+  Rendered gifts/create.js.erb (302.5ms)
+Completed 500 Internal Server Error in 320ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gift_params' for #<#<Class:0x00007fa815b1fd40>:0x00007fa816f84808>
+Did you mean?  gift_path):
+    1: <%  wishlist_obj = Wishlist.new %>
+    2: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:2:in `_app_views_gifts__results_html_erb___1517982776289497547_70179958417800'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179958302960'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:15:47 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.2ms)
+  Rendered gifts/new.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 65ms (Views: 33.7ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:15:52 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"bGKt/pXIC11Pf2X4fclR/KVrfcG4lO/l2ZSEamMea2FSsNDcKCXlC5k9vfa2GZPZoTDD9KeYFZn6w8eblN4sFA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (276.2ms)
+  Rendered gifts/create.js.erb (279.1ms)
+Completed 500 Internal Server Error in 292ms (ActiveRecord: 3.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gift_params' for #<#<Class:0x00007fa816f68310>:0x00007fa819576e58>
+Did you mean?  gift_path):
+    1: <%  wishlist_obj = Wishlist.new %>
+    2: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:2:in `_app_views_gifts__results_html_erb___1517982776289497547_70179978214100'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179978198000'
+Started GET "/wishlists" for ::1 at 2017-11-13 22:15:55 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 5]]
+  Rendered wishlists/index.html.erb within layouts/application (71.7ms)
+Completed 200 OK in 110ms (Views: 99.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:15:56 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 93ms (Views: 82.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:16:01 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"27p8WC9npOFSO7McknZo19wxZvTMbH5XPUfPOt+PPRFjh6xkRtsaT7+bqQOd0gjFP7o8Yp/XU1R07/R6zRCxhA==", "gift"=>{"keyword"=>"camera"}, "commit"=>"Create Gift"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/gifts_controller.rb:41:in `create'
+Started POST "/gifts" for ::1 at 2017-11-13 22:16:53 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"27p8WC9npOFSO7McknZo19wxZvTMbH5XPUfPOt+PPRFjh6xkRtsaT7+bqQOd0gjFP7o8Yp/XU1R07/R6zRCxhA==", "gift"=>{"keyword"=>"camera"}, "commit"=>"Create Gift"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/gifts_controller.rb:41:in `create'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:16:57 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 37ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:17:05 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"F1lbQjzTUcMdD1wRo0OdyVRAchlcv4I+E2R+FlFCttgpiyZggT6/lctNhB9ok1/sUBvMLEOzeEIwMz3npoLxrQ==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.6ms)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:17:26 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.8ms)
+  Rendered gifts/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:17:28 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"mu//u3GmuyR+0HihxBpCK8GFaBQMhiHCwUVQzIfWsmqkPYKZzEtVcqiSoK8PyoAOxd7WIROK277iEhM9cBb1Hw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.5ms)
+  Rendered gifts/create.js.erb (3.2ms)
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:19:59 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"mu//u3GmuyR+0HihxBpCK8GFaBQMhiHCwUVQzIfWsmqkPYKZzEtVcqiSoK8PyoAOxd7WIROK277iEhM9cBb1Hw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (277.2ms)
+  Rendered gifts/create.js.erb (279.2ms)
+Completed 500 Internal Server Error in 291ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_gift' for #<#<Class:0x00007fa816f68310>:0x00007fa81939eb80>):
+    1: <p>HELLO</p>>
+    2: <%  wishlist_obj = Wishlist.new %>
+    3: <%create_gift%>
+    4: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:3:in `_app_views_gifts__results_html_erb___1517982776289497547_70179969876300'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179977231000'
+Started POST "/gifts" for ::1 at 2017-11-13 22:20:06 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"mu//u3GmuyR+0HihxBpCK8GFaBQMhiHCwUVQzIfWsmqkPYKZzEtVcqiSoK8PyoAOxd7WIROK277iEhM9cBb1Hw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (260.9ms)
+  Rendered gifts/create.js.erb (264.2ms)
+Completed 500 Internal Server Error in 277ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_gift' for #<#<Class:0x00007fa816f68310>:0x00007fa8192cfcb8>):
+    1: <p>HELLO</p>>
+    2: <%  wishlist_obj = Wishlist.new %>
+    3: <%create_gift%>
+    4: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:3:in `_app_views_gifts__results_html_erb___1517982776289497547_70179916138900'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179975430920'
+Started POST "/gifts" for ::1 at 2017-11-13 22:21:24 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"mu//u3GmuyR+0HihxBpCK8GFaBQMhiHCwUVQzIfWsmqkPYKZzEtVcqiSoK8PyoAOxd7WIROK277iEhM9cBb1Hw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 89677ms (ActiveRecord: 5.4ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:41:in `create'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:25:03 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (36.3ms)
+  Rendered gifts/new.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 840ms (Views: 484.9ms | ActiveRecord: 19.1ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:25:13 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"v8wRi/3+Lz7/U6wWOonPFp3n/RL1zo08FJW4nOW4DUOBHmypQBPBaCkRdBjxWQ0zmbxDJ+rCd0A3wvttEnhKNg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 80385ms (ActiveRecord: 1.1ms)
+
+
+  
+SystemExit (exit):
+  
+app/controllers/gifts_controller.rb:41:in `create'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:26:34 -0500
+Processing by GiftsController#new as HTML
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:26:39 -0500
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (41.5ms)
+  Rendered gifts/new.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 1090ms (Views: 648.1ms | ActiveRecord: 19.3ms)
+
+
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (40.3ms)
+  Rendered gifts/new.html.erb within layouts/application (46.6ms)
+Completed 200 OK in 1000ms (Views: 567.9ms | ActiveRecord: 12.7ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:26:54 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"9KNvI7S6eklRYE10j3jJiQagJsirQjk5ruxdZWc28ZbKcRIBCVeUH4cilXpEqAusAvuY/bROw0WNux6UkPa24w==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (3470.6ms)
+  Rendered gifts/create.js.erb (3478.3ms)
+Completed 500 Internal Server Error in 3563ms (ActiveRecord: 6.8ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_gift' for #<#<Class:0x00007fa811c7e6b8>:0x00007fa8190e1ff0>):
+    1: <p>HELLO</p>
+    2: <%  wishlist_obj = Wishlist.new %>
+    3: <%create_gift%>
+    4: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:3:in `_app_views_gifts__results_html_erb___1517982776289497547_70179916205080'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179927716440'
+Started POST "/gifts" for ::1 at 2017-11-13 22:26:58 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"9KNvI7S6eklRYE10j3jJiQagJsirQjk5ruxdZWc28ZbKcRIBCVeUH4cilXpEqAusAvuY/bROw0WNux6UkPa24w==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (200.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (2978.3ms)
+  Rendered gifts/create.js.erb (2990.8ms)
+Completed 500 Internal Server Error in 5463ms (ActiveRecord: 1774.3ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `create_gift' for #<#<Class:0x00007fa811c7e6b8>:0x00007fa8182acb38>):
+    1: <p>HELLO</p>
+    2: <%  wishlist_obj = Wishlist.new %>
+    3: <%create_gift%>
+    4: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:3:in `_app_views_gifts__results_html_erb___1517982776289497547_70179975659400'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179916111440'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:27:29 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (35.5ms)
+  Rendered gifts/new.html.erb within layouts/application (54.8ms)
+Completed 200 OK in 615ms (Views: 555.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:27:37 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"9bA/l1bJX0mK4qdFHwDx7/YZWWAfLIqqZlzlOV/utd/LYkK16ySxH1ygf0vU0DPK8kLnVQAgcNZFC6bIqC7yqg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (2978.7ms)
+  Rendered gifts/create.js.erb (3001.4ms)
+Completed 500 Internal Server Error in 3087ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `gift_params' for #<#<Class:0x00007fa811c7e6b8>:0x00007fa8193cc878>
+Did you mean?  gift_path):
+    1: <p>HELLO</p>
+    2: <%  wishlist_obj = Wishlist.new %>
+    3: <%  search_results = wishlist_obj.parsed_info_by_keyword(gift_params["keyword"]) %>
+  
+app/views/gifts/_results.html.erb:3:in `_app_views_gifts__results_html_erb___1517982776289497547_70179919438480'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179978100240'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:28:43 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (101.6ms)
+  Rendered gifts/new.html.erb within layouts/application (111.8ms)
+Completed 200 OK in 1212ms (Views: 754.7ms | ActiveRecord: 15.8ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:28:48 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (32.2ms)
+  Rendered gifts/new.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 682ms (Views: 635.1ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:29:06 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"ebqgLeUBFzOgdtd9276tsEcPjDi75yiPyNM6CQz3BedHaN0PWOz5ZXY0D3MQbm+VQ1QyDaTr0vPrhHn4+zdCkg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (3.6ms)
+  Rendered gifts/create.js.erb (6.5ms)
+Completed 500 Internal Server Error in 419855ms (ActiveRecord: 3.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: <%= @results['name'] %>
+  
+app/views/gifts/_results.html.erb:1:in `_app_views_gifts__results_html_erb___1517982776289497547_70179915993000'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__856865615570530624_70179975369040'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:38:52 -0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (660.4ms)
+  Rendered gifts/new.html.erb within layouts/application (665.2ms)
+Completed 200 OK in 1036ms (Views: 985.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:38:53 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (9.8ms)
+  Rendered gifts/new.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 117ms (Views: 108.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:39:06 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"162Tb9xSo6HZI0NyrKfYcpd6LIQC7nUwKYyZ+7AduA3pf+5NYb9N9w9hm3xndxpXkyGSsR3ij0wK29oKR93/eA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (4.2ms)
+Completed 200 OK in 946ms (Views: 13.7ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:39:08 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"162Tb9xSo6HZI0NyrKfYcpd6LIQC7nUwKYyZ+7AduA3pf+5NYb9N9w9hm3xndxpXkyGSsR3ij0wK29oKR93/eA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.2ms)
+  Rendered gifts/create.js.erb (2.4ms)
+Completed 200 OK in 182ms (Views: 9.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:39:13 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"162Tb9xSo6HZI0NyrKfYcpd6LIQC7nUwKYyZ+7AduA3pf+5NYb9N9w9hm3xndxpXkyGSsR3ij0wK29oKR93/eA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.2ms)
+  Rendered gifts/create.js.erb (2.4ms)
+Completed 200 OK in 495ms (Views: 11.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:39:39 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.5ms)
+  Rendered gifts/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 60ms (Views: 53.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:39:52 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"15ror2ru/NGthwS9VbYVPu23ev+X9z7AbfOGFshWSMXpSJWN1wMSh3vF3LOeZtcb6ezEyoj7xLxOpMXnP5YPsA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.3ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 389ms (Views: 9.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:41:45 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 32ms (Views: 27.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:41:56 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"JNyoU1AjzAd7yOxbWApQcjRUJnvm//zz4VrqK3hxCJMaDtVx7c4iUa2KNFWT2pJXMA+YTvnzBo/CDanaj7FP5g==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (6.4ms)
+  Rendered gifts/create.js.erb (8.6ms)
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    1: Hello
+    2: <%= results['names'][0] %>
+  
+app/views/gifts/_results.html.erb:2:in `_app_views_gifts__results_html_erb___2696168979677617368_70227225485900'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__4408492480872136882_70227228498940'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:42:30 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.7ms)
+  Rendered gifts/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:42:37 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"1aPf31i/Hs2rl2bzmS5rSmi492IsuxRH+j4L5GYBP6XrcaL95VLwm33Vvv1S/qlvbONJVzO37jvZaUgVkcF40A==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.2ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 783ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:47:15 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.8ms)
+  Rendered gifts/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:47:21 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"Nn2mL19KEZgu8Fpb6KKswGL+bDZrigf/YdSvE7IEAT4Ir9sN4qf/zviyglUjcm7lZqXSA3SG/YNCg+ziRcRGSw==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (283.7ms)
+  Rendered gifts/create.js.erb (285.8ms)
+Completed 500 Internal Server Error in 484ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `result' for #<#<Class:0x00007fbe1792c660>:0x00007fbe14536b08>
+Did you mean?  results
+               @results):
+    1: <h1>Results</h1>
+    2: 
+    3: <ul>
+    4: <% result[:names].each do |name| %>	
+    5: <li> <%= name %>	 </li>
+    6: <% end %>	
+    7: </ul>
+  
+app/views/gifts/_results.html.erb:4:in `_app_views_gifts__results_html_erb___2696168979677617368_70227180752060'
+app/views/gifts/create.js.erb:1:in `_app_views_gifts_create_js_erb__4408492480872136882_70227180763840'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:48:01 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.2ms)
+  Rendered gifts/new.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 37ms (Views: 32.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:48:05 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"aEwRMQ+O0UVk7w+qQ7IRcVWqjU7GVFi+CHhZI6lya19WnmwTsmM/E7Kt16SIYtNUUfEze9lYosIrLxrSXrIsKg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.5ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 773ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:49:19 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.6ms)
+  Rendered gifts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 58ms (Views: 54.7ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:49:26 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"+OJ6+/HiPYLtw+pXRGX72LZ00uea5mYSrwv0rkFsJ8nGMAfZTA/T1DuBMlmPtTn9si9s0oXqnG6MXLdftqxgvA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.8ms)
+  Rendered gifts/create.js.erb (3.1ms)
+Completed 200 OK in 379ms (Views: 10.5ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:49:49 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"+OJ6+/HiPYLtw+pXRGX72LZ00uea5mYSrwv0rkFsJ8nGMAfZTA/T1DuBMlmPtTn9si9s0oXqnG6MXLdftqxgvA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.3ms)
+  Rendered gifts/create.js.erb (2.7ms)
+Completed 200 OK in 511ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:49:52 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.3ms)
+  Rendered gifts/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:49:56 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"ff4+hTvS8TPvevTSNmBgCUtWtCc2Vs5fAGC81/YQcN1DLEOnhj8fZTk4LNz9sKIsTw0KEilaNCMjN/8mAdA3qA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 233ms (Views: 11.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:50:07 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"ff4+hTvS8TPvevTSNmBgCUtWtCc2Vs5fAGC81/YQcN1DLEOnhj8fZTk4LNz9sKIsTw0KEilaNCMjN/8mAdA3qA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.7ms)
+  Rendered gifts/create.js.erb (3.3ms)
+Completed 200 OK in 688ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:50:12 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 30.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:50:18 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"VCNVN8X6ER4RicRrlIzmcJ3yJVuACzDPtOODSdgEP/lq8SgVeBf/SMfLHGVfXCRVmambbp8HyrOXtMC4L8R4jA==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.6ms)
+Completed 200 OK in 200ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:50:58 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.9ms)
+  Rendered gifts/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 71ms (Views: 35.1ms | ActiveRecord: 5.7ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:51:04 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"Yd7iKXONE+R3Km7jVIAialPpiRBjPUKey61em6L85URfDJ8LzmD9sqFotu2fUOBPV7I3JXwxuOLo+h1qVTyiMQ==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 849ms (ActiveRecord: 3.8ms)
+
+
+  
+NoMethodError (undefined method `map' for nil:NilClass):
+  
+app/models/wishlist.rb:72:in `parsed_info_by_keyword'
+app/controllers/gifts_controller.rb:29:in `create'
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:52:33 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.1ms)
+  Rendered gifts/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 66ms (Views: 29.0ms | ActiveRecord: 5.8ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:38 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.6ms)
+Completed 200 OK in 471ms (Views: 9.8ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:46 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 600ms (Views: 9.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:49 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:49 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.5ms)
+  Rendered gifts/create.js.erb (3.4ms)
+Completed 200 OK in 390ms (Views: 11.2ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:50 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:50 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"THfvXBr33030i47omjmKh3BzGF7Sz/0lWCa1wtUSxz9ypZJ+pxoxGyLJVuZR6UiidCima83DB1l7cfYzItKASg==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.5ms)
+  Rendered gifts/create.js.erb (25.0ms)
+Completed 200 OK in 298ms (Views: 70.9ms | ActiveRecord: 6.3ms)
+
+
+  Rendering gifts/create.js.erb
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.1ms)
+  Rendered gifts/_results.html.erb (0.1ms)
+  Rendered gifts/create.js.erb (2.4ms)
+  Rendered gifts/create.js.erb (5.0ms)
+Completed 200 OK in 543ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Completed 200 OK in 711ms (Views: 88.7ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:52:52 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.0ms)
+  Rendered gifts/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 37ms (Views: 29.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:52:57 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"JaCfJq8c2YacSpnDj6h3o1/+e4zMVeM/opKyoUr61AQbcuIEEvE30EoIQc1EeLWGW6XFudNZGUOBxfFQvTqTcQ==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.4ms)
+  Rendered gifts/create.js.erb (2.5ms)
+Completed 200 OK in 586ms (Views: 10.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/gifts/new" for ::1 at 2017-11-13 22:55:09 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.6ms)
+  Rendered gifts/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 85ms (Views: 33.3ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:55:14 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"2mTDqK6/nPN6Oe94nBeMOtSeeIQqpUIGif5zOt+Vatzktr6KE1Jypax7N3ZXx04f0MXGsTWpuHqqqTDLKFUtqQ==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.5ms)
+  Rendered gifts/create.js.erb (2.8ms)
+Completed 200 OK in 644ms (Views: 13.6ms | ActiveRecord: 6.9ms)
+
+
+Started POST "/gifts" for ::1 at 2017-11-13 22:58:17 -0500
+Processing by GiftsController#create as */*
+  Parameters: {"authenticity_token"=>"2mTDqK6/nPN6Oe94nBeMOtSeeIQqpUIGif5zOt+Vatzktr6KE1Jypax7N3ZXx04f0MXGsTWpuHqqqTDLKFUtqQ==", "gift"=>{"name"=>"camera", "category"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering gifts/create.js.erb
+  Rendered gifts/_results.html.erb (0.6ms)
+  Rendered gifts/create.js.erb (4.3ms)
+Completed 200 OK in 194814ms (Views: 12.4ms | ActiveRecord: 2.6ms)
+
+

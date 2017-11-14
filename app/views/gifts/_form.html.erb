@@ -1,4 +1,6 @@
-<%= form_with(model: gift, local: true) do |form| %>
+<div style="width: 100%; overflow: hidden;">
+    <div class="form-container" style="width: 600px; float: left;">
+      <%= form_with(model: gift, local: true) do |form| %>
   <% if gift.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(gift.errors.count, "error") %> prohibited this gift from being saved:</h2>
@@ -22,5 +24,10 @@
     <%= form.submit class: 'create_gift'%>
   </div>
 <% end %>
-<div class='res'>
+    </div>
+    <div class="res" style="margin-left: 620px;"> 
+
+    </div>
 </div>
+
+

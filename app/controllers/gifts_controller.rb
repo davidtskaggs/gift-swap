@@ -24,10 +24,10 @@ class GiftsController < ApplicationController
   # POST /gifts
   # POST /gifts.json
   def create
-    
-    p gift_params["name"]
-    p gift_params["category"]
-
+    #p gift_params["name"]
+    #p gift_params["category"]
+    @results = Wishlist.new.parsed_info_by_keyword(gift_params[:name])
+    #@results = Wishlist.new.parsed_info_by_keyword(params[:gift][:category])
     # submit the form 
 
     # go to the page with the list of results of the search
@@ -82,6 +82,10 @@ class GiftsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gift_params
+      binding.pry
       params.require(:gift).permit(:name, :price, :url, :category)
     end
+
+
+    
 end
