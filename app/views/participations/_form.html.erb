@@ -8,8 +8,7 @@
 
 <%@event.participants.each do |participant| %>
 <ul>
-<li><%=participant.first_name%> <%=participant.last_name%></li>
+  <li><%=participant.first_name%> <%=participant.last_name%></li>
 </ul>
 <%end%>
 
-<%=link to 'Events', events_path %>
