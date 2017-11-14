@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+/*.participants-form {
+  display: none;
+}*/
  body {
    padding-top: 60px;
    background: #f2f2f2;
@@ -44,3 +46,14 @@ img {
   position: absolute;
   margin: auto;
 }
+
+.btn {
+  outline: 0;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  box-shadow:inset 2px -3px rgba(0,0,0,0.15);
+}
+
