@@ -33,10 +33,9 @@
               Logged in as <strong><%= current_user.email %></strong>
               <!-- Change path to show events user participates in -->
               <li class="nav-link"><%= link_to 'All Events', events_path, :class => 'navbar-link' %></li>
-              <!-- change path to my wishlist to show user's wishlist -->
-              <li class="active"><%= link_to 'My Wishlist', wishlists_path, :class => 'navbar-link' %></li>
-              <li class="active"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-              <li class="active"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+              <li class="nav-link"><a href="/wishlists">Your Wishlist</a></li>
+              <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 
             <% else %>
               <li class="nav-link"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
@@ -57,12 +56,13 @@
     <div class="container">
       <%= yield %>
     </div>
-    <footer>
-      <div class="container">
-    giftSwap<%= Time.now.year %>
-    </div>
-  </footer>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
   </body>
+   <footer>
+      <!-- <div class="container">
+    giftSwap<%= Time.now.year %>
+    </div>
+  </footer> -->
 </html>

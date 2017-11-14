@@ -38,9 +38,21 @@
 
 img {
   width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 #gift {
   position: absolute;
   margin: auto;
+}
+
+#all-events tr th, #all-events tr td {
+  border: 2px solid DarkBlue;
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav-link:hover {
+  background-color: LightBlue;
 }

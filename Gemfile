@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
-<<<<<<< HEAD
 
-=======
-ruby "2.4.2"
->>>>>>> 861d43a734e6e81286144d9675da45666eb5f696
+ruby "2.3.3"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -39,7 +36,8 @@ gem 'faker'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'dotenv-rails'
+gem 'httparty'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
