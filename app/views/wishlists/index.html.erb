@@ -22,8 +22,8 @@
  <tbody>
    <% wishlist_gifts.order(:price).each do |gift| %>
      <tr>
-       <td><%= gift.name %></td>
-       <td><%= gift.url %></td>
+      <% link = gift.url%>
+       <td><a href=<%= link %>><%= gift.name %> </a></td>
        <td><%= gift.category %></td>
        <td><%= gift.price %></td>
      </tr>
