@@ -10,7 +10,6 @@
  <thead>
    <tr>
      <th>Gift</th>
-     <th>Url</th>
      <th>Category</th>
      <th>Price</th>
    </tr>
@@ -22,7 +21,7 @@
       <% link = gift.url%>
        <td><a href=<%= link %>><%= gift.name %> </a></td>
        <td><%= gift.category %></td>
-       <td><%= gift.price %></td>
+       <td>$<%= gift.price %></td>
      </tr>
    <% end %>
  </tbody>

@@ -6,6 +6,10 @@
 </p>
 
 <p>
+  <strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></a>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @event.description %>
 </p>
@@ -30,11 +34,18 @@
   <%= @event.creator.first_name %>
 </p>
 
-<p>
+<p><strong>Participants:</strong>
+  <%@event.participants.each do |participant| %>
+  <ul>
+  <li><%=participant.first_name%> <%=participant.last_name%></li>
+  </ul>
+  <%end%>
+
+
 
 <%= link_to "Add participants", new_event_participation_path(@event) %>
 
-<p><strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></p>
+
 
 
 
