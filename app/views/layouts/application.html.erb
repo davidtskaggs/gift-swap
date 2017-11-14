@@ -3,7 +3,7 @@
   <head>
     <title>GiftSwap</title>
     <%= csrf_meta_tags %>
-
+  <link rel="icon" href="http://dreamatico.com/data_images/gift/gift-5.jpg" sizes="16x16" type="image/jpg"/>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -33,7 +33,7 @@
               Logged in as <strong><%= current_user.email %></strong>
               <!-- Change path to show events user participates in -->
               <li class="nav-link"><%= link_to 'All Events', events_path, :class => 'navbar-link' %></li>
-              <li class="nav-link"><a href="/wishlists">Your Wishlist</a></li>
+              <li class="nav-link"><%= link_to 'Your Wishlist', wishlists_path, :class=> 'navbar-link'%></li>
               <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 

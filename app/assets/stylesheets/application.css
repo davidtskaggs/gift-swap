@@ -54,5 +54,24 @@ img {
 }
 
 .nav-link:hover {
-  background-color: LightBlue;
+  background-color: Green;
+  color: white;
+}
+
+.navbar .nav-link .navbar-link:hover {
+  color: white;
+}
+.navbar-header .navbar-brand:hover {
+  background-color: red;
+  color: white;
+
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.carousel-inner {
+  background-color: rgba(206, 6, 34, 0.8);
+  border-radius: 20px;
 }

@@ -31,6 +31,7 @@ $(document).ready(function(){
 	})
 
 	$('.carousel').carousel({
-		interval: 2000
+		interval: 1000
+		wrap: true
 	})
 })

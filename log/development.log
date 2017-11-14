@@ -6766,3 +6766,776 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 37ms (Views: 32.9ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-14 13:20:07 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:20:07 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 118ms (Views: 89.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:20:45 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 72ms (Views: 66.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:20:55 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 164ms (Views: 159.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:21:45 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 59ms (Views: 54.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:08 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 52ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:15 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 79ms (Views: 75.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:23 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 72ms (Views: 65.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:31 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 110ms (Views: 96.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:42 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 68ms (Views: 63.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:22:50 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 82ms (Views: 77.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:23:34 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 110ms (Views: 105.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:23:58 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 98ms (Views: 93.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:24:35 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 57ms (Views: 51.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:27:29 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 81ms (Views: 76.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:28:06 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 70ms (Views: 65.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:29:47 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 255ms (Views: 227.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:30:22 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 386ms (Views: 381.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:31:44 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 91ms (Views: 84.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:33:40 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 421ms (Views: 414.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:35:44 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 58ms (Views: 52.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:36:58 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 111ms (Views: 86.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:37:16 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 71ms (Views: 65.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:37:32 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 79ms (Views: 74.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:37:38 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 76ms (Views: 71.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:38:38 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 97ms (Views: 90.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:40:10 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 93ms (Views: 84.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:40:33 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 55ms (Views: 50.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:41:18 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 40ms (Views: 36.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:41:30 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 37.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:43:23 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 37.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:44:11 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 46ms (Views: 42.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:45:33 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 174ms (Views: 168.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 13:45:44 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (7.2ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 82ms (Views: 58.6ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 13:45:45 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 67ms (Views: 57.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 13:50:20 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 72ms (Views: 65.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 13:51:10 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 116ms (Views: 87.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 13:51:29 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 130ms (Views: 121.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 13:51:39 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 72ms (Views: 54.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 13:51:40 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:51:40 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 61ms (Views: 55.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 13:52:28 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:52:28 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 78ms (Views: 73.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:52:43 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 64ms (Views: 57.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:53:08 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 62.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:53:29 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:53:38 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:54:12 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 73ms (Views: 65.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:54:33 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 574ms (Views: 568.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:54:56 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 84ms (Views: 73.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:56:00 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 83ms (Views: 77.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:56:19 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (87.8ms)
+Completed 200 OK in 143ms (Views: 137.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:56:46 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 63ms (Views: 57.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:57:03 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 71.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:57:04 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 48ms (Views: 43.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:57:09 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 80ms (Views: 75.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 13:57:18 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 56ms (Views: 51.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 13:58:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.6ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 80ms (Views: 66.2ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 13:59:19 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 85ms (Views: 73.7ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 13:59:56 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 71ms (Views: 60.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:00:18 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 61ms (Views: 52.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 14:00:37 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (850.9ms)
+  Rendered events/new.html.erb within layouts/application (855.5ms)
+Completed 200 OK in 908ms (Views: 896.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:02:29 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (20.3ms)
+Completed 200 OK in 165ms (Views: 125.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:18:30 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 188ms (Views: 144.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:19:33 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 96ms (Views: 82.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:20:10 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 53ms (Views: 41.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:20:52 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.2ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 2.0ms)
+
+
+  
+SyntaxError (/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:37: unknown regexp option - l
+unmatched close parenthesis: /li>
+              <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' );@output_buffer.safe_append='</i
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+              <li class="nav-link">'.freeze;...
+               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+...hod: :delete, :class => 'navbar-link'  );@output_buffer.safe...
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...delete, :class => 'navbar-link'  );@output_buffer.safe_appen...
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:41: unknown regexp option - l
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+              <li class="nav-link">'.freeze;...
+               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+...session_path, :class => 'navbar-link'  );@output_buffer.safe...
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...n_path, :class => 'navbar-link'  );@output_buffer.safe_appen...
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:45: unknown regexp option - p
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+          </ul>
+           ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:47: unknown regexp options - dv
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:48: syntax error, unexpected '<'
+      </div>
+       ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:49: unknown regexp options - av
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:51: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+...fer.safe_append='      <p class="alert alert-success">'.free...
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:54: unknown regexp option - p
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:56: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+@output_buffer.safe_append='    <div class="container">
+                                          ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:58: syntax error, unexpected '<', expecting ')'
+    </div>
+     ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:60: unexpected fraction part after numeric literal
+...eapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+.../ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:61: unknown regexp options - bttrap
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:61: unexpected fraction part after numeric literal
+....bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+...strapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:61: syntax error, unexpected tSTRING_BEG, expecting ')'
+...ootstrap/3.0.3/js/bootstrap.js"></script>
+...                               ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+      <!-- <div class="container">
+                                ^
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:64: unterminated string meets end of file
+/Users/catherinerice/Desktop/gift-swap/app/views/layouts/application.html.erb:64: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/layouts/application.html.erb:37: unknown regexp option - l
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:38: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/application.html.erb:41: unknown regexp option - l
+app/views/layouts/application.html.erb:42: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:42: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:42: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/layouts/application.html.erb:45: unknown regexp option - p
+app/views/layouts/application.html.erb:46: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:47: unknown regexp options - dv
+app/views/layouts/application.html.erb:48: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:49: unknown regexp options - av
+app/views/layouts/application.html.erb:51: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/layouts/application.html.erb:54: unknown regexp option - p
+app/views/layouts/application.html.erb:56: syntax error, unexpected keyword_class, expecting keyword_do or '{' or '('
+app/views/layouts/application.html.erb:58: syntax error, unexpected '<', expecting ')'
+app/views/layouts/application.html.erb:60: unexpected fraction part after numeric literal
+app/views/layouts/application.html.erb:60: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:61: unknown regexp options - bttrap
+app/views/layouts/application.html.erb:61: unexpected fraction part after numeric literal
+app/views/layouts/application.html.erb:61: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:61: syntax error, unexpected tSTRING_BEG, expecting ')'
+app/views/layouts/application.html.erb:64: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/layouts/application.html.erb:64: unterminated string meets end of file
+app/views/layouts/application.html.erb:64: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:21:12 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 78ms (Views: 67.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 14:21:39 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 51ms (Views: 40.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 14:22:06 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 14:22:06 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 81ms (Views: 53.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 14:22:16 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 131ms (Views: 48.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 14:22:46 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 536ms (Views: 58.1ms | ActiveRecord: 1.5ms)
+
+
