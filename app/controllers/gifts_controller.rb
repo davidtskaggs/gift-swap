@@ -21,24 +21,10 @@ class GiftsController < ApplicationController
   def edit
   end
 
-  # POST /gifts
-  # POST /gifts.json
-  def create
-    
-    p gift_params["name"]
-    p gift_params["category"]
+  def search
 
-    # submit the form 
-
-    # go to the page with the list of results of the search
-
-    # select one link, save the url into the database
-
-    # Gift.new(name: gift_params, price: 19.99, url: "www.example.com", category: "kitchen")
-
-    #@gift = Gift.new(name: gift_params["name"], price: 19.99, url: "www.example.com", category: gift_params["name"])
-
-     respond_to do |format|
+     @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
+       respond_to do |format|
        #if @gift.save
         format.js
         # format.html { redirect_to @gift, notice: 'Gift was successfully created.' }
@@ -48,6 +34,37 @@ class GiftsController < ApplicationController
          # format.json { render json: @gift.errors, status: :unprocessable_entity }
        #end
      end
+
+  end
+  # POST /gifts
+  # POST /gifts.json
+   def create
+    items = Gift.new.add_wanted_gifts(params)
+    items.each do |item|
+      gift = Gift.create(name: item[:name], price: item[:price].gsub("/","").gsub("$","").to_f,
+        url: item[:url], category:item[:category].gsub("/",""))
+      wishlist_item = WishlistItem.create(wishlist_id: current_user.wishlists.first.id, gift_id: gift.id)
+    end
+
+
+
+    # p params
+    # binding.pry
+    # p params["gift"]["keyword"]
+    # p gift_params
+    # p @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
+    #@results = Wishlist.new.parsed_info_by_keyword(params[:gift][:category])
+    # submit the form
+
+    # go to the page with the list of results of the search
+
+    # select one link, save the url into the database
+
+    # Gift.new(name: gift_params, price: 19.99, url: "www.example.com", category: "kitchen")
+
+    #@gift = Gift.new(name: gift_params["name"], price: 19.99, url: "www.example.com", category: gift_params["name"])
+
+
    end
 
   # PATCH/PUT /gifts/1
