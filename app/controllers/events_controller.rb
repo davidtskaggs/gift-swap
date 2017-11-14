@@ -4,9 +4,16 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
 
-    # binding.pry
+    current_user
+    # @event_current_user = Event.all
+    # .participants
+    # .find(current_user.id)
+    # @current_user_events
+
+    @events = Event.all
+    @user_events_participations = Participation.find_by(participant_id: current_user.id)
+    @user_event_attendee = @user_events_participations.event
   end
 
   # GET /events/1
