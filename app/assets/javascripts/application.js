@@ -26,9 +26,22 @@ $(document).ready(function(){
 				}
 			}
 		})
-		.done(function(response) {
-			console.log("*****************")
-			console.log(response)
-		})
-}	)
+
+
+	})
+
+	$('#carousel').carousel({
+		interval: 2000
+	});
+
+	$('#carousel').carousel('cycle');
+
+	$('.show-participant').click(function(event){
+		event.preventDefault();
+		$(this).parent().parent().toggle();
+	})
+	$(".hide-participant").click(function(){
+		$(this).parent().parent().toggle();
+	})
+
 })

@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   resources :events
   devise_for :users
   resources :welcome
-  resources :events
+  resources :events do
+   resources :participations
+ end
   resources :users
+
   root to: redirect('/welcome/show')
   post '/search', to: 'gifts#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

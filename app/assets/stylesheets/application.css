@@ -38,9 +38,51 @@
 
 img {
   width: 50%;
+  display: block;
+  margin: 0 auto;
 }
 
 #gift {
   position: absolute;
   margin: auto;
 }
+
+#all-events tr th, #all-events tr td {
+  border: 2px solid DarkBlue;
+  padding: 10px;
+  margin: 10px;
+}
+
+.nav-link:hover {
+  background-color: rgba(55,165,8,0.8);
+  color: white;
+}
+
+.navbar .nav-link .navbar-link:hover {
+  color: white;
+}
+.navbar-header .navbar-brand:hover {
+  background-color: red;
+  color: white;
+
+}
+
+.cursive {
+  font-family: cursive;
+}
+
+.carousel-inner {
+  background-color: ivory;
+  border-radius: 20px;
+}
+
+.btn {
+  outline: 0;
+  border: none;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  box-shadow: inset 2px -3px rgba(0,0,0,0.15);
+}
+

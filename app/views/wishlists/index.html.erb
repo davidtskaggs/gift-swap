@@ -1,15 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<h1><%= current_user.first_name %>'s Wishlist | <a href='gifts/new'>Add a new item</a></h1>
-
-
+<h1 class="cursive"><%= current_user.first_name %>'s Wishlist</h1>
+  <p><a href='gifts/new'>Add a new item</a></p>
 
 <% current_user_wishlist = current_user.wishlists[0] %>
 <% wishlist_gifts = current_user_wishlist.gifts %>
 
 <br>
 
-<table>
+<table class="table table-striped table-bordered">
  <thead>
    <tr>
      <th>Gift</th>
@@ -30,3 +27,4 @@
    <% end %>
  </tbody>
 </table>
+

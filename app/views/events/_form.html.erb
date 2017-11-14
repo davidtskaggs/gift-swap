@@ -37,15 +37,10 @@
   </div>
   <%= form.hidden_field :creator_id, value: current_user.id%>
 
-  <p><strong>Participants:</strong></p>
-
-    <%= form_tag("/events", method: "get") do %>
-      <%= label_tag(:email, "Search for:") %>
-      <%= text_field_tag(:email) %>
-      <%= submit_tag("Search") %>
-    <%end%>
-
-  <%= form.submit %>
-<% end %>
+      <%= form.submit 'Create event', class: "btn btn-primary btn-lg btn-default" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 

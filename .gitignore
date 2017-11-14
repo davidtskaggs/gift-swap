@@ -15,5 +15,5 @@
 .byebug_history
 .env
 *.log
-*.temp
-log
+*.tmp
+

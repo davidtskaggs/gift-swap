@@ -31,12 +31,8 @@
 </p>
 
 <p>
-  <strong>Participants:</strong>
-  <ul>
-  <% @participants.each do |participant| %>
-    <li><%=participant.first_name%></li>
-  <%end%>
-</ul>
+
+<%= link_to "Add participants", new_event_participation_path(@event) %>
 
 <p><strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></p>
 

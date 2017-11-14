@@ -1,6 +1,48 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<div>
+<%= link_to 'New Event', new_event_path %>
+
+</div>
+
+<h1>Attending Events</h1>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Suggested budget</th>
+      <th>Owner</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <div>
+    <% current_user.events.each do |event| %>
+
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.start_date %></td>
+        <td><%= event.end_date %></td>
+        <td>$<%= event.suggested_budget %></td>
+        <td><%= event.creator.first_name %></td>
+        <td><%= link_to 'Details', event %></td>
+      </tr>
+    <% end %>
+  </div>
+  </tbody>
+</table>
+</div>
+
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h1>Events Hosting</h1>
 
 <table>
   <thead>
@@ -16,7 +58,10 @@
   </thead>
 
   <tbody>
+    <div>
     <% @events.each do |event| %>
+
+    <% if event.creator_id == current_user.id %>
       <tr>
         <td><%= event.name %></td>
         <td><%= event.description %></td>
@@ -27,11 +72,11 @@
         <td><%= link_to 'Details', event %></td>
         <td><%= link_to 'Edit event', edit_event_path(event) %></td>
         <td><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
+
     <% end %>
+  </div>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+</div>
