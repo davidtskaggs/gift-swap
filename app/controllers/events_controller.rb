@@ -14,7 +14,6 @@ class EventsController < ApplicationController
     @events = Event.all
     @user_events_participations = Participation.find_by(participant_id: current_user.id)
     @user_event_attendee = @user_events_participations.event
-    
   end
 
   # GET /events/1
