@@ -1,0 +1,404 @@
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:35:08 -0500
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.7ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 672ms (Views: 518.0ms | ActiveRecord: 19.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 18:35:11 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 18:35:11 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 54ms (Views: 46.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:35:15 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 115ms (Views: 75.6ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 18:35:19 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (1.3ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (41.5ms)
+Completed 200 OK in 86ms (Views: 70.7ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:35:21 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (1.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 84ms (Views: 64.3ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 18:35:22 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (744.1ms)
+  Rendered events/new.html.erb within layouts/application (747.5ms)
+Completed 200 OK in 805ms (Views: 794.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 18:38:02 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 18:38:02 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-14 18:38:02 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-14 18:38:02 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 46ms (Views: 40.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:39:37 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.9ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.8ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.9ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 212ms (Views: 155.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:40:28 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 90ms (Views: 77.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:41:31 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.3ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 716ms (Views: 705.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 18:41:32 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (22.1ms)
+  Rendered events/new.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 95ms (Views: 84.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:41:39 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.4ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.6ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 70ms (Views: 56.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:42:48 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 104ms (Views: 90.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:42:54 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.4ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 77ms (Views: 61.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:42:59 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 52ms (Views: 41.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:43:32 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.2ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 51ms (Views: 40.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:43:45 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.2ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 105ms (Views: 94.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/wishlists/4" for 127.0.0.1 at 2017-11-14 18:43:50 -0500
+Processing by WishlistsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering wishlists/show.html.erb within layouts/application
+  Rendered wishlists/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 55ms (Views: 43.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 18:44:06 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.7ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 62ms (Views: 55.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-14 18:47:02 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 96ms (Views: 78.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-14 18:47:03 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (25.8ms)
+  Rendered events/new.html.erb within layouts/application (29.5ms)
+Completed 200 OK in 92ms (Views: 83.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events/1" for 127.0.0.1 at 2017-11-14 18:47:05 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGiftExchange Load (0.3ms)[0m  [1m[34mSELECT  "gift_exchanges".* FROM "gift_exchanges" WHERE "gift_exchanges"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 1]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered events/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 71ms (Views: 53.7ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:47:10 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (5.1ms)
+  Rendered participations/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 70ms (Views: 61.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:47:36 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (4.5ms)
+  Rendered participations/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 61ms (Views: 54.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:47:47 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (12.5ms)
+  Rendered participations/new.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 126ms (Views: 102.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:47:56 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (6.5ms)
+  Rendered participations/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 89ms (Views: 71.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/events/1/participations/new" for 127.0.0.1 at 2017-11-14 18:48:13 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 1]]
+  Rendered participations/_form.html.erb (4.2ms)
+  Rendered participations/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 60ms (Views: 51.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 18:48:24 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 80ms (Views: 68.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 18:49:18 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 85ms (Views: 78.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-14 18:49:25 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Load (4.0ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 564ms (Views: 72.8ms | ActiveRecord: 5.3ms)
+
+
