@@ -12,20 +12,20 @@
 <table>
  <thead>
    <tr>
-     <th>Name</th>
      <th>Gift</th>
      <th>Url</th>
      <th>Category</th>
+     <th>Price</th>
    </tr>
  </thead>
 
  <tbody>
-   <% wishlist_gifts.each do |gift| %>
+   <% wishlist_gifts.order(:price).each do |gift| %>
      <tr>
        <td><%= gift.name %></td>
-       <td><%= gift.price %></td>
        <td><%= gift.url %></td>
        <td><%= gift.category %></td>
+       <td><%= gift.price %></td>
      </tr>
    <% end %>
  </tbody>

@@ -2,7 +2,7 @@
 
 <form action="/gifts" method="POST">
   <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
-  <ul><% @results[:names].each_with_index do |item, index| %>
+  <ul><% @results[:names].each_with_index do |item, index|%>
     <div class = "aws_results">
       <% image = @results[:images][index] %>
       <% link = @results[:urls][index] %>

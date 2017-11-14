@@ -22,7 +22,8 @@ class GiftsController < ApplicationController
   end
 
   def search
-    p @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
+
+     @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
        respond_to do |format|
        #if @gift.save
         format.js
@@ -40,7 +41,8 @@ class GiftsController < ApplicationController
    def create
     items = Gift.new.add_wanted_gifts(params)
     items.each do |item|
-      gift = Gift.create(name: item[:name], price: item[:price], url: item[:url], category:item[:category])
+      gift = Gift.create(name: item[:name], price: item[:price].gsub("/","").gsub("$","").to_f,
+        url: item[:url], category:item[:category].gsub("/",""))
       wishlist_item = WishlistItem.create(wishlist_id: current_user.wishlists.first.id, gift_id: gift.id)
     end
 
