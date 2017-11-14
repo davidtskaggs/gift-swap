@@ -1,1 +1,8 @@
-Results from the request
+<h3>Results</h3>
+<ul><% @results[:names].each_with_index do |item, index| %>
+  <% link = @results[:images][index] %>
+  <li><img src=<%=link%>><br><a href=<%=link%>>Item Details</a></li>
+  <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
+  <% end %>
+</ul>
+

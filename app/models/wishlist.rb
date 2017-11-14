@@ -4,9 +4,9 @@ require 'openssl'
 require 'base64'
 
 class Wishlist < ApplicationRecord
-	belongs_to :user 
-	has_many :wishlist_items 
-	has_many :gifts, through: :wishlist_items  
+	belongs_to :user
+	has_many :wishlist_items
+	has_many :gifts, through: :wishlist_items
 
 	accepts_nested_attributes_for :gifts, allow_destroy: true
 	#AWS API
@@ -67,30 +67,30 @@ class Wishlist < ApplicationRecord
 
 	 def parsed_info_by_keyword(keyword)
 	 	result_hash = self.by_keyword(keyword)
-	 	returned_hash = {names: [], prices: [], urls: [], 
+	 	returned_hash = {names: [], prices: [], urls: [],
 	 		images: [], categories: []}
 	 	result_hash["ItemSearchResponse"]["Items"]["Item"].map do |elt|
 	 		returned_hash[:names] << elt["ItemAttributes"]["Title"]
 	 		returned_hash[:prices] << elt["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]
 	 		returned_hash[:urls] << elt["DetailPageURL"].split("?").first
-	 		returned_hash[:images] << elt["SmallImage"]["URL"]
-	 		returned_hash[:categories] << keyword 
+	 		returned_hash[:images] << elt["LargeImage"]["URL"]
+	 		returned_hash[:categories] << keyword
 	 	end
 	 	return returned_hash
-	 end 
+	 end
 
 	 def parsed_info_by_category(category)
 	 	result_hash = self.by_category(category)
-	 	returned_hash = {names: [], prices: [], urls: [], 
+	 	returned_hash = {names: [], prices: [], urls: [],
 	 		images: [], categories: []}
 	 	result_hash["ItemSearchResponse"]["Items"]["Item"].map do |elt|
 	 		returned_hash[:names] << elt["ItemAttributes"]["Title"]
 	 		returned_hash[:prices] << elt["OfferSummary"]["LowestNewPrice"]["FormattedPrice"]
 	 		returned_hash[:urls] << elt["DetailPageURL"].split("?").first
 	 		returned_hash[:images] << elt["SmallImage"]["URL"]
-	 		returned_hash[:categories] << category 
+	 		returned_hash[:categories] << category
 	 	end
 	 	return returned_hash
-	 end 
+	 end
 
 end

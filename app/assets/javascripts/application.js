@@ -16,17 +16,19 @@
 $(document).ready(function(){
 	$('.create_gift').click(function(e){
 		e.preventDefault();
-
 		$.ajax({
 			url: '/gifts',
 			type: 'POST',
 			data: {
 				'authenticity_token': $('input[name=authenticity_token]').val(),
 				'gift': {
-					name: 'camera',
-					category: 'camera'
+					keyword: $('input#gift_name').val()
 				}
 			}
+		})
+		.done(function(response) {
+			console.log("*****************")
+			console.log(response)
 		})
 }	)
 })

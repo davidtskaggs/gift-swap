@@ -23,12 +23,15 @@ class GiftsController < ApplicationController
 
   # POST /gifts
   # POST /gifts.json
-  def create
-    
-    p gift_params["name"]
-    p gift_params["category"]
-
-    # submit the form 
+   def create
+    p '*'*10
+    # p params
+    # binding.pry
+    p params["gift"]["keyword"]
+    # p gift_params
+    p @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
+    #@results = Wishlist.new.parsed_info_by_keyword(params[:gift][:category])
+    # submit the form
 
     # go to the page with the list of results of the search
 
