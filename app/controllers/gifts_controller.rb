@@ -38,12 +38,10 @@ class GiftsController < ApplicationController
   # POST /gifts
   # POST /gifts.json
    def create
-    p '*'*10
-
     items = Gift.new.add_wanted_gifts(params)
     items.each do |item|
-      p "******saved*****"
-      Gift.create(name: item[:name], price: item[:price], url: item[:url], category:item[:category])
+      gift = Gift.create(name: item[:name], price: item[:price], url: item[:url], category:item[:category])
+      wishlist_item = WishlistItem.create(wishlist_id: current_user.wishlists.first.id, gift_id: gift.id)
     end
 
 
