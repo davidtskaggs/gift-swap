@@ -9,8 +9,8 @@
 <h3>Participants:</h3>
 <ol>
 <%@event.participants.each do |participant| %>
-
   <li><%=participant.first_name%> <%=participant.last_name%></li>
-
 <%end%>
 </ol>
+
+<%=link_to 'Back to Events', events_path %>
