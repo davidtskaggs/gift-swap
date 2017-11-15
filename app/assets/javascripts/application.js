@@ -31,10 +31,10 @@ $(document).ready(function(){
 	})
 
 	$('#carousel').carousel({
-		interval: 2000
+		interval: 2000,
+		slidesToShow: 3,
+		autoplay: true
 	});
-
-	$('#carousel').carousel('cycle');
 
 	$('.show-participant').click(function(event){
 		event.preventDefault();

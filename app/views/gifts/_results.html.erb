@@ -11,8 +11,8 @@
         <input type="hidden" name='gift[<%=index%>][price]' value=<%=@results[:prices][index]%>/>
         <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
         <input type="hidden" name='gift[<%=index%>][category]' value=<%=@results[:categories][index]%>/>
-      <li><img src=<%=image%>><br><a href=<%=link%>>Item Details</a></li>
-      <li><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></li>
+      <p><img id="gift-result" src=<%=image%>><br><a href=<%=link%>>Item Details</a></p>
+      <p><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></p>
       <% end %>
     </div>
   </ul>
