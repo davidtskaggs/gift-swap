@@ -44,6 +44,7 @@ class GiftsController < ApplicationController
       gift = Gift.create(name: item[:name], price: item[:price].gsub("/","").gsub("$","").to_f,
         url: item[:url], category:item[:category].gsub("/",""))
       wishlist_item = WishlistItem.create(wishlist_id: current_user.wishlists.first.id, gift_id: gift.id)
+      redirect_to wishlists_path
     end
 
 

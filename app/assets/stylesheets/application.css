@@ -74,6 +74,14 @@ img {
 
 }
 
+#gift-result {
+  border-radius: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+
+
 .cursive {
   font-family: cursive;
 }
@@ -95,9 +103,9 @@ img {
 
 
 
-h1, h2 {
-  color: MidnightBlue;
-  text-shadow: 2px 2px #ff0000;
+h1, h2, h3 {
+  color: black;
+  text-shadow: 2px 2px MidnightBlue;
 
 }
 

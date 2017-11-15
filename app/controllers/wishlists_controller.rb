@@ -31,7 +31,9 @@ class WishlistsController < ApplicationController
       params["wishlist"]["gifts_attributes"].each do |i|
         gift_values = params['wishlist']['gifts_attributes']["#{i}"].values
         Gift.create(name: gift_values[0], price: gift_values[1], url: gift_values[2], category: gift_values[3], wishlist_id: @wishlist.id)
+
       end
+
     end
 
     respond_to do |format|
