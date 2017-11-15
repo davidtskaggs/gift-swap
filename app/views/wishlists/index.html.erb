@@ -22,8 +22,10 @@
        <td><a href=<%= link %>><%= gift.name %> </a></td>
        <td><%= gift.category %></td>
        <td>$<%= gift.price %></td>
+       <td><%= link_to 'Delete item', gift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
      </tr>
    <% end %>
  </tbody>
 </table>
+
 

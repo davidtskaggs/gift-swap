@@ -103,7 +103,7 @@ img {
 
 
 
-h1, h2, h3 {
+h1, h2 {
   color: black;
   text-shadow: 2px 2px MidnightBlue;
 
@@ -113,3 +113,16 @@ h1, h2, h3 {
   font-size: 40px;
 }
 
+li {
+  padding: 5px;
+  margin: 5px;
+}
+
+.btn {
+  background-color: red;
+}
+
+.navbar ul li {
+  padding: 0px;
+  margin: 0px;
+}
