@@ -26,8 +26,6 @@ $(document).ready(function(){
 				}
 			}
 		})
-
-
 	})
 
 	$('#carousel').carousel({
@@ -36,22 +34,21 @@ $(document).ready(function(){
 		autoplay: true
 	});
 
-	$('.show-participant').click(function(event){
-		event.preventDefault();
-		$(this).parent().parent().toggle();
-	})
-	$(".hide-participant").click(function(){
-		$(this).parent().parent().toggle();
-	})
+	// $('.show-participant').click(function(event){
+	// 	event.preventDefault();
+	// 	$(this).parent().parent().toggle();
+	// })
+	// $(".hide-participant").click(function(){
+	// 	$(this).parent().parent().toggle();
+	// })
 
-	$("#secret-santa").on("submit", function(event){
-		$('#secret').show();
-	})
+	// $("#secret-santa").on("submit", function(event){
+	// 	$('#secret').show();
+	// })
 
-	$("#participant-list").on("submit", "#add-participants", function(event){
+	$("#participant-container").on("submit", "#add-participants", function(event){
 		event.preventDefault();
 		$form = $(event.target)
-
 		$.ajax({
 			url: $form.attr("action"),
 			method: $form.attr("method"),
@@ -61,9 +58,6 @@ $(document).ready(function(){
 			$("#add-participants").each(function(){
 				this.reset();
 			})
-		}).fail(function(a,b,c){
-			"fail"
-				// debugger
-			})
+		})
 	})
 })

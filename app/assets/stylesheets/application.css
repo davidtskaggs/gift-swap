@@ -57,7 +57,7 @@ img {
 }
 
 .nav-link:hover {
-  background-color: rgba(55,165,8,0.8);
+  background-color: LightBlue;
   color: white;
 }
 
@@ -69,7 +69,7 @@ img {
   color: white;
 }
 .navbar-header .navbar-brand:hover {
-  background-color: red;
+  background-color: MidnightBlue;
   color: white;
 
 }
@@ -125,4 +125,18 @@ li {
 .navbar ul li {
   padding: 0px;
   margin: 0px;
+}
+
+#giftshare-title {
+  text-shadow: 2px 2px black;
+}
+
+th {
+  background-color: MidnightBlue;
+  color: white;
+}
+
+#creators-list {
+  list-style-type: none;
+  padding-left: 0px;
 }

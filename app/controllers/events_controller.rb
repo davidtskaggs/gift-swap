@@ -4,13 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-
     current_user
-    # @event_current_user = Event.all
-    # .participants
-    # .find(current_user.id)
-    # @current_user_events
-
     @events = Event.all
     @user_events_participations = Participation.find_by(participant_id: current_user.id)
     @user_event_attendee = @user_events_participations.event
@@ -19,18 +13,21 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-
-    # @participants = @event.participants
-    @gift_exchange = GiftExchange.find(params[:id])
-    @wishlist = Wishlist.find_by(user_id: @gift_exchange.sender.id)
+    # @event.create_pairs
+    @gift_exchange = GiftExchange.find_by(event_id: params[:event_id])
+    # binding.pry
+    # @wishlist = Wishlist.find_by(user_id: @gift_exchange.recipient_id)
+    # render "participations/_secret_santa"
   end
+
+
 
   # GET /events/new
   def new
     @event = Event.new
-
-
   end
+
+
 
   # GET /events/1/edit
   def edit
@@ -77,6 +74,8 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
