@@ -48,7 +48,7 @@ $(document).ready(function(){
 		$('#secret').show();
 	})
 
-	$("#participant-list").on("submit", "#add-participants", function(event){
+	$("body").on("submit", "#add-participants", function(event){
 		event.preventDefault();
 		$form = $(event.target)
 

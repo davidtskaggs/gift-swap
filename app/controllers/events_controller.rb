@@ -20,6 +20,8 @@ class EventsController < ApplicationController
     render "participations/_secret_santa"
   end
 
+
+
   # GET /events/new
   def new
     @event = Event.new

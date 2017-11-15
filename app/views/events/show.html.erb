@@ -9,12 +9,12 @@
 
 <p>
   <strong>Start date:</strong>
-  <%= @event.start_date %>
+  <%= @event.start_date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
   <strong>End date:</strong>
-  <%= @event.end_date %>
+  <%= @event.end_date.strftime("%m/%d/%Y") %>
 </p>
 
 <p>
@@ -27,9 +27,10 @@
   <%= @event.creator.first_name %> <%=@event.creator.last_name %>
 </p>
 
+<%if current_user == @event.creator %>
 <p><strong>Participants:</strong></p>
   <p><%= link_to "Add a participant", new_event_participation_path(@event) %></p>
-
+<% end %>
   <ol>
   <%@event.participants.each do |participant| %>
   <li><%=participant.first_name%> <%=participant.last_name%></li>
