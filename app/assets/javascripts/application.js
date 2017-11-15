@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
+
 //= require_tree .
 $(document).ready(function(){
 	$('body').on('click', '.create_gift', function(e){
