@@ -1,13 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
-
-<p>
-  <strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%></a>
-</p>
+<p><h3><%= @event.name %></h3></p>
 
 <p>
   <strong>Description:</strong>
@@ -31,22 +24,26 @@
 
 <p>
   <strong>Owner:</strong>
-  <%= @event.creator.first_name %>
+  <%= @event.creator.first_name %> <%=@event.creator.last_name %>
 </p>
 
-<p><strong>Participants:</strong>
+<p><strong>Participants:</strong></p>
+  <p><%= link_to "Add a participant", new_event_participation_path(@event) %></p>
+
+  <ol>
   <%@event.participants.each do |participant| %>
-  <ul>
   <li><%=participant.first_name%> <%=participant.last_name%></li>
-  </ul>
   <%end%>
+  </ol>
 
+  <%if current_user == @event.creator %>
 
+<form action= "/participations" method="get" id="secret-santa">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit" value="Start Secret Santa" class="btn">
+</form>
 
-<%= link_to "Add participants", new_event_participation_path(@event) %>
-
-
-
+<%end%>
 
 
 
