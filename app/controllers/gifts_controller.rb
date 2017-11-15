@@ -23,11 +23,12 @@ class GiftsController < ApplicationController
 
   def search
 
-     @results = Wishlist.new.parsed_info_by_keyword(params["gift"]["keyword"])
+      p params
+     @results = Wishlist.new.parsed_info_by_keyword(params["gifts"]["keyword"])
        respond_to do |format|
        #if @gift.save
         format.js
-        # format.html { redirect_to @gift, notice: 'Gift was successfully created.' }
+        format.html { render "new", locals: {results: @results} }
         # format.json { render :show, status: :created, location: @gift }
        #else
          # format.html { render :new }

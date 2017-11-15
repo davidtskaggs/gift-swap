@@ -1,21 +1,22 @@
-<h3>Results</h3>
+<% if results %>
+  <h3>Results</h3>
 
-<form action="/gifts" method="POST">
-  <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
-  <ul><% @results[:names].each_with_index do |item, index|%>
-    <div class = "aws_results">
-      <% image = @results[:images][index] %>
-      <% link = @results[:urls][index] %>
-        <input type='checkbox' name='gift[<%=index%>][want]'/>
-        <input type="hidden" name='gift[<%=index%>][name]' value=<%=@results[:names][index]%>/>
-        <input type="hidden" name='gift[<%=index%>][price]' value=<%=@results[:prices][index]%>/>
-        <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
-        <input type="hidden" name='gift[<%=index%>][category]' value=<%=@results[:categories][index]%>/>
-      <p><img id="gift-result" src=<%=image%>><br><a href=<%=link%>>Item Details</a></p>
-      <p><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></p>
-      <% end %>
-    </div>
-  </ul>
-  <input type='submit' value="Add to Wishlist">
-</form>
-
+  <form action="/gifts" method="POST">
+    <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
+    <ul><% @results[:names].each_with_index do |item, index|%>
+      <div class = "aws_results">
+        <% image = @results[:images][index] %>
+        <% link = @results[:urls][index] %>
+          <input type='checkbox' name='gift[<%=index%>][want]'/>
+          <input type="hidden" name='gift[<%=index%>][name]' value=<%=@results[:names][index]%>/>
+          <input type="hidden" name='gift[<%=index%>][price]' value=<%=@results[:prices][index]%>/>
+          <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
+          <input type="hidden" name='gift[<%=index%>][category]' value=<%=@results[:categories][index]%>/>
+        <p><img id="gift-result" src=<%=image%>><br><a href=<%=link%>>Item Details</a></p>
+        <p><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></p>
+        <% end %>
+      </div>
+    </ul>
+    <input type='submit' value="Add to Wishlist">
+  </form>
+<% end %>
