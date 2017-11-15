@@ -12,6 +12,7 @@ end
 gem 'rails', '~> 5.1.4'
 gem 'better_errors'
 gem 'jquery-rails'
+gem 'binding_of_caller'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
 # Use Puma as the app server

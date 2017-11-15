@@ -37,8 +37,7 @@
   </ol>
 
   <%if current_user == @event.creator %>
-
-  <form action= "/participations" method="get" id="secret-santa">
+  <form action= "/events/<%=@event.id%>/participations" method="post" id="secret-santa">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <input type="submit" value="Start Secret Santa" class="btn">
   </form>

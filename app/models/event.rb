@@ -17,7 +17,6 @@ class Event < ApplicationRecord
     assignees[(nb_participants-1)] = temp
     pairs = assignees.zip(participants)
     pairs.each_with_index do |elt, index|
-
       GiftExchange.create(recipient_id: elt[0].id, sender_id: elt[1].id, event_id: self.id, wishlist_item_id: 1)
     end
   end
