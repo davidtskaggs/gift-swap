@@ -5,9 +5,7 @@
   <%= @event.name %>
 </p>
 
-<p>
-  <strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@wishlist.id%>"><%=@gift_exchange.sender.first_name%> <%=@gift_exchange.sender.last_name%></a>
-</p>
+
 
 <p>
   <strong>Description:</strong>
@@ -43,10 +41,14 @@
   <%end%>
   </ol>
 
+  <%if @event.creator%>
 
+<form action= "/participations" method="get" id="secret-santa">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="submit" value="Start Secret Santa" class="btn">
+</form>
 
-
-
+<%end%>
 
 
 

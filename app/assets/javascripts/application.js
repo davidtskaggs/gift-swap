@@ -44,4 +44,7 @@ $(document).ready(function(){
 		$(this).parent().parent().toggle();
 	})
 
+	$("#secret-santa").on("submit", function(){
+		$('#secret').show();
+	})
 })
