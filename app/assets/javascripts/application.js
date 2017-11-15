@@ -46,7 +46,7 @@ $(document).ready(function(){
 	// 	$('#secret').show();
 	// })
 
-	$("body").on("submit", "#add-participants", function(event){
+	$("#participant-container").on("submit", "#add-participants", function(event){
 		event.preventDefault();
 		$form = $(event.target)
 		$.ajax({
@@ -54,12 +54,10 @@ $(document).ready(function(){
 			method: $form.attr("method"),
 			data: $form.serialize()
 		}).done(function(response){
-			$("#participant-container").append("<ol><li>" + response.first_name + " " + response.last_name + "</li>");
+			$("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
 			$("#add-participants").each(function(){
 				this.reset();
 			})
-		}).fail(function(a,b,c){
-			"fail"
-			})
 		})
+	})
 })

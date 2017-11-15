@@ -57,7 +57,7 @@ img {
 }
 
 .nav-link:hover {
-  background-color: rgba(55,165,8,0.8);
+  background-color: LightBlue;
   color: white;
 }
 
@@ -69,7 +69,7 @@ img {
   color: white;
 }
 .navbar-header .navbar-brand:hover {
-  background-color: red;
+  background-color: MidnightBlue;
   color: white;
 
 }
@@ -132,7 +132,7 @@ li {
 }
 
 th {
-  background-color: red;
+  background-color: MidnightBlue;
   color: white;
 }
 
