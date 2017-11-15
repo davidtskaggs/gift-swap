@@ -28,13 +28,13 @@
 </p>
 
 <%if current_user == @event.creator %>
-<p><strong>Participants:</strong></p>
+  <p><strong>Participants:</strong></p>
   <p><%= link_to "Add a participant", new_event_participation_path(@event) %></p>
 <% end %>
   <ol>
   <%@event.participants.each do |participant| %>
   <li><%=participant.first_name%> <%=participant.last_name%></li>
-  <%end%>
+  <% end %>
   </ol>
 
   <%if current_user == @event.creator %>

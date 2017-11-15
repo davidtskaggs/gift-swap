@@ -1,3 +1,4 @@
+
 <h2>Add participants</h2>
 <!-- Add logic so that user can't RSVP more than once -->
 <form action= "/events/<%=@event.id%>/participations" method="post" id="add-participants">
@@ -6,12 +7,13 @@
   <input type="email" name="user[email]"/>
   <input type="submit" value="Submit">
 </form>
-
-<h3>Currently attending:</h3>
-<ol id="participant-list">
-<%@event.participants.each do |participant| %>
-  <li><%=participant.first_name%> <%=participant.last_name%></li>
-<%end%>
-</ol>
+<div id="participant-container">
+  <h3>Currently attending:</h3>
+  <ol id="participant-list">
+    <%@event.participants.each do |participant| %>
+      <li><%=participant.first_name%> <%=participant.last_name%></li>
+    <%end%>
+  </ol>
+</div>
 
 <%=link_to 'Back to Events', events_path %>

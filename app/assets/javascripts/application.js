@@ -26,8 +26,6 @@ $(document).ready(function(){
 				}
 			}
 		})
-
-
 	})
 
 	$('#carousel').carousel({
@@ -36,34 +34,32 @@ $(document).ready(function(){
 		autoplay: true
 	});
 
-	$('.show-participant').click(function(event){
-		event.preventDefault();
-		$(this).parent().parent().toggle();
-	})
-	$(".hide-participant").click(function(){
-		$(this).parent().parent().toggle();
-	})
+	// $('.show-participant').click(function(event){
+	// 	event.preventDefault();
+	// 	$(this).parent().parent().toggle();
+	// })
+	// $(".hide-participant").click(function(){
+	// 	$(this).parent().parent().toggle();
+	// })
 
-	$("#secret-santa").on("submit", function(event){
-		$('#secret').show();
-	})
+	// $("#secret-santa").on("submit", function(event){
+	// 	$('#secret').show();
+	// })
 
 	$("body").on("submit", "#add-participants", function(event){
 		event.preventDefault();
 		$form = $(event.target)
-
 		$.ajax({
 			url: $form.attr("action"),
 			method: $form.attr("method"),
 			data: $form.serialize()
 		}).done(function(response){
-			$("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
+			$("#participant-container").append("<ol><li>" + response.first_name + " " + response.last_name + "</li>");
 			$("#add-participants").each(function(){
 				this.reset();
 			})
 		}).fail(function(a,b,c){
 			"fail"
-				// debugger
 			})
-	})
+		})
 })
