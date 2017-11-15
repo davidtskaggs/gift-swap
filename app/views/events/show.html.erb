@@ -38,13 +38,22 @@
 
   <%if current_user == @event.creator %>
 
-  <form action= "/participations" method="get" id="secret-santa">
+  <form action= "/events/<%= @event.id %>" method="get" id="secret-santa">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
     <input type="submit" value="Start Secret Santa" class="btn">
   </form>
 <%end%>
 
 <br />
+
+<div id="secret">
+ <p>
+  <% if @recipient and @recipient_wishlist %>
+  <strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@recipient_wishlist.id%>"><%=@recipient.first_name%> <%=@recipient.last_name%></a>
+  <%end%>
+  </p>
+</div>
+
 
 
 <%= link_to 'Edit', edit_event_path(@event) %> |

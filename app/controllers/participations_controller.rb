@@ -9,10 +9,15 @@ class ParticipationsController < ApplicationController
   end
 
   def create
-     @event = Event.find_by(id: params[:event_id])
+    @event = Event.find_by(id: params[:event_id])
+
+    if !Participation.find_by(participant_id: @event.creator.id, event_id: @event.id)
+      Participation.create(participant_id: @event.creator.id, event_id: @event.id)
+    end  
+
     @user = User.find_by(email: params[:user][:email])
     if @user
-      @participation = @event.participations.create(participant_id: @user.id)
+      Participation.create(participant_id: @user.id, event_id: @event.id)
     end
     if request.xhr?
       render json: @user

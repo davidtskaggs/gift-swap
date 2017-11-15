@@ -13,22 +13,28 @@ class EventsController < ApplicationController
 
     @events = Event.all
     @user_events_participations = Participation.find_by(participant_id: current_user.id)
-    @user_event_attendee = @user_events_participations.event
+    if @events.count and @user_events_participations 
+      @user_event_attendee = @user_events_participations.event
+    end 
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
-
-    # @participants = @event.participants
-    @gift_exchange = GiftExchange.find(params[:id])
-    @wishlist = Wishlist.find_by(user_id: @gift_exchange.sender.id)
+    @event = Event.find_by(id: params[:id])
+    if @event.participants.count > 1  
+      @event.create_pairs
+      @gift_exchanges = GiftExchange.find_by(sender_id: current_user.id, event_id: @event.id)
+      if @gift_exchanges
+        @recipient = @gift_exchanges.recipient
+        @recipient_wishlist = Wishlist.find_by(user_id: @recipient.id)
+      end 
+    end 
   end
 
   # GET /events/new
   def new
     @event = Event.new
-
 
   end
 
@@ -40,7 +46,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
