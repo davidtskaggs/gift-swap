@@ -14,7 +14,9 @@ class ParticipationsController < ApplicationController
     if @user
       @participation = @event.participations.create(participant_id: @user.id)
     end
-
+    if request.xhr?
+      render json: @user
+    end
   end
 
   def controller_params

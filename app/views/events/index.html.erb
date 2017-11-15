@@ -30,7 +30,7 @@
         <td><%= event.start_date %></td>
         <td><%= event.end_date %></td>
         <td>$<%= event.suggested_budget %></td>
-        <td><%= event.creator.first_name %></td>
+        <td><%= event.creator.first_name %> <%=event.creator.last_name%></td>
         <td><%= link_to 'Details', event %></td>
       </tr>
     <% end %>
