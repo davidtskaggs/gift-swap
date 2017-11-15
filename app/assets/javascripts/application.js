@@ -48,7 +48,7 @@ $(document).ready(function(){
 		$('#secret').show();
 	})
 
-	$("#add-participants").on("submit", function(event){
+	$("#participant-list").on("submit", "#add-participants", function(event){
 		event.preventDefault();
 		$form = $(event.target)
 
@@ -57,12 +57,12 @@ $(document).ready(function(){
 			method: $form.attr("method"),
 			data: $form.serialize()
 		}).done(function(response){
-
 			$("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
 			$("#add-participants").each(function(){
 				this.reset();
 			})
 		}).fail(function(a,b,c){
+			"fail"
 				// debugger
 			})
 	})
