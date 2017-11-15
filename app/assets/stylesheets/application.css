@@ -126,3 +126,17 @@ li {
   padding: 0px;
   margin: 0px;
 }
+
+#giftshare-title {
+  text-shadow: 2px 2px black;
+}
+
+th {
+  background-color: red;
+  color: white;
+}
+
+#creators-list {
+  list-style-type: none;
+  padding-left: 0px;
+}

@@ -7,13 +7,11 @@ class ParticipationsController < ApplicationController
 
   def new
     @event = Event.find_by(id: params[:event_id])
-    # debugger
   end
 
   def create
-     @event = Event.find_by(id: params[:event_id])
-       @user = User.find_by(email: params[:user][:email])
-      # @participants = @event.participants
+      @event = Event.find_by(id: params[:event_id])
+      @user = User.find_by(email: params[:user][:email])
     if @user
       @participation = @event.participations.create(participant_id: @user.id)
     end
