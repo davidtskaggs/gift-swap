@@ -33,7 +33,7 @@
 <br />
 
 <div id="secret">
- <b>Pairs created: </b>
+ <p><b>Pairs created: </b></p>
  <% participants = @event.participants %>
  <% nb_participants = participants.length %>
  <% if nb_participants > 0 %>
@@ -55,7 +55,7 @@
   <% current_participant = participants[index] %>
   <% if current_user.first_name == current_participant.first_name %>
   <% assignee = assignees[index] %>
-   <%= current_participant.first_name %>, you have: <a href="/wishlists/<%= assignee.id %>"><%= assignee.first_name %></a>
+   <p><%= current_participant.first_name %>, you have: <a href="/wishlists/<%= assignee.id %>"><%= assignee.first_name %></a></p>
     <br>
   <% end %>
   <% end %>
