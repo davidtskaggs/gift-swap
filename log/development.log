@@ -21308,3 +21308,1055 @@ Processing by WelcomeController#show as HTML
 Completed 200 OK in 165ms (Views: 153.1ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-16 15:02:42 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-16 15:02:42 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 621ms (Views: 555.9ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-16 15:02:45 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (7.0ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[35m (5.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (6.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/index.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 214ms (Views: 105.1ms | ActiveRecord: 34.8ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-16 15:02:47 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (764.3ms)
+  Rendered events/new.html.erb within layouts/application (767.8ms)
+Completed 200 OK in 807ms (Views: 799.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:02:57 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hovLrLxhe0++P7j7ZyFJqP1bm3NdwFqgykIiZ0SK6VvPvd5mnlgl6FdKBZYT7ZAncIM9Z8+aETOPcwwv/rnxfw==", "event"=>{"name"=>"Dbc Graduation", "description"=>"HOORAY", "start_date(1i)"=>"2017", "start_date(2i)"=>"11", "start_date(3i)"=>"16", "start_date(4i)"=>"20", "start_date(5i)"=>"02", "end_date(1i)"=>"2017", "end_date(2i)"=>"11", "end_date(3i)"=>"16", "end_date(4i)"=>"20", "end_date(5i)"=>"02", "suggested_budget"=>"23", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (6.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (14.0ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Dbc Graduation"], ["description", "HOORAY"], ["start_date", "2017-11-16"], ["end_date", "2017-11-16"], ["suggested_budget", "23"], ["creator_id", 2], ["created_at", "2017-11-16 20:02:57.623355"], ["updated_at", "2017-11-16 20:02:57.623355"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/4
+Completed 302 Found in 32ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/events/4" for 127.0.0.1 at 2017-11-16 15:02:57 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 4]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 4]]
+  Rendered events/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 52ms (Views: 39.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-16 15:03:26 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (2.8ms)
+  Rendered events/new.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 53ms (Views: 47.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:03:33 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1crcQkUe6gG+HCWm5T24kovRazlY+fkOj9bM3uaA/duc/MmIZye0pldpmMuR8WEdBgnNLcqjsp3K5+KWXLPl/w==", "event"=>{"name"=>"DBC Graduation", "description"=>"hooray", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.3ms)
+  Rendered events/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 54ms (Views: 41.5ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:04:03 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1crcQkUe6gG+HCWm5T24kovRazlY+fkOj9bM3uaA/duc/MmIZye0pldpmMuR8WEdBgnNLcqjsp3K5+KWXLPl/w==", "event"=>{"name"=>"DBC Graduation", "description"=>"hooray", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (4.4ms)
+  Rendered events/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 70ms (Views: 56.4ms | ActiveRecord: 1.6ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (200.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gift-swap_development"[0m
+  [1m[35m (192.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gift-swap_test"[0m
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6117931283012641995)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20171109235258)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (26.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '', "last_name" character varying DEFAULT '', "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171109235258"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20171110012822)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "start_date" date, "end_date" date, "suggested_budget" character varying NOT NULL, "creator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_creator_id" ON "events"  ("creator_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110012822"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateParticipations (20171110032755)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (21.0ms)[0m  [1m[35mCREATE TABLE "participations" ("id" bigserial primary key, "participant_id" integer NOT NULL, "event_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bae88c7ffa"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_participations_on_participant_id" ON "participations"  ("participant_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_participations_on_event_id" ON "participations"  ("event_id")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110032755"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20171110063319)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '', "last_name" character varying DEFAULT '', "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110063319"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWishlists (20171110210613)
+  [1m[35m (6.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "wishlists" ("id" bigserial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE  INDEX  "index_wishlists_on_user_id" ON "wishlists"  ("user_id")[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110210613"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGifts (20171110213733)
+  [1m[35m (5.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "price" float, "url" character varying, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110213733"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWishlistItems (20171110213907)
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE "wishlist_items" ("id" bigserial primary key, "wishlist_id" integer, "gift_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110213907"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGiftExchanges (20171110221623)
+  [1m[35m (5.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "gift_exchanges" ("id" bigserial primary key, "recipient_id" integer NOT NULL, "sender_id" integer NOT NULL, "event_id" integer NOT NULL, "wishlist_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110221623"]]
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-16 20:04:35.916553"], ["updated_at", "2017-11-16 20:04:35.916553"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(6117931283012641995)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[31mDELETE FROM "gift_exchanges"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "wishlist_items"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "gifts"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "wishlists"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "participations"[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "t@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "t@gmail.com"], ["encrypted_password", "$2a$11$NZokV.UtsarKoFmQRCRQ8.JMV6KUdew0ZGp3x7qBvmweqSCJiXdbq"], ["first_name", "Thierry"], ["last_name", "Moudiki"], ["created_at", "2017-11-16 20:04:43.894577"], ["updated_at", "2017-11-16 20:04:43.894577"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "c@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "c@gmail.com"], ["encrypted_password", "$2a$11$kIp6P7TgPyCtsPwhOORRJONkzto52zMo.zKmVuZan6XDWm43oQbgS"], ["first_name", "Catherine"], ["last_name", "Rice"], ["created_at", "2017-11-16 20:04:44.069031"], ["updated_at", "2017-11-16 20:04:44.069031"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "d@gmail.com"], ["encrypted_password", "$2a$11$OH5LJeLTfBKmdg.HU39gE.Z6AoO9Cb0851RJo5owSDGGb3cca2VCK"], ["first_name", "David"], ["last_name", "Skaggs"], ["created_at", "2017-11-16 20:04:44.242754"], ["updated_at", "2017-11-16 20:04:44.242754"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "a@gmail.com"], ["encrypted_password", "$2a$11$kIW.wu8IcSspYRnJ2T.JZ.t7gkq6wH2jkPZ.krFb/VfwQ2l/K5TLy"], ["first_name", "Andres"], ["last_name", "Arias"], ["created_at", "2017-11-16 20:04:44.420479"], ["updated_at", "2017-11-16 20:04:44.420479"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 1], ["name", "Secret Santa"], ["description", "My situation does not define who I am. I define who I am."], ["start_date", "2017-11-30"], ["end_date", "2017-11-09"], ["suggested_budget", "82"], ["creator_id", 1], ["created_at", "2017-11-16 20:04:45.127685"], ["updated_at", "2017-11-16 20:04:45.127685"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 1], ["event_id", 1], ["created_at", "2017-11-16 20:04:45.159121"], ["updated_at", "2017-11-16 20:04:45.159121"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 2], ["event_id", 1], ["created_at", "2017-11-16 20:04:45.166883"], ["updated_at", "2017-11-16 20:04:45.166883"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 1], ["created_at", "2017-11-16 20:04:45.172371"], ["updated_at", "2017-11-16 20:04:45.172371"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 4], ["event_id", 1], ["created_at", "2017-11-16 20:04:45.178142"], ["updated_at", "2017-11-16 20:04:45.178142"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Thierry's Wishlist 1"], ["user_id", 1], ["created_at", "2017-11-16 20:04:45.197374"], ["updated_at", "2017-11-16 20:04:45.197374"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Catherine's Wishlist 1"], ["user_id", 2], ["created_at", "2017-11-16 20:04:45.203615"], ["updated_at", "2017-11-16 20:04:45.203615"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David's Wishlist 1"], ["user_id", 3], ["created_at", "2017-11-16 20:04:45.207753"], ["updated_at", "2017-11-16 20:04:45.207753"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Andres' Wishlist1"], ["user_id", 4], ["created_at", "2017-11-16 20:04:45.211988"], ["updated_at", "2017-11-16 20:04:45.211988"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Frying pan"], ["price", 19.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:04:45.227863"], ["updated_at", "2017-11-16 20:04:45.227863"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sauce pan"], ["price", 18.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:04:45.232136"], ["updated_at", "2017-11-16 20:04:45.232136"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Wok pan"], ["price", 20.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:04:45.235675"], ["updated_at", "2017-11-16 20:04:45.235675"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "pan"], ["price", 17.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", " kitchen"], ["created_at", "2017-11-16 20:04:45.238216"], ["updated_at", "2017-11-16 20:04:45.238216"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "camera"], ["price", 476.0], ["url", "https://www.amazon.com/Nikon-D3300-Camera-18-55mm-Bundle/dp/B00II8TQ2E/ref=sr_1_1_sspa?s=electronics&ie=UTF8&qid=1510851619&sr=1-1-spons&keywords=camera&psc=1"], ["category", "photography"], ["created_at", "2017-11-16 20:04:45.240706"], ["updated_at", "2017-11-16 20:04:45.240706"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "french press"], ["price", 39.97], ["url", "https://www.amazon.com/Bodum-Chambord-French-Coffee-Chrome/dp/B005ADS5TU/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1510851795&sr=1-1-spons&keywords=french+press&psc=1"], ["category", "culinary"], ["created_at", "2017-11-16 20:04:45.243202"], ["updated_at", "2017-11-16 20:04:45.243202"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 1], ["gift_id", 1], ["created_at", "2017-11-16 20:04:45.267745"], ["updated_at", "2017-11-16 20:04:45.267745"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 2], ["created_at", "2017-11-16 20:04:45.273386"], ["updated_at", "2017-11-16 20:04:45.273386"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 3], ["gift_id", 3], ["created_at", "2017-11-16 20:04:45.278337"], ["updated_at", "2017-11-16 20:04:45.278337"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 4], ["gift_id", 4], ["created_at", "2017-11-16 20:04:45.284064"], ["updated_at", "2017-11-16 20:04:45.284064"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 1], ["sender_id", 4], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:04:45.317307"], ["updated_at", "2017-11-16 20:04:45.317307"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.2ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 3], ["sender_id", 2], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:04:45.324893"], ["updated_at", "2017-11-16 20:04:45.324893"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.2ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 4], ["sender_id", 3], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:04:45.332187"], ["updated_at", "2017-11-16 20:04:45.332187"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:04:45.339869"], ["updated_at", "2017-11-16 20:04:45.339869"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:04:53 -0500
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1crcQkUe6gG+HCWm5T24kovRazlY+fkOj9bM3uaA/duc/MmIZye0pldpmMuR8WEdBgnNLcqjsp3K5+KWXLPl/w==", "event"=>{"name"=>"DBC Graduation", "description"=>"hooray", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 52ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:04:54 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.6ms)
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 366ms (Views: 362.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:05:00 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HdXHxjuu37eWF2DUDdBhVMawPPSbcbYNbXL25VfelixU49IMGZeBEH9i3bl5HLjbS2ia4Akr/Z4oQ9it7e2OCA==", "user"=>{"email"=>"c@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "c@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2017-11-16 20:05:00.310840"], ["last_sign_in_at", "2017-11-16 20:05:00.310840"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2017-11-16 20:05:00.312908"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 219ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-16 15:05:00 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-16 15:05:00 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 43ms (Views: 36.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-16 15:05:03 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.6ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 170ms (Views: 68.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-16 15:05:04 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.8ms)
+  Rendered events/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 60ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:05:10 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGm3etPNLIt8k8tX6ty8sBPOP2GsQwb1IwB4hmtYTSQ3BgVA6BpqbuBX0rttXyG3mrkGPb2u/1lKrVewTMc/mQ==", "event"=>{"name"=>"DBC", "description"=>"lkfsdf", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.3ms)
+  Rendered events/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 59ms (Views: 49.3ms | ActiveRecord: 1.9ms)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (197.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gift-swap_development"[0m
+  [1m[35m (188.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "gift-swap_test"[0m
+  [1m[35m (14.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (28.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6117931283012641995)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to DeviseCreateUsers (20171109235258)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '', "last_name" character varying DEFAULT '', "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_reset_password_token" ON "users"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171109235258"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEvents (20171110012822)
+  [1m[35m (5.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE "events" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "start_date" date, "end_date" date, "suggested_budget" character varying NOT NULL, "creator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE  INDEX  "index_events_on_creator_id" ON "events"  ("creator_id")[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110012822"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateParticipations (20171110032755)
+  [1m[35m (6.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE "participations" ("id" bigserial primary key, "participant_id" integer NOT NULL, "event_id" bigint NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_bae88c7ffa"
+FOREIGN KEY ("event_id")
+  REFERENCES "events" ("id")
+)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX  "index_participations_on_participant_id" ON "participations"  ("participant_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE  INDEX  "index_participations_on_event_id" ON "participations"  ("event_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110032755"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20171110063319)
+  [1m[35m (6.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "admins" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "first_name" character varying DEFAULT '', "last_name" character varying DEFAULT '', "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" inet, "last_sign_in_ip" inet, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_email" ON "admins"  ("email")[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_admins_on_reset_password_token" ON "admins"  ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110063319"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWishlists (20171110210613)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.6ms)[0m  [1m[35mCREATE TABLE "wishlists" ("id" bigserial primary key, "name" character varying, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX  "index_wishlists_on_user_id" ON "wishlists"  ("user_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110210613"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGifts (20171110213733)
+  [1m[35m (11.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "gifts" ("id" bigserial primary key, "name" character varying, "price" float, "url" character varying, "category" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110213733"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWishlistItems (20171110213907)
+  [1m[35m (11.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE "wishlist_items" ("id" bigserial primary key, "wishlist_id" integer, "gift_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110213907"]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateGiftExchanges (20171110221623)
+  [1m[35m (11.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "gift_exchanges" ("id" bigserial primary key, "recipient_id" integer NOT NULL, "sender_id" integer NOT NULL, "event_id" integer NOT NULL, "wishlist_item_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20171110221623"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-11-16 20:06:28.493299"], ["updated_at", "2017-11-16 20:06:28.493299"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(6117931283012641995)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35mSQL (5.0ms)[0m  [1m[31mDELETE FROM "gift_exchanges"[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[31mDELETE FROM "wishlist_items"[0m
+  [1m[35mSQL (6.2ms)[0m  [1m[31mDELETE FROM "gifts"[0m
+  [1m[35mSQL (8.3ms)[0m  [1m[31mDELETE FROM "wishlists"[0m
+  [1m[35mSQL (20.5ms)[0m  [1m[31mDELETE FROM "participations"[0m
+  [1m[35mSQL (7.6ms)[0m  [1m[31mDELETE FROM "events"[0m
+  [1m[35mSQL (14.1ms)[0m  [1m[31mDELETE FROM "admins"[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "t@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "t@gmail.com"], ["encrypted_password", "$2a$11$vjLR/M8HkT8B5yvNXLh7aO7FL5HOZACpXmZUDR2DI84t1.b8TjrAu"], ["first_name", "Thierry"], ["last_name", "Moudiki"], ["created_at", "2017-11-16 20:06:35.913620"], ["updated_at", "2017-11-16 20:06:35.913620"]]
+  [1m[35m (6.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "c@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "c@gmail.com"], ["encrypted_password", "$2a$11$VgiC3G/N3bCS/QalcGHYIOcclwnZdF5walX7s3sZb9KoyT.fuUFxa"], ["first_name", "Catherine"], ["last_name", "Rice"], ["created_at", "2017-11-16 20:06:36.097809"], ["updated_at", "2017-11-16 20:06:36.097809"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "d@gmail.com"], ["encrypted_password", "$2a$11$ACPChWJKf7pOg.pxyEZ8F.7P29aS7OyIQQQlU4J40byHpSWj2V19W"], ["first_name", "David"], ["last_name", "Skaggs"], ["created_at", "2017-11-16 20:06:36.261498"], ["updated_at", "2017-11-16 20:06:36.261498"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "first_name", "last_name", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["email", "a@gmail.com"], ["encrypted_password", "$2a$11$F5Bsn07s4bBSgUNmLEzZK./D57TGui3eSVPtAQevN/6GGazU2fqZm"], ["first_name", "Andres"], ["last_name", "Arias"], ["created_at", "2017-11-16 20:06:36.435820"], ["updated_at", "2017-11-16 20:06:36.435820"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (6.7ms)[0m  [1m[32mINSERT INTO "events" ("id", "name", "description", "start_date", "end_date", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["id", 1], ["name", "Secret Santa"], ["description", "Will, there's something you should know: Sometimes... parents just don't understand."], ["start_date", "2017-11-18"], ["end_date", "2017-11-15"], ["suggested_budget", "93"], ["creator_id", 1], ["created_at", "2017-11-16 20:06:37.160725"], ["updated_at", "2017-11-16 20:06:37.160725"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 1], ["event_id", 1], ["created_at", "2017-11-16 20:06:37.197472"], ["updated_at", "2017-11-16 20:06:37.197472"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 2], ["event_id", 1], ["created_at", "2017-11-16 20:06:37.204382"], ["updated_at", "2017-11-16 20:06:37.204382"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 1], ["created_at", "2017-11-16 20:06:37.210351"], ["updated_at", "2017-11-16 20:06:37.210351"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 4], ["event_id", 1], ["created_at", "2017-11-16 20:06:37.217432"], ["updated_at", "2017-11-16 20:06:37.217432"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Thierry's Wishlist 1"], ["user_id", 1], ["created_at", "2017-11-16 20:06:37.235939"], ["updated_at", "2017-11-16 20:06:37.235939"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Catherine's Wishlist 1"], ["user_id", 2], ["created_at", "2017-11-16 20:06:37.240688"], ["updated_at", "2017-11-16 20:06:37.240688"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "David's Wishlist 1"], ["user_id", 3], ["created_at", "2017-11-16 20:06:37.244966"], ["updated_at", "2017-11-16 20:06:37.244966"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlists" ("name", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Andres' Wishlist1"], ["user_id", 4], ["created_at", "2017-11-16 20:06:37.249497"], ["updated_at", "2017-11-16 20:06:37.249497"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Frying pan"], ["price", 19.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:06:37.265222"], ["updated_at", "2017-11-16 20:06:37.265222"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Sauce pan"], ["price", 18.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:06:37.268492"], ["updated_at", "2017-11-16 20:06:37.268492"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Wok pan"], ["price", 20.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", "kitchen"], ["created_at", "2017-11-16 20:06:37.271591"], ["updated_at", "2017-11-16 20:06:37.271591"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "pan"], ["price", 17.99], ["url", "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1"], ["category", " kitchen"], ["created_at", "2017-11-16 20:06:37.275424"], ["updated_at", "2017-11-16 20:06:37.275424"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "camera"], ["price", 476.0], ["url", "https://www.amazon.com/Nikon-D3300-Camera-18-55mm-Bundle/dp/B00II8TQ2E/ref=sr_1_1_sspa?s=electronics&ie=UTF8&qid=1510851619&sr=1-1-spons&keywords=camera&psc=1"], ["category", "photography"], ["created_at", "2017-11-16 20:06:37.278145"], ["updated_at", "2017-11-16 20:06:37.278145"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "french press"], ["price", 39.97], ["url", "https://www.amazon.com/Bodum-Chambord-French-Coffee-Chrome/dp/B005ADS5TU/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1510851795&sr=1-1-spons&keywords=french+press&psc=1"], ["category", "culinary"], ["created_at", "2017-11-16 20:06:37.280706"], ["updated_at", "2017-11-16 20:06:37.280706"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 1], ["gift_id", 1], ["created_at", "2017-11-16 20:06:37.305312"], ["updated_at", "2017-11-16 20:06:37.305312"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 2], ["created_at", "2017-11-16 20:06:37.311025"], ["updated_at", "2017-11-16 20:06:37.311025"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mGift Load (0.2ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 3], ["gift_id", 3], ["created_at", "2017-11-16 20:06:37.317038"], ["updated_at", "2017-11-16 20:06:37.317038"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 4], ["gift_id", 4], ["created_at", "2017-11-16 20:06:37.324341"], ["updated_at", "2017-11-16 20:06:37.324341"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 1], ["sender_id", 4], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:06:37.357052"], ["updated_at", "2017-11-16 20:06:37.357052"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 3], ["sender_id", 2], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:06:37.365775"], ["updated_at", "2017-11-16 20:06:37.365775"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 4], ["sender_id", 3], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:06:37.373529"], ["updated_at", "2017-11-16 20:06:37.373529"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["event_id", 1], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:06:37.381265"], ["updated_at", "2017-11-16 20:06:37.381265"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:06:47 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zGm3etPNLIt8k8tX6ty8sBPOP2GsQwb1IwB4hmtYTSQ3BgVA6BpqbuBX0rttXyG3mrkGPb2u/1lKrVewTMc/mQ==", "event"=>{"name"=>"DBC", "description"=>"lkfsdf", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+Completed 401 Unauthorized in 52ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:06:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 389ms (Views: 384.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:06:53 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xuy3xlA8H8xpQgcwxCw2s0Qwg3e2D/Jl7DQMFddRvgqlgwX8a+tZKfWGHtxDr6u0zUe6K6fiC8mFmSMj8M7Mtw==", "user"=>{"email"=>"c@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "c@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2017-11-16 20:06:53.284507"], ["last_sign_in_at", "2017-11-16 20:06:53.284507"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2017-11-16 20:06:53.286184"], ["id", 2]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 214ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-16 15:06:53 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-16 15:06:53 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 33.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2017-11-16 15:06:54 -0500
+Processing by EventsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.5ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 LIMIT $2[0m  [["participant_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "events"[0m
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering events/index.html.erb within layouts/application
+  [1m[36mEvent Load (0.5ms)[0m  [1m[34mSELECT "events".* FROM "events" INNER JOIN "participations" ON "events"."id" = "participations"."event_id" WHERE "participations"."participant_id" = $1[0m  [["participant_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT "events".* FROM "events"[0m
+  Rendered events/index.html.erb within layouts/application (34.3ms)
+Completed 200 OK in 144ms (Views: 72.2ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2017-11-16 15:06:56 -0500
+Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering events/new.html.erb within layouts/application
+  Rendered events/_form.html.erb (5.0ms)
+  Rendered events/new.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 51ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:07:00 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UwbkVSVLjS/CGJU+OeAnB/fyB2y0IKxHB45FALku35jswFtTaz0j/B48ssEfGB58nEv82qqGGAUnw+f4F7+CRA==", "event"=>{"name"=>"DBC", "description"=>"sdlkgh", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (13.5ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "DBC"], ["description", "sdlkgh"], ["suggested_budget", "20"], ["creator_id", 2], ["created_at", "2017-11-16 20:07:00.442113"], ["updated_at", "2017-11-16 20:07:00.442113"]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 14.7ms)
+
+
+
+PG::UniqueViolation - ERROR:  duplicate key value violates unique constraint "events_pkey"
+DETAIL:  Key (id)=(1) already exists.
+:
+  app/controllers/events_controller.rb:60:in `block in create'
+  app/controllers/events_controller.rb:59:in `create'
+
+Started POST "/__better_errors/cb65fff5caf57bd2/variables" for 127.0.0.1 at 2017-11-16 15:07:00 -0500
+Started POST "/events" for 127.0.0.1 at 2017-11-16 15:07:10 -0500
+Processing by EventsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UwbkVSVLjS/CGJU+OeAnB/fyB2y0IKxHB45FALku35jswFtTaz0j/B48ssEfGB58nEv82qqGGAUnw+f4F7+CRA==", "event"=>{"name"=>"DBC3423423523", "description"=>"sdlkgh", "suggested_budget"=>"20", "creator_id"=>"2"}, "commit"=>"Create exchange"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "events" ("name", "description", "suggested_budget", "creator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "DBC3423423523"], ["description", "sdlkgh"], ["suggested_budget", "20"], ["creator_id", 2], ["created_at", "2017-11-16 20:07:10.677974"], ["updated_at", "2017-11-16 20:07:10.677974"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2
+Completed 302 Found in 16ms (ActiveRecord: 7.2ms)
+
+
+Started GET "/events/2" for 127.0.0.1 at 2017-11-16 15:07:10 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered events/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 59ms (Views: 42.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/events/2/participations/new" for 127.0.0.1 at 2017-11-16 15:07:15 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered participations/_form.html.erb (8.2ms)
+  Rendered participations/new.html.erb within layouts/application (648.6ms)
+Completed 200 OK in 800ms (Views: 678.3ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/events/2/participations" for 127.0.0.1 at 2017-11-16 15:07:19 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"diboI6p80nwVfpD8yCgdfLS/jrOdv6//9MhqaHy3WZvJ4Fcl5Ap8r8latwPu0CQH3wZ1BYMZG73UhciQ0iYERw==", "user"=>{"email"=>"d@gmail.com"}, "event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.4ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 AND "participations"."event_id" = $2 LIMIT $3[0m  [["participant_id", 2], ["event_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (6.3ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 2], ["event_id", 2], ["created_at", "2017-11-16 20:07:19.704840"], ["updated_at", "2017-11-16 20:07:19.704840"]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "d@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (1.5ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (3.6ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 3], ["event_id", 2], ["created_at", "2017-11-16 20:07:19.731494"], ["updated_at", "2017-11-16 20:07:19.731494"]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2/participations/new
+Completed 302 Found in 56ms (ActiveRecord: 27.0ms)
+
+
+Started GET "/events/2/participations/new" for 127.0.0.1 at 2017-11-16 15:07:19 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered participations/_form.html.erb (5.9ms)
+  Rendered participations/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 70ms (Views: 62.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/2/participations" for 127.0.0.1 at 2017-11-16 15:07:24 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"8AmVh3ibpMMYUnHj6AhudV+l6s6D3HomYLCNeP7brUhPzyqBNu0KEMR2VhzO8FcONBwReJ16zmRA/S+AUErwlA==", "user"=>{"email"=>"a@gmail.com"}, "event_id"=>"2"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.8ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 AND "participations"."event_id" = $2 LIMIT $3[0m  [["participant_id", 2], ["event_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "a@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 4], ["event_id", 2], ["created_at", "2017-11-16 20:07:24.197021"], ["updated_at", "2017-11-16 20:07:24.197021"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2/participations/new
+Completed 302 Found in 23ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/events/2/participations/new" for 127.0.0.1 at 2017-11-16 15:07:24 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered participations/_form.html.erb (5.7ms)
+  Rendered participations/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 56ms (Views: 48.9ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/events/2/participations" for 127.0.0.1 at 2017-11-16 15:07:28 -0500
+Processing by ParticipationsController#create as HTML
+  Parameters: {"authenticity_token"=>"+HfB/zKo1GIjBaAMhVqmPvk9xBpq8aFukJkpXgRM3BdHsX75fN56sf8hh/Ojop9FkoQ/rHRXFSyw1Iumqt2Byw==", "user"=>{"email"=>"t@gmail.com"}, "event_id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mParticipation Load (0.7ms)[0m  [1m[34mSELECT  "participations".* FROM "participations" WHERE "participations"."participant_id" = $1 AND "participations"."event_id" = $2 LIMIT $3[0m  [["participant_id", 2], ["event_id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "t@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "participations" ("participant_id", "event_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["participant_id", 1], ["event_id", 2], ["created_at", "2017-11-16 20:07:28.787112"], ["updated_at", "2017-11-16 20:07:28.787112"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/events/2/participations/new
+Completed 302 Found in 27ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/events/2/participations/new" for 127.0.0.1 at 2017-11-16 15:07:28 -0500
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.7ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered participations/_form.html.erb (7.9ms)
+  Rendered participations/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/events/2?authenticity_token=I30B5ZqBoB9g3lLLW%2B2qLAgG53x2DEskZEbALmdh60Ocu77j1PcOzLz6dTR9FZNXY78cymiq%2F2ZEC2LWyfC2nw%3D%3D" for 127.0.0.1 at 2017-11-16 15:07:30 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"authenticity_token"=>"I30B5ZqBoB9g3lLLW+2qLAgG53x2DEskZEbALmdh60Ocu77j1PcOzLz6dTR9FZNXY78cymiq/2ZEC2LWyfC2nw==", "id"=>"2"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 1], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:07:30.182330"], ["updated_at", "2017-11-16 20:07:30.182330"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 3], ["sender_id", 2], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:07:30.193337"], ["updated_at", "2017-11-16 20:07:30.193337"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 4], ["sender_id", 3], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:07:30.203592"], ["updated_at", "2017-11-16 20:07:30.203592"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.2ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 1], ["sender_id", 4], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:07:30.213043"], ["updated_at", "2017-11-16 20:07:30.213043"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 140ms (Views: 33.2ms | ActiveRecord: 19.3ms)
+
+
+Started GET "/wishlists/1" for 127.0.0.1 at 2017-11-16 15:07:32 -0500
+Processing by WishlistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.8ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wishlists/show.html.erb within layouts/application
+  [1m[36mGift Load (6.4ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 1]]
+  Rendered wishlists/show.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 94ms (Views: 56.7ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-16 15:07:41 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (1.0ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 74ms (Views: 66.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-16 15:07:42 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (4.4ms)
+  Rendered gifts/_results.html.erb (1.8ms)
+  Rendered gifts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 66ms (Views: 59.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:07:45 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"87TkKouKKfibhTRAiV2sMWvWlnHPPd4GUB0m00wNrGhMclssxfyHK0ehE7+vpZVKAG9tx9GbakRwUIQr4pzxtA==", "gifts"=>{"keyword"=>"gun"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.8ms)
+  Rendered gifts/_results.html.erb (1.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 1119ms (Views: 62.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:07:51 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3P6qq7Pt2S6porqRw7PoczneMEWhwpWUIBHSC0Q6qMBjOBWt/Zt3/XWGnW7lS9EIUmfL879kIdYAXHDz6qv1HA==", "gifts"=>{"keyword"=>"oboe"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (1.9ms)
+  Rendered gifts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 416ms (Views: 44.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-16 15:08:00 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"LGlYe3V3zLsncPsgtd270vGqXSi34vHxP9K4M9zdpL2Tr+d9OwFiaPtU3N+TJYKpmhOmnqlERbMfnxrLckz5YQ==", "gift"=>{"0"=>{"want"=>"on", "name"=>"ammoon", "price"=>"$449.99/", "url"=>"https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/", "category"=>"oboe/"}, "1"=>{"name"=>"6.25\"", "price"=>"$11.99/", "url"=>"https://www.amazon.com/6-25-Oboe-Ornament-Broadway-Gifts/dp/B00GNIIKHS/", "category"=>"oboe/"}, "2"=>{"name"=>"Spinningdaisy", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Spinningdaisy-Crystal-Instrument-Necklace-Silver/dp/B01F0MXC02/", "category"=>"oboe/"}, "3"=>{"name"=>"Oboe", "price"=>"$12.34/", "url"=>"https://www.amazon.com/Oboe-Solos-Everybodys-Favorite-99/dp/0825620996/", "category"=>"oboe/"}, "4"=>{"name"=>"Mendini", "price"=>"$84.99/", "url"=>"https://www.amazon.com/Mendini-SD-PB-Pocketbook-Mouthpiece/dp/B005CXMOEU/", "category"=>"oboe/"}, "5"=>{"name"=>"Jones", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Jones-JR101MS-Oboe-Reed-Medium/dp/B0002FOHTI/", "category"=>"oboe/"}, "6"=>{"name"=>"Little", "price"=>"$0.99/", "url"=>"https://www.amazon.com/Little-Big-Oboe-Various-artists/dp/B017LIIEAQ/", "category"=>"oboe/"}, "7"=>{"name"=>"Yamaha", "price"=>"$2,295.00/", "url"=>"https://www.amazon.com/Yamaha-YOB-241-Series-Student-Oboe/dp/B0002F576K/", "category"=>"oboe/"}, "8"=>{"name"=>"Protec", "price"=>"$4.99/", "url"=>"https://www.amazon.com/Protec-Clarinet-Oboe-Thumb-Cushion/dp/B001BAMO5W/", "category"=>"oboe/"}, "9"=>{"name"=>"Mens", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Mens-Oboe-Shirts-Definition-shirts/dp/B01N1NODSP/", "category"=>"oboe/"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "ammoon"], ["price", 449.99], ["url", "https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/"], ["category", "oboe"], ["created_at", "2017-11-16 20:08:00.883020"], ["updated_at", "2017-11-16 20:08:00.883020"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 7], ["created_at", "2017-11-16 20:08:00.902491"], ["updated_at", "2017-11-16 20:08:00.902491"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/wishlists
+Completed 302 Found in 26ms (ActiveRecord: 9.3ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-16 15:08:00 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 53ms (Views: 46.6ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:08:08 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3P6qq7Pt2S6porqRw7PoczneMEWhwpWUIBHSC0Q6qMBjOBWt/Zt3/XWGnW7lS9EIUmfL879kIdYAXHDz6qv1HA==", "gifts"=>{"keyword"=>"oboe"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.5ms)
+  Rendered gifts/_results.html.erb (2.1ms)
+  Rendered gifts/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 289ms (Views: 45.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-16 15:08:15 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"PaT/AtI53FhB3ocXSTKmLZ5bTvOBHqP8SoJY/zXf1qGCYkAEnE9yi536oOhvyp9W9eK1RZ+4F75qz/oHm06LfQ==", "gift"=>{"0"=>{"want"=>"on", "name"=>"ammoon", "price"=>"$449.99/", "url"=>"https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/", "category"=>"oboe/"}, "1"=>{"want"=>"on", "name"=>"6.25\"", "price"=>"$11.99/", "url"=>"https://www.amazon.com/6-25-Oboe-Ornament-Broadway-Gifts/dp/B00GNIIKHS/", "category"=>"oboe/"}, "2"=>{"name"=>"Spinningdaisy", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Spinningdaisy-Crystal-Instrument-Necklace-Silver/dp/B01F0MXC02/", "category"=>"oboe/"}, "3"=>{"name"=>"Oboe", "price"=>"$12.34/", "url"=>"https://www.amazon.com/Oboe-Solos-Everybodys-Favorite-99/dp/0825620996/", "category"=>"oboe/"}, "4"=>{"name"=>"Mendini", "price"=>"$84.99/", "url"=>"https://www.amazon.com/Mendini-SD-PB-Pocketbook-Mouthpiece/dp/B005CXMOEU/", "category"=>"oboe/"}, "5"=>{"name"=>"Jones", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Jones-JR101MS-Oboe-Reed-Medium/dp/B0002FOHTI/", "category"=>"oboe/"}, "6"=>{"name"=>"Little", "price"=>"$0.99/", "url"=>"https://www.amazon.com/Little-Big-Oboe-Various-artists/dp/B017LIIEAQ/", "category"=>"oboe/"}, "7"=>{"name"=>"Yamaha", "price"=>"$2,295.00/", "url"=>"https://www.amazon.com/Yamaha-YOB-241-Series-Student-Oboe/dp/B0002F576K/", "category"=>"oboe/"}, "8"=>{"name"=>"Protec", "price"=>"$4.99/", "url"=>"https://www.amazon.com/Protec-Clarinet-Oboe-Thumb-Cushion/dp/B001BAMO5W/", "category"=>"oboe/"}, "9"=>{"name"=>"Mens", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Mens-Oboe-Shirts-Definition-shirts/dp/B01N1NODSP/", "category"=>"oboe/"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "ammoon"], ["price", 449.99], ["url", "https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/"], ["category", "oboe"], ["created_at", "2017-11-16 20:08:15.531578"], ["updated_at", "2017-11-16 20:08:15.531578"]]
+  [1m[35m (124.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (1.2ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.6ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 8], ["created_at", "2017-11-16 20:08:15.670390"], ["updated_at", "2017-11-16 20:08:15.670390"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/wishlists
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "6.25\""], ["price", 11.99], ["url", "https://www.amazon.com/6-25-Oboe-Ornament-Broadway-Gifts/dp/B00GNIIKHS/"], ["category", "oboe"], ["created_at", "2017-11-16 20:08:15.680430"], ["updated_at", "2017-11-16 20:08:15.680430"]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.5ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 9], ["created_at", "2017-11-16 20:08:15.703322"], ["updated_at", "2017-11-16 20:08:15.703322"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 180ms (ActiveRecord: 144.1ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/gifts_controller.rb:48:in `block in create'
+  app/controllers/gifts_controller.rb:44:in `create'
+
+Started POST "/__better_errors/e78d70fa54b94e61/variables" for 127.0.0.1 at 2017-11-16 15:08:15 -0500
+Started POST "/gifts" for 127.0.0.1 at 2017-11-16 15:08:27 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"PaT/AtI53FhB3ocXSTKmLZ5bTvOBHqP8SoJY/zXf1qGCYkAEnE9yi536oOhvyp9W9eK1RZ+4F75qz/oHm06LfQ==", "gift"=>{"0"=>{"want"=>"on", "name"=>"ammoon", "price"=>"$449.99/", "url"=>"https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/", "category"=>"oboe/"}, "1"=>{"want"=>"on", "name"=>"6.25\"", "price"=>"$11.99/", "url"=>"https://www.amazon.com/6-25-Oboe-Ornament-Broadway-Gifts/dp/B00GNIIKHS/", "category"=>"oboe/"}, "2"=>{"name"=>"Spinningdaisy", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Spinningdaisy-Crystal-Instrument-Necklace-Silver/dp/B01F0MXC02/", "category"=>"oboe/"}, "3"=>{"name"=>"Oboe", "price"=>"$12.34/", "url"=>"https://www.amazon.com/Oboe-Solos-Everybodys-Favorite-99/dp/0825620996/", "category"=>"oboe/"}, "4"=>{"name"=>"Mendini", "price"=>"$84.99/", "url"=>"https://www.amazon.com/Mendini-SD-PB-Pocketbook-Mouthpiece/dp/B005CXMOEU/", "category"=>"oboe/"}, "5"=>{"name"=>"Jones", "price"=>"$11.99/", "url"=>"https://www.amazon.com/Jones-JR101MS-Oboe-Reed-Medium/dp/B0002FOHTI/", "category"=>"oboe/"}, "6"=>{"name"=>"Little", "price"=>"$0.99/", "url"=>"https://www.amazon.com/Little-Big-Oboe-Various-artists/dp/B017LIIEAQ/", "category"=>"oboe/"}, "7"=>{"name"=>"Yamaha", "price"=>"$2,295.00/", "url"=>"https://www.amazon.com/Yamaha-YOB-241-Series-Student-Oboe/dp/B0002F576K/", "category"=>"oboe/"}, "8"=>{"name"=>"Protec", "price"=>"$4.99/", "url"=>"https://www.amazon.com/Protec-Clarinet-Oboe-Thumb-Cushion/dp/B001BAMO5W/", "category"=>"oboe/"}, "9"=>{"name"=>"Mens", "price"=>"$19.99/", "url"=>"https://www.amazon.com/Mens-Oboe-Shirts-Definition-shirts/dp/B01N1NODSP/", "category"=>"oboe/"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "ammoon"], ["price", 449.99], ["url", "https://www.amazon.com/ammoon-Cupronickel-Instrument-Lubricant-Screwdriver/dp/B01MTRAS7A/"], ["category", "oboe"], ["created_at", "2017-11-16 20:08:27.846416"], ["updated_at", "2017-11-16 20:08:27.846416"]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 10], ["created_at", "2017-11-16 20:08:27.860518"], ["updated_at", "2017-11-16 20:08:27.860518"]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/wishlists
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "6.25\""], ["price", 11.99], ["url", "https://www.amazon.com/6-25-Oboe-Ornament-Broadway-Gifts/dp/B00GNIIKHS/"], ["category", "oboe"], ["created_at", "2017-11-16 20:08:27.868696"], ["updated_at", "2017-11-16 20:08:27.868696"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.3ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 11], ["created_at", "2017-11-16 20:08:27.875766"], ["updated_at", "2017-11-16 20:08:27.875766"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to 
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 16.9ms)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/gifts_controller.rb:48:in `block in create'
+  app/controllers/gifts_controller.rb:44:in `create'
+
+Started POST "/__better_errors/cd6cef0ac3db646b/variables" for 127.0.0.1 at 2017-11-16 15:08:27 -0500
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-16 15:08:31 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 50ms (Views: 41.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-16 15:08:46 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.7ms)
+  Rendered gifts/_results.html.erb (1.0ms)
+  Rendered gifts/new.html.erb within layouts/application (648.3ms)
+Completed 200 OK in 786ms (Views: 680.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:08:51 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/IOcmBO+dWPZSTvhR4F9ieeeo6WoIXGx/rn9X9LdktJDRSOeXcjbsAVtHB5heUTyjCdYE7aHxfPe9F+nfEzPDg==", "gifts"=>{"keyword"=>"trumpet"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.1ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 470ms (Views: 36.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/gifts" for 127.0.0.1 at 2017-11-16 15:08:55 -0500
+Processing by GiftsController#create as HTML
+  Parameters: {"authenticity_token"=>"vbzUkI0pCj8bEOirdZONBXr2SgGcUOvmksuuJJuqJ9sCemuWw1+k7Mc0z1RTa7R+EU+xt4L2X6SyhgzcNTt6Bw==", "gift"=>{"0"=>{"want"=>"on", "name"=>"Mendini", "price"=>"$99.99/", "url"=>"https://www.amazon.com/Mendini-Cecilio-MTT-L-Trumpet-Gold/dp/B00I8QJT78/", "category"=>"trumpet/"}, "1"=>{"name"=>"Jean", "price"=>"$175.91/", "url"=>"https://www.amazon.com/Jean-Paul-USA-TR-330-Standard/dp/B006WAVQ50/", "category"=>"trumpet/"}, "2"=>{"name"=>"Click", "price"=>"$14.99/", "url"=>"https://www.amazon.com/Click-Play-Metallic-Trumpet-Instrument/dp/B016TRICSY/", "category"=>"trumpet/"}, "3"=>{"name"=>"Reig", "price"=>"$16.36/", "url"=>"https://www.amazon.com/Reig-REIG283-Deluxe-Trumpet-Silver/dp/B00699R6TE/", "category"=>"trumpet/"}, "4"=>{"name"=>"Glory", "price"=>"$99.99/", "url"=>"https://www.amazon.com/Trumpet-TUNING-directlly-Available-LISTING/dp/B00SKXIMI6/", "category"=>"trumpet/"}, "5"=>{"name"=>"Yamaha", "price"=>"$669.98/", "url"=>"https://www.amazon.com/Yamaha-YTR-2330-Standard-Bb-Trumpet/dp/B007G3T3TS/", "category"=>"trumpet/"}, "6"=>{"name"=>"Mendini", "price"=>"$109.99/", "url"=>"https://www.amazon.com/Mendini-MTT-BL-Lacquer-Mouthpiece-Pocketbook/dp/B002474FI0/", "category"=>"trumpet/"}, "7"=>{"name"=>"Mendini", "price"=>"$119.99/", "url"=>"https://www.amazon.com/Mendini-MPT-N-Nickel-Plated-Trumpet/dp/B0051B16D8/", "category"=>"trumpet/"}, "8"=>{"name"=>"Mendini", "price"=>"$149.99/", "url"=>"https://www.amazon.com/Mendini-MTT-30CN-Intermediate-Double-Braced-Trumpet/dp/B0051WWPGO/", "category"=>"trumpet/"}, "9"=>{"name"=>"OSWAL", "price"=>"$67.00/", "url"=>"https://www.amazon.com/OSWAL-Brass-Finishing-Trumpet-Mouthpiece/dp/B01BOS9LZG/", "category"=>"trumpet/"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gifts" ("name", "price", "url", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Mendini"], ["price", 99.99], ["url", "https://www.amazon.com/Mendini-Cecilio-MTT-L-Trumpet-Gold/dp/B00I8QJT78/"], ["category", "trumpet"], ["created_at", "2017-11-16 20:08:55.377946"], ["updated_at", "2017-11-16 20:08:55.377946"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mWishlist Load (0.7ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1 ORDER BY "wishlists"."id" ASC LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGift Load (0.4ms)[0m  [1m[34mSELECT  "gifts".* FROM "gifts" WHERE "gifts"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "wishlist_items" ("wishlist_id", "gift_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["wishlist_id", 2], ["gift_id", 12], ["created_at", "2017-11-16 20:08:55.389071"], ["updated_at", "2017-11-16 20:08:55.389071"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/wishlists
+Completed 302 Found in 19ms (ActiveRecord: 5.5ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-16 15:08:55 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.3ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mGift Load (0.9ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 2]]
+  Rendered wishlists/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2017-11-16 15:09:15 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 39ms (Views: 33.2ms | ActiveRecord: 0.4ms)
+
+
