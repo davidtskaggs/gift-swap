@@ -1,6 +1,6 @@
+<div class="results-container">
 <% if results %>
   <h3>Results</h3>
-
   <form action="/gifts" method="POST">
     <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
     <ul><% @results[:names].each_with_index do |item, index|%>
@@ -20,3 +20,4 @@
     <input type='submit' value="Add to Wishlist">
   </form>
 <% end %>
+</container>

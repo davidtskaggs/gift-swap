@@ -157,3 +157,11 @@ th {
   list-style-type: none;
   padding-left: 0px;
 }
+
+.results-container {
+
+}
+
+.results-item {
+border: 5px solid blue;
+}
