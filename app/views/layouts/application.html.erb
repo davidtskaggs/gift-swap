@@ -12,10 +12,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" type="text/javascript"></script>
     <%= stylesheet_link_tag 'application' %>
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <%= javascript_include_tag 'application' %>
   </head>
 
@@ -30,7 +27,7 @@
             <span class="icon-bar"></span>
           </button>
 
-          <a class="navbar-brand" href="/">giftSwap</a>
+          <a class="navbar-brand" href="/">giftSwap <span class="glyphicon glyphicon-gift" aria-hidden="true"></span></a>
 
         </div>
         <div class="collapse navbar-collapse">
@@ -38,7 +35,7 @@
             <p class="navbar-text pull-right">
             <% if user_signed_in? %>
               Logged in as <strong><%= current_user.email %></strong>
-              <span class="glyphicon glyphicon-gift" aria-hidden="true"></span>
+
               <li class="nav-link"><%= link_to 'Events', events_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to 'Your Wishlist', wishlists_path, :class=> 'navbar-link'%></li>
               <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
