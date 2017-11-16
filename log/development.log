@@ -22646,3 +22646,474 @@ Processing by EventsController#show as HTML
 Completed 200 OK in 82ms (Views: 32.8ms | ActiveRecord: 12.4ms)
 
 
+Started GET "/events/2/participations/new" for 127.0.0.1 at 2017-11-16 15:28:38 -0500
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ParticipationsController#new as HTML
+  Parameters: {"event_id"=>"2"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering participations/new.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  Rendered participations/_form.html.erb (50.2ms)
+  Rendered participations/new.html.erb within layouts/application (54.5ms)
+Completed 200 OK in 429ms (Views: 350.9ms | ActiveRecord: 13.3ms)
+
+
+Started GET "/events/2?authenticity_token=L69ggO08hDDb58MLhM%2BsFkRBA4fc2Jojtmn4r9tZ1X2Qad%2BGo0oq4wfD5PSiN5VtL%2Fj4McJ%2BLmGWJFpXdciIoQ%3D%3D" for 127.0.0.1 at 2017-11-16 15:28:42 -0500
+Processing by EventsController#show as HTML
+  Parameters: {"authenticity_token"=>"L69ggO08hDDb58MLhM+sFkRBA4fc2Jojtmn4r9tZ1X2Qad+Go0oq4wfD5PSiN5VtL/j4McJ+LmGWJFpXdciIoQ==", "id"=>"2"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE Event Load (0.0ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "participations" ON "users"."id" = "participations"."participant_id" WHERE "participations"."event_id" = $1[0m  [["event_id", 2]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (5.8ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 4], ["sender_id", 1], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:28:42.651268"], ["updated_at", "2017-11-16 20:28:42.651268"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.3ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.3ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 2], ["sender_id", 4], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:28:42.668933"], ["updated_at", "2017-11-16 20:28:42.668933"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 3], ["sender_id", 2], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:28:42.679759"], ["updated_at", "2017-11-16 20:28:42.679759"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mEvent Load (0.4ms)[0m  [1m[34mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlistItem Load (0.4ms)[0m  [1m[34mSELECT  "wishlist_items".* FROM "wishlist_items" WHERE "wishlist_items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "gift_exchanges" ("recipient_id", "sender_id", "event_id", "wishlist_item_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["recipient_id", 1], ["sender_id", 3], ["event_id", 2], ["wishlist_item_id", 1], ["created_at", "2017-11-16 20:28:42.692789"], ["updated_at", "2017-11-16 20:28:42.692789"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering events/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered events/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 169ms (Views: 49.2ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/wishlists/1" for 127.0.0.1 at 2017-11-16 15:28:56 -0500
+Processing by WishlistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT  "wishlists".* FROM "wishlists" WHERE "wishlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wishlists/show.html.erb within layouts/application
+  [1m[36mGift Load (6.8ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 1]]
+  Rendered wishlists/show.html.erb within layouts/application (54.4ms)
+Completed 200 OK in 116ms (Views: 73.3ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/welcome" for 127.0.0.1 at 2017-11-16 15:29:08 -0500
+Processing by WelcomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 32.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-11-16 15:29:13 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XOUIoDHXS6J0h/VYlMCcVwfa9xm7gAYjy/n6mnrz3FrjI7emf6Hlcaij0qeyOKUsbGMMr6UmsmHrtFhi1GKBhg=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 671ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-16 15:29:13 -0500
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-16 15:29:13 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:29:14 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/shared/_links.html.erb (1.5ms)
+  Rendered /Users/catherinerice/.rbenv/versions/2.3.3/lib/ruby/gems/2.3.0/gems/devise-4.3.0/app/views/devise/sessions/new.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-11-16 15:29:22 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Gn+zhPwkPLl/mzwAvJI2DYUViq/8Qu7CIC344kVGOUm7ZveFTAlmIJp1ZFJyyMXf9uO5QxlggXhquhK1X/M+Lg==", "user"=>{"email"=>"t@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "t@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (4.5ms)[0m  [1m[33mUPDATE "users" SET "current_sign_in_at" = $1, "last_sign_in_at" = $2, "current_sign_in_ip" = $3, "last_sign_in_ip" = $4, "sign_in_count" = $5, "updated_at" = $6 WHERE "users"."id" = $7[0m  [["current_sign_in_at", "2017-11-16 20:29:22.623807"], ["last_sign_in_at", "2017-11-16 20:29:22.623807"], ["current_sign_in_ip", "127.0.0.1/32"], ["last_sign_in_ip", "127.0.0.1/32"], ["sign_in_count", 1], ["updated_at", "2017-11-16 20:29:22.624767"], ["id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/welcome/show
+Completed 302 Found in 224ms (ActiveRecord: 18.2ms)
+
+
+Started GET "/welcome/show" for 127.0.0.1 at 2017-11-16 15:29:22 -0500
+Processing by WelcomeController#show as HTML
+  Parameters: {"id"=>"show"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering welcome/show.html.erb within layouts/application
+  Rendered welcome/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 34ms (Views: 30.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/wishlists" for 127.0.0.1 at 2017-11-16 15:29:30 -0500
+Processing by WishlistsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering wishlists/index.html.erb within layouts/application
+  [1m[36mWishlist Exists (9.0ms)[0m  [1m[34mSELECT  1 AS one FROM "wishlists" WHERE "wishlists"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  [1m[36mWishlist Load (0.4ms)[0m  [1m[34mSELECT "wishlists".* FROM "wishlists" WHERE "wishlists"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mGift Load (0.5ms)[0m  [1m[34mSELECT "gifts".* FROM "gifts" INNER JOIN "wishlist_items" ON "gifts"."id" = "wishlist_items"."gift_id" WHERE "wishlist_items"."wishlist_id" = $1 ORDER BY "gifts"."price" ASC[0m  [["wishlist_id", 1]]
+  Rendered wishlists/index.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 63ms (Views: 48.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/gifts/new" for 127.0.0.1 at 2017-11-16 15:29:38 -0500
+Processing by GiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.1ms)
+  Rendered gifts/_results.html.erb (1.2ms)
+  Rendered gifts/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 52ms (Views: 43.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:29:48 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.6ms)
+  Rendered gifts/_results.html.erb (2.2ms)
+  Rendered gifts/new.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 653ms (Views: 47.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:32:02 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.3ms)
+  Rendered gifts/_results.html.erb (2.0ms)
+  Rendered gifts/new.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 518ms (Views: 232.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:32:14 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.4ms)
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 300ms (Views: 59.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:33:39 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.7ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 335ms (Views: 78.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:34:26 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.4ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 594ms (Views: 58.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:34:40 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.4ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 253ms (Views: 59.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:34:47 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.2ms)
+  Rendered gifts/_results.html.erb (1.2ms)
+  Rendered gifts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 297ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:34:53 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.2ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 253ms (Views: 55.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:35:02 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.4ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 251ms (Views: 55.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:36:21 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.8ms)
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 285ms (Views: 75.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:36:46 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (1.1ms)
+  Rendered gifts/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 305ms (Views: 40.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:36:57 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.2ms)
+  Rendered gifts/_results.html.erb (1.6ms)
+  Rendered gifts/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 274ms (Views: 48.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:37:28 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (2.2ms)
+  Rendered gifts/new.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 291ms (Views: 37.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:37:58 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.2ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 258ms (Views: 61.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:38:08 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.2ms)
+  Rendered gifts/_results.html.erb (1.2ms)
+  Rendered gifts/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 251ms (Views: 54.9ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:38:52 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (3.6ms)
+  Rendered gifts/_results.html.erb (2.0ms)
+  Rendered gifts/new.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 500ms (Views: 92.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:38:57 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/new.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 499ms (Views: 42.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:39:09 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"msnogx1HXOid+Ii1Y0MGy5bjANmZ4S9+Tq0Aw4aQZxjjPTDa/i86s3qbK6oFljwe3LAxcAFMRDBFuAVAusymtQ==", "gifts"=>{"keyword"=>"table"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (1.6ms)
+  Rendered gifts/new.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 327ms (Views: 82.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:39:49 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.3ms)
+  Rendered gifts/_results.html.erb (1.7ms)
+  Rendered gifts/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 777ms (Views: 53.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:40:45 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.6ms)
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 274ms (Views: 64.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:41:02 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.4ms)
+  Rendered gifts/_results.html.erb (1.4ms)
+  Rendered gifts/new.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 287ms (Views: 44.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:41:29 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.6ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 243ms (Views: 46.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:41:54 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.5ms)
+  Rendered gifts/_results.html.erb (1.9ms)
+  Rendered gifts/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 372ms (Views: 99.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:42:11 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.3ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 303ms (Views: 70.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:42:31 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.0ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 330ms (Views: 81.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:43:00 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (5.4ms)
+  Rendered gifts/_results.html.erb (3.1ms)
+  Rendered gifts/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 428ms (Views: 123.9ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:43:14 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.7ms)
+  Rendered gifts/_results.html.erb (1.3ms)
+  Rendered gifts/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 389ms (Views: 78.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:43:30 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.1ms)
+  Rendered gifts/_results.html.erb (1.7ms)
+  Rendered gifts/new.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 274ms (Views: 63.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:44:04 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (1.7ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 287ms (Views: 72.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/search" for 127.0.0.1 at 2017-11-16 15:44:14 -0500
+Processing by GiftsController#search as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8bkMUqPsmCXFqjqHV536V2WURf4irRCZrh0aD3iV35uITdQLQIT+fiLJmZgxSMCCL8d0V7oAe9elCB+MRMkeNg==", "gifts"=>{"keyword"=>"camera"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering gifts/new.html.erb within layouts/application
+  Rendered gifts/_form.html.erb (2.2ms)
+  Rendered gifts/_results.html.erb (1.5ms)
+  Rendered gifts/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 221ms (Views: 44.0ms | ActiveRecord: 0.5ms)
+
+
