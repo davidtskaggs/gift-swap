@@ -14,14 +14,15 @@
 
 //= require_tree .
 $(document).ready(function(){
-	$('.create_gift').click(function(e){
+	$('body').on('click', '.create_gift', function(e){
 		e.preventDefault();
+		// debugger
 		$.ajax({
 			url: '/search',
 			type: 'POST',
 			data: {
 				'authenticity_token': $('input[name=authenticity_token]').val(),
-				'gift': {
+				'gifts': {
 					keyword: $('input#gift_name').val()
 				}
 			}

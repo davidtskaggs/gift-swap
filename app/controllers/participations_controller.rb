@@ -17,6 +17,8 @@ class ParticipationsController < ApplicationController
     end
     if request.xhr?
       render json: @user
+    else
+      redirect_to "/events/#{@event.id}/participations/new"
     end
   end
 
