@@ -36,34 +36,35 @@ $(document).ready(function(){
 		autoplay: true
 	});
 
-	$('.show-participant').click(function(event){
-		event.preventDefault();
-		$(this).parent().parent().toggle();
-	})
-	$(".hide-participant").click(function(){
-		$(this).parent().parent().toggle();
-	})
+	// $('.show-participant').click(function(event){
+	// 	event.preventDefault();
+	// 	$(this).parent().parent().toggle();
+	// })
+	// $(".hide-participant").click(function(){
+	// 	$(this).parent().parent().toggle();
+	// })
 
-	$("#secret-santa").on("submit", function(event){
-		$('#secret').show();
-	})
+	// $("#secret-santa").on("submit", function(event){
+	// 	$('#secret').show();
+	// })
 
-	$("#participant-list").on("submit", "#add-participants", function(event){
-		event.preventDefault();
-		$form = $(event.target)
+	$("#add-participants").on("submit", function(event) {
+    event.preventDefault();
 
-		$.ajax({
-			url: $form.attr("action"),
-			method: $form.attr("method"),
-			data: $form.serialize()
-		}).done(function(response){
-			$("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
-			$("#add-participants").each(function(){
-				this.reset();
-			})
-		}).fail(function(a,b,c){
-			"fail"
-				// debugger
-			})
-	})
+    var $obj = $(this);
+    var url = $obj.attr("action");
+    var method = $obj.attr("method");
+    var data = $obj.serialize();
+
+    $.ajax({
+      url: url,
+      method: method,
+      data: data
+    })
+
+    .done(function(response) {
+      $("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
+    })
+  })
+
 })

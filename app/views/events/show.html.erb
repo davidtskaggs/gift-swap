@@ -28,7 +28,7 @@
 </p>
 
 <p><strong>Participants:</strong></p>
-  <p><%= link_to "Add a participant", new_event_participation_path(@event) %></p>
+  <p><%= link_to "Add participants", new_event_participation_path(@event) %></p>
 
   <ol>
   <%@event.participants.each do |participant| %>
@@ -36,25 +36,40 @@
   <%end%>
   </ol>
 
-  <%if current_user == @event.creator %>
-
-  <form action= "/events/<%= @event.id %>" method="get" id="secret-santa">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-    <input type="submit" value="Start Secret Santa" class="btn">
-  </form>
-<%end%>
-
 <br />
 
 <div id="secret">
- <p>
-  <% if @recipient and @recipient_wishlist %>
-  <strong>Your Secret Santa: </strong> <a href="/wishlists/<%=@recipient_wishlist.id%>"><%=@recipient.first_name%> <%=@recipient.last_name%></a>
-  <%end%>
-  </p>
+ <b>Pairs created: </b>
+ <% participants = @event.participants %>
+ <% nb_participants = participants.length %>
+ <% if nb_participants > 0 %>
+ <% temp = participants[0] %>
+ <% assignees = Array.new(nb_participants, 0) %>
+   <% participants.each_with_index do |elt, index| %>
+    <% assignees[index] = participants[index+1] %>
+   <% end %>
+ <% assignees[(nb_participants-1)] = temp %>
+ <% end %>
 </div>
 
 
 
+
+<div>
+<% if nb_participants > 0 %>
+  <% assignees.each_with_index do |elt, index| %> 
+  <% current_participant = participants[index] %>
+  <% if current_user.first_name == current_participant.first_name %>
+  <% assignee = assignees[index] %>
+   <%= current_participant.first_name %>, you have: <a href="/wishlists/<%= assignee.id %>"><%= assignee.first_name %></a>
+    <br>
+  <% end %>
+  <% end %> 
+<% end %> 
+</div>
+
+
+<br>
+
 <%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', events_path %>
+<%= link_to 'Back', wishlists_path %>

@@ -23,7 +23,7 @@
 
   <tbody>
     <div>
-    <% current_user.events.each do |event| %>
+    <% current_user.events.uniq.each do |event| %>
 
         <td><%= event.name %></td>
         <td><%= event.description %></td>

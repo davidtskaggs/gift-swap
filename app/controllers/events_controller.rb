@@ -24,11 +24,12 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
     if @event.participants.count > 1  
       @event.create_pairs
-      @gift_exchanges = GiftExchange.find_by(sender_id: current_user.id, event_id: @event.id)
-      if @gift_exchanges
-        @recipient = @gift_exchanges.recipient
-        @recipient_wishlist = Wishlist.find_by(user_id: @recipient.id)
-      end 
+      #binding.pry
+      @gift_exchanges = GiftExchange.where(event_id: @event.id)
+      #if @gift_exchanges
+      #  @recipient = @gift_exchanges.recipient
+      #  @recipient_wishlist = Wishlist.find_by(user_id: @recipient.id)
+      #end 
     end 
   end
 

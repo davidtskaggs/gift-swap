@@ -1,4 +1,4 @@
-<h2>Add participants</h2>
+<h2>Add participants to your event</h2>
 
 <form action= "/events/<%=@event.id%>/participations" method="post" id="add-participants">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
@@ -7,11 +7,23 @@
   <input type="submit" value="Submit">
 </form>
 
-<h3>Currently attending:</h3>
-<ol id="participant-list">
-<%@event.participants.each do |participant| %>
-  <li><%=participant.first_name%> <%=participant.last_name%></li>
-<%end%>
-</ol>
+<br>
 
-<%=link_to 'Back to Events', events_path %>
+<% event_creator = @event.creator %>
+<%if current_user == event_creator %>
+    <form action= "/events/<%= @event.id %>" method="get" id="secret-santa">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type="submit" value="Create event" class="btn">
+    </form>
+<%end%>
+
+
+<h3>Currently attending:</h3>
+
+<ul id="participant-list">
+	<% if @event.participants %>
+		<% @event.participants.each do |participant| %>
+			<li><%= participant.first_name%> <%= participant.last_name%></li>
+		<% end %>		
+	<% end %>
+</ul>
