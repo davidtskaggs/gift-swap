@@ -11,23 +11,22 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require turbolinks
+
 //= require_tree .
 $(document).ready(function(){
-	$('.create_gift').click(function(e){
+	$('body').on('click', '.create_gift', function(e){
 		e.preventDefault();
+		// debugger
 		$.ajax({
 			url: '/search',
 			type: 'POST',
 			data: {
 				'authenticity_token': $('input[name=authenticity_token]').val(),
-				'gift': {
+				'gifts': {
 					keyword: $('input#gift_name').val()
 				}
 			}
 		})
-
-
 	})
 
 	$('#carousel').carousel({
@@ -48,6 +47,7 @@ $(document).ready(function(){
 	// 	$('#secret').show();
 	// })
 
+
 	$("#add-participants").on("submit", function(event) {
     event.preventDefault();
 
@@ -66,5 +66,21 @@ $(document).ready(function(){
       $("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
     })
   })
+
+// master pre-merge
+// 	$("#participant-container").on("submit", "#add-participants", function(event){
+// 		event.preventDefault();
+// 		$form = $(event.target)
+// 		$.ajax({
+// 			url: $form.attr("action"),
+// 			method: $form.attr("method"),
+// 			data: $form.serialize()
+// 		}).done(function(response){
+// 			$("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
+// 			$("#add-participants").each(function(){
+// 				this.reset();
+// 			})
+// 		})
+// 	})
 
 })

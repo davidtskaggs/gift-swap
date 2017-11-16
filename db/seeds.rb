@@ -9,17 +9,17 @@ Event.delete_all
 Admin.delete_all
 User.delete_all
 
-thierry = User.create(first_name: "Thierry", last_name: "test", email: "thierry@gmail.com", password: "123456")
-catherine = User.create(first_name: "Catherine", last_name: "test", email: "catherine@gmail.com", password: "123456")
-david = User.create(first_name: "David", last_name: "test", email: "david@gmail.com", password: "123456")
-andres = User.create(first_name: "Andres", last_name: "test", email: "andres@gmail.com", password: "123456")
+thierry = User.create(first_name: "Thierry", last_name: "Moudiki", email: "thierry@gmail.com", password: "123456")
+catherine = User.create(first_name: "Catherine", last_name: "Rice", email: "catherine@gmail.com", password: "123456")
+david = User.create(first_name: "David", last_name: "Skaggs", email: "david@gmail.com", password: "123456")
+andres = User.create(first_name: "Andres", last_name: "Arias", email: "andres@gmail.com", password: "123456")
 
 # 30.times do
 #   User.create(email: Faker::Internet.email, password: Faker::Internet.password(6, 15))
 # end
 
 
-e1 = Event.create(id: 1, name: "Secret Santa", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 1)
+e1 = Event.create(id: 1, name: "Secret Santa", description: Faker::TheFreshPrinceOfBelAir.quote, start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 1)
 # e2 = Event.create(name: "Yankee Swap", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 2)
 # e3 = Event.create(name: "Gift Swap-a-roo", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 4)
 # e4 = Event.create(name: "Office Secret Santa", description: Faker::Lorem.paragraph(2, false, 4), start_date: Faker::Date.forward(rand(60)), end_date: Faker::Date.backward(rand(15)), suggested_budget: Faker::Number.between(1, 100), creator_id: 6)
@@ -47,10 +47,10 @@ w2 = Wishlist.create(name: "Catherine's Wishlist 1", user_id: catherine.id)
 w3 = Wishlist.create(name: "David's Wishlist 1", user_id: david.id)
 w4 = Wishlist.create(name: "Andres' Wishlist1", user_id: andres.id)
 
-g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.example.com", category: "kitchen")
-g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.example.com", category: "kitchen")
-g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.example.com", category: "kitchen")
-g4 = Gift.create(name: "something pan", price: 17.99, url: "www.example.com", category: " kitchen")
+g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.amazon.com", category: "kitchen")
+g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.amazon.com", category: "kitchen")
+g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.amazon.com", category: "kitchen")
+g4 = Gift.create(name: "something pan", price: 17.99, url: "www.amazon.com", category: " kitchen")
 
 
 wi1_1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)

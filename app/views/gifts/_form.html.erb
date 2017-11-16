@@ -1,7 +1,7 @@
 <div style="width: 100%; overflow: hidden;">
     <div id="keyword-search" class="form-container" style="width: 600px; float: left;">
-      <%= form_with(model: gift, local: true) do |form| %>
-  <% if gift.errors.any? %>
+      <%= form_tag({ controller: "gifts", action: "search"}, method:"post", class: "form_stuff") do |form| %>
+  <% if gift && gift.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(gift.errors.count, "error") %> prohibited this gift from being saved:</h2>
 
@@ -13,19 +13,17 @@
     </div>
   <% end %>
 
-  <p>You can search for your new gift by <b>keyword</b> or by <b>category</b></p>
+  <p>Search Gift by <b>keyword</b></p>
 
   <div class="field">
-    <%= form.label :keyword %>
-    <%= form.text_field :keyword, id: :gift_name %>
+    Keyword:
+    <%= text_field(:gifts, :keyword, id: 'gift_name') %>
   </div>
 
   <div class="actions">
-    <%= form.submit class: 'create_gift'%>
+    <input type='submit' class="create_gift" value="Search"/>
   </div>
 <% end %>
     </div>
-    <div class="res" style="margin-left: 620px;">
 
-    </div>
 </div>
