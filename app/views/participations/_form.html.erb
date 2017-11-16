@@ -1,11 +1,17 @@
 
+
+
+
+
+<div class="container">
 <h2>Add participants to your exchange</h2>
+<div class="form-group">
 
 <form action= "/events/<%=@event.id%>/participations" method="post" id="add-participants">
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <label for="email">Email:</label>
-  <input type="email" name="user[email]"/>
-  <input type="submit" value="Submit">
+  <input class="form-control" type="email" name="user[email]"/><br>
+  <input type="submit" class="btn btn-primary" value="Submit">
 </form>
 
 <br>
@@ -17,13 +23,18 @@
       <input type="submit" value="Create exchange" class="btn">
     </form>
 <%end%>
+</div>
 
+<div class="container ">
 <h3>Currently attending:</h3>
 
-<ul id="participant-list">
+<ul class="list-group" id="participant-list">
 	<% if @event.participants %>
 		<% @event.participants.each do |participant| %>
-			<li><%= participant.first_name%> <%= participant.last_name%></li>
+
+			<li class="list-group-item"><%= participant.first_name%> <%= participant.last_name%></li>
+
 		<% end %>
 	<% end %>
 </ul>
+</div>
