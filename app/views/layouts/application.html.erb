@@ -36,7 +36,7 @@
             <% if user_signed_in? %>
               Logged in as <strong><%= current_user.email %></strong>
 
-              <li class="nav-link"><%= link_to 'Events', events_path, :class => 'navbar-link' %></li>
+              <li class="nav-link"><%= link_to 'Exchanges', events_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to 'Your Wishlist', wishlists_path, :class=> 'navbar-link'%></li>
               <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to 'About', welcome_index_path, :class => 'navbar-link' %></li>

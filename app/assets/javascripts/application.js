@@ -63,7 +63,9 @@ $(document).ready(function(){
     })
 
     .done(function(response) {
+
       $("#participant-list").append("<li class="list-group-item"> + response.first_name + " " + response.last_name + "</li>");
+
     })
   })
 

@@ -5,6 +5,31 @@
   <%= @wishlist.name %>
 </p>
 
+ <table class="table table-striped table-bordered">
+       <thead>
+         <tr>
+           <th>Gift</th>
+           <th>Category</th>
+           <th>Price</th>
+           <th></th>
+         </tr>
+       </thead>
+
+       <% wishlist_gifts = @wishlist.gifts %>
+       <tbody>
+         <% wishlist_gifts.order(:price).each do |gift| %>
+           <tr>
+            <% link = gift.url%>
+             <td><a href=<%= link %>><%= gift.name %> </a></td>
+             <td><%= gift.category %></td>
+             <td>$<%= gift.price %></td>
+             <td><%= link_to 'Delete item', gift, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+           </tr>
+         <% end %>
+       </tbody>
+      </table>
+
+
 
 
 <%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
