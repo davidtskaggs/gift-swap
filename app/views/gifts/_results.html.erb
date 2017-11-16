@@ -1,6 +1,7 @@
+
 <div class="results-container">
 <% if results %>
-  <h3>Results</h3>
+
   <form action="/gifts" method="POST">
     <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
     <ul><% @results[:names].each_with_index do |item, index|%>
@@ -14,8 +15,9 @@
           <input type="hidden" name='gift[<%=index%>][category]' value=<%=@results[:categories][index]%>/>
         <p><img id="gift-result" src=<%=image%>><br><a href=<%=link%>>Item Details</a></p>
         <p><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></p>
+        </div>
         <% end %>
-      </div>
+
     </ul>
     <input type='submit' value="Add to Wishlist">
   </form>

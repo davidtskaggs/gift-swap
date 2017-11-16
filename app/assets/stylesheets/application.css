@@ -139,6 +139,17 @@ li {
 
 }
 
+.res {
+  column-count: 3;
+}
+
+.aws_results {
+
+  padding: 10px;
+  margin: 10px;
+  overflow: scroll;
+}
+
 .navbar ul li {
   padding: 0px;
   margin: 0px;
