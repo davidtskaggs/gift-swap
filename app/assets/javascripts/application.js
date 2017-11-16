@@ -64,6 +64,8 @@ $(document).ready(function(){
 
     .done(function(response) {
       $("#participant-list").append("<li>" + response.first_name + " " + response.last_name + "</li>");
+      $("#add-participants").find()
+
     })
   })
 

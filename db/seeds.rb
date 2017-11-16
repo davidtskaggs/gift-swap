@@ -9,10 +9,10 @@ Event.delete_all
 Admin.delete_all
 User.delete_all
 
-thierry = User.create(first_name: "Thierry", last_name: "Moudiki", email: "thierry@gmail.com", password: "123456")
-catherine = User.create(first_name: "Catherine", last_name: "Rice", email: "catherine@gmail.com", password: "123456")
-david = User.create(first_name: "David", last_name: "Skaggs", email: "david@gmail.com", password: "123456")
-andres = User.create(first_name: "Andres", last_name: "Arias", email: "andres@gmail.com", password: "123456")
+thierry = User.create(first_name: "Thierry", last_name: "Moudiki", email: "t@gmail.com", password: "dbc123")
+catherine = User.create(first_name: "Catherine", last_name: "Rice", email: "c@gmail.com", password: "dbc123")
+david = User.create(first_name: "David", last_name: "Skaggs", email: "d@gmail.com", password: "dbc123")
+andres = User.create(first_name: "Andres", last_name: "Arias", email: "a@gmail.com", password: "dbc123")
 
 # 30.times do
 #   User.create(email: Faker::Internet.email, password: Faker::Internet.password(6, 15))
@@ -47,17 +47,18 @@ w2 = Wishlist.create(name: "Catherine's Wishlist 1", user_id: catherine.id)
 w3 = Wishlist.create(name: "David's Wishlist 1", user_id: david.id)
 w4 = Wishlist.create(name: "Andres' Wishlist1", user_id: andres.id)
 
-g1 = Gift.create(name: "Frying pan", price: 19.99, url: "www.amazon.com", category: "kitchen")
-g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "www.amazon.com", category: "kitchen")
-g3 = Gift.create(name: "Wok pan", price: 20.99, url: "www.amazon.com", category: "kitchen")
-g4 = Gift.create(name: "something pan", price: 17.99, url: "www.amazon.com", category: " kitchen")
-
+g1 = Gift.create(name: "Frying pan", price: 19.99, url: "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1", category: "kitchen")
+g2 = Gift.create(name: "Sauce pan", price: 18.99, url: "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1", category: "kitchen")
+g3 = Gift.create(name: "Wok pan", price: 20.99, url: "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1", category: "kitchen")
+g4 = Gift.create(name: "pan", price: 17.99, url: "https://www.amazon.com/dp/B06XNZDHHC/ref=sxts_hf_cd_wl_1?pf_rd_m=ATVPDKIKX0DER&pf_rd_p=3313742702&pd_rd_wg=ApJUM&pf_rd_r=QTEC7JB29HEJG99SZBNJ&pf_rd_s=desktop-sx-top-slot&pf_rd_t=301&pd_rd_i=B06XNZDHHC&pd_rd_w=Q0NsA&pf_rd_i=frying+pan&pd_rd_r=e77f98c1-0d41-46fc-9f06-01e09d4266a4&ie=UTF8&qid=1510850009&sr=1", category: " kitchen")
+g5 = Gift.create(name: "camera", price: 476.00, url: "https://www.amazon.com/Nikon-D3300-Camera-18-55mm-Bundle/dp/B00II8TQ2E/ref=sr_1_1_sspa?s=electronics&ie=UTF8&qid=1510851619&sr=1-1-spons&keywords=camera&psc=1", category: "photography")
+g6 = Gift.create(name: "french press", price: 39.97, url: "https://www.amazon.com/Bodum-Chambord-French-Coffee-Chrome/dp/B005ADS5TU/ref=sr_1_1_sspa?s=home-garden&ie=UTF8&qid=1510851795&sr=1-1-spons&keywords=french+press&psc=1", category: "culinary")
 
 wi1_1 = WishlistItem.create(wishlist_id: w1.id, gift_id: g1.id)
 wi2_1 = WishlistItem.create(wishlist_id: w2.id, gift_id: g2.id)
 wi3_1 = WishlistItem.create(wishlist_id: w3.id, gift_id: g3.id)
-wi1_2 = WishlistItem.create(wishlist_id: w1.id, gift_id: g2.id)
-wi1_3 = WishlistItem.create(wishlist_id: w1.id, gift_id: g3.id)
+wi1_2 = WishlistItem.create(wishlist_id: w4.id, gift_id: g4.id)
+
 
 
 ge1 = GiftExchange.create(recipient_id: 1, sender_id: 4, event_id: 1, wishlist_item_id: 1)
