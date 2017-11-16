@@ -38,13 +38,36 @@
   </ol>
 
   <%if current_user == @event.creator %>
-  <form action= "/events/<%=@event.id%>/participations" method="post" id="secret-santa">
-    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <form action= "/events/<%=@event.id%>" method="get" id="secret-santa">
+
     <input type="submit" value="Start Secret Santa" class="btn">
   </form>
 <%end%>
 
 <br />
+
+ <div id="secret">
+ <p>
+  <strong>Your Secret Santa: </strong> <%=@gift_exchange%></a>
+  <ul>
+
+  <%@all_exchanges.each do |x| %>
+
+  <%user = User.find_by(id: x.sender_id)%>
+  <%if x.sender_id == current_user.id%>
+  <%user_2 = User.find_by(id: x.recipient_id)%></li>
+  <%user_2.first_name%>
+  <p><%=user.first_name%> your secret santa is <%=user_2.first_name%></p>
+  <%end%>
+
+
+
+
+  <%end%>
+
+</ul>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>

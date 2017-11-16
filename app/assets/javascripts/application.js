@@ -60,4 +60,16 @@ $(document).ready(function(){
 			})
 		})
 	})
+
+	$("#secret-santa").on("submit", function(){
+		event.preventDefault();
+		$form = $(event.target)
+		$.ajax({
+			url: $form.attr("action"),
+			method: $form.attr("method"),
+			data: $form.serialize()
+		}) .done(function(response){
+			$("#secret").append(response)
+		})
+	})
 })

@@ -13,9 +13,13 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    # @event.create_pairs
-    @gift_exchange = GiftExchange.find_by(event_id: params[:event_id])
-    # binding.pry
+
+
+    @event.create_pairs
+     @all_exchanges = GiftExchange.where(event_id: params[:id])
+
+
+    # @all_exchanges.map {|x| @sender = exchange.sender_id}
     # @wishlist = Wishlist.find_by(user_id: @gift_exchange.recipient_id)
     # render "participations/_secret_santa"
   end
