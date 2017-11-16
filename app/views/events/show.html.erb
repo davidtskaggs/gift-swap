@@ -7,15 +7,6 @@
   <%= @event.description %>
 </p>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @event.start_date.strftime("%m/%d/%Y") %>
-</p>
-
-<p>
-  <strong>End date:</strong>
-  <%= @event.end_date.strftime("%m/%d/%Y") %>
-</p>
 
 <p>
   <strong>Suggested budget:</strong>
@@ -60,15 +51,15 @@
 
 <div>
 <% if nb_participants > 0 %>
-  <% assignees.each_with_index do |elt, index| %> 
+  <% assignees.each_with_index do |elt, index| %>
   <% current_participant = participants[index] %>
   <% if current_user.first_name == current_participant.first_name %>
   <% assignee = assignees[index] %>
    <%= current_participant.first_name %>, you have: <a href="/wishlists/<%= assignee.id %>"><%= assignee.first_name %></a>
     <br>
   <% end %>
-  <% end %> 
-<% end %> 
+  <% end %>
+<% end %>
 </div>
 
 
