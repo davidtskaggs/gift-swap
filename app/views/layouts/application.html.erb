@@ -41,11 +41,9 @@
               <li class="nav-link"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to 'About', welcome_index_path, :class => 'navbar-link' %></li>
               <li class="nav-link"><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-
             <% else %>
               <li class="nav-link"><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
               <li class="nav-link"><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
-
             <% end %>
             </p>
           </ul>
@@ -58,17 +56,15 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-
     <div class="container">
       <%= yield %>
     </div>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.js"></script>
   </body>
-   <footer>
-      <!-- <div class="container">
-    giftSwap<%= Time.now.year %>
+  <footer>
+      <div class="container">
+    giftSwap <%= Time.now.year %>
     </div>
-  </footer> -->
+  </footer>
 </html>
