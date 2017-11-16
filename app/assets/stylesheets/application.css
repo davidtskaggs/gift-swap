@@ -83,7 +83,6 @@ img {
 
 
 .cursive {
-  font-family: cursive;
 }
 
 .carousel-inner {
@@ -105,7 +104,6 @@ img {
 
 h1, h2 {
   color: black;
-  text-shadow: 2px 2px MidnightBlue;
 
 }
 
@@ -128,7 +126,7 @@ li {
 }
 
 #giftshare-title {
-  text-shadow: 2px 2px black;
+
 }
 
 th {
