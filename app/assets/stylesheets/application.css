@@ -160,8 +160,40 @@ th {
 
 .results-container {
 
+
+}
+
+.carousel-inner .item {
+  max-height: 300px;
+  height: 300px;
+}
+
+.carousel-inner .item img {
+  height: 100%;
+}
+
+.carousel-inner .item img.item-2 {
+  width: auto;
+}
+
+
+#carousel {
+    margin-left: -11%;
+    margin-right: -11%;
+    border-radius: 0;
+}
+
+.carousel-inner {
+    border-radius: 0;
+}
+
+.carousel-caption p {
+    margin-bottom: 0px;
 }
 
 .results-item {
 border: 5px solid blue;
 }
+
+
+
