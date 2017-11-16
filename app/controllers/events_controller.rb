@@ -7,16 +7,35 @@ class EventsController < ApplicationController
     current_user
     @events = Event.all
     @user_events_participations = Participation.find_by(participant_id: current_user.id)
+
+    if @events.count and @user_events_participations 
+      @user_event_attendee = @user_events_participations.event
+    end 
+
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+
+    @event = Event.find_by(id: params[:id])
+    if @event.participants.count > 1  
+      @event.create_pairs
+      #binding.pry
+      @gift_exchanges = GiftExchange.where(event_id: @event.id)
+      #if @gift_exchanges
+      #  @recipient = @gift_exchanges.recipient
+      #  @recipient_wishlist = Wishlist.find_by(user_id: @recipient.id)
+      #end 
+    end 
+
     # @event.create_pairs
-    @gift_exchange = GiftExchange.find_by(event_id: params[:event_id])
+#     pre-merge master
+#     @gift_exchange = GiftExchange.find_by(event_id: params[:event_id])
     # binding.pry
     # @wishlist = Wishlist.find_by(user_id: @gift_exchange.recipient_id)
     # render "participations/_secret_santa"
+
   end
 
 
@@ -36,7 +55,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+    
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
