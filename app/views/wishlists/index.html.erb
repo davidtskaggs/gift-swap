@@ -1,6 +1,7 @@
-
-<h1 class="cursive"><%= current_user.first_name %>'s Wishlist</h1>
+<div class="container">
   <button type="button" class="btn btn-light"><a href='gifts/new'>Add a new item</a></button><br>
+</div>
+<div class="container">
 <% if current_user.wishlists.empty?%>
       <h1 class="cursive"><%= current_user.first_name %>'s Wishlist</h1>
       <p><a href='gifts/new'>Add a new item</a></p>
@@ -35,4 +36,4 @@
      </tbody>
     </table>
 <%end%>
-
+</div>
