@@ -16,7 +16,7 @@
 
  body {
    padding-top: 60px;
-   background: Beige;
+   background: LightGray;
    font-family: 'Open Sans', sans-serif;
  }
 
@@ -56,21 +56,40 @@ img {
   margin: 10px;
 }
 
+.navbar .navbar-container {
+background-color: black;
+color: white;
+}
+
 .nav-link:hover {
   background-color: LightBlue;
+  /*color: white;*/
+}
+
+.nav .nav-link .navbar-link {
+color: white;
+}
+
+.navbar .navbar-brand {
   color: white;
 }
 
-.navbar .navlink .navbar-link {
-  color: MidnightBlue;
+.nav .navbar-text {
+  color: white;
+}
+
+
+
+/*.navbar .navlink .navbar-link {
+  color: white;
 }
 
 .navbar .nav-link .navbar-link:hover {
   color: white;
-}
+}*/
 .navbar-header .navbar-brand:hover {
-  background-color: MidnightBlue;
-  color: white;
+  background-color: LightBlue;
+
 
 }
 
@@ -86,7 +105,7 @@ img {
 }
 
 .carousel-inner {
-  background-color: ivory;
+  background-color: white;
   border-radius: 20px;
 }
 
