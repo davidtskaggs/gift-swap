@@ -1,25 +1,41 @@
 
 <div class="results-container">
-<% if results %>
+<% if @results %>
 
   <form action="/gifts" method="POST">
     <input type="hidden" name="authenticity_token" value=<%= form_authenticity_token %>>
-    <ul><% @results[:names].each_with_index do |item, index|%>
-      <div class = "aws_results">
-        <% image = @results[:images][index] %>
-        <% link = @results[:urls][index] %>
-          <input type='checkbox' name='gift[<%=index%>][want]'/>
-          <input type="hidden" name='gift[<%=index%>][name]' value=<%=@results[:names][index]%>/>
-          <input type="hidden" name='gift[<%=index%>][price]' value=<%=@results[:prices][index]%>/>
-          <input type="hidden" name='gift[<%=index%>][url]' value=<%=link%>/>
-          <input type="hidden" name='gift[<%=index%>][category]' value=<%=@results[:categories][index]%>/>
-        <p><img id="gift-result" src=<%=image%>><br><a href=<%=link%>>Item Details</a></p>
-        <p><b>Name: </b><%=item%> | <b>Price: </b> <%=@results[:prices][index]%></p>
-        </div>
-        <% end %>
+     
+    <input type='submit' value="Add selected items">
+    <br>
+    <br>
+      
+        <div class="card-group">
 
-    </ul>
-    <input type='submit' value="Add to Wishlist">
+          <% @results[:names].each_with_index do |item, index|%>
+            <% image = @results[:images][index] %>
+            <% url = @results[:urls][index] %>
+            <% price = @results[:prices][index] %>
+            <% category = @results[:categories][index] %>
+            <% item_name = @results[:names][index] %>
+              <div class="card">
+                  <div class="card-block">
+                    <img class="card-img-top" src=<%= image %> alt="Card image cap" height="150" width="150">
+                    <input type="hidden" name='gift[<%=index%>][name]' value=<%= item_name %>/>
+                    <input type="hidden" name='gift[<%=index%>][price]' value=<%= price %>/>
+                    <input type="hidden" name='gift[<%=index%>][url]' value=<%= url %>/>
+                    <input type="hidden" name='gift[<%=index%>][category]' value=<%= category %>/>
+                    <p class="card-text">
+                      <b>Description: </b> <%= item_name %> | <b>Price: </b> <%= price %>
+                    </p>
+                    <h4 class="card-title"> Add this item <input type='checkbox' name='gift[<%=index%>][want]'/></h4>
+                  </div>
+                  <br>
+                  <br>
+                  <br>
+                
+              <% end %>
+        
+      </div>  
   </form>
+
 <% end %>
-</container>
