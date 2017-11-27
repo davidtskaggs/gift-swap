@@ -1,9 +1,9 @@
-
-<h1 class="cursive"><%= current_user.first_name %>'s Wishlist</h1>
-  <button type="button" class="btn btn-light"><a href='gifts/new'>Add a new item</a></button><br>
+<div class="container">
+<h1 class="cursive"><%= current_user.email %>'s Wishlist</h1>
+<button type="button" class="btn btn-light"><a href='gifts/new'>Add a new item</a></button><br>
+</div>
 <% if current_user.wishlists.empty?%>
-      <h1 class="cursive"><%= current_user.first_name %>'s Wishlist</h1>
-      <p><a href='gifts/new'>Add a new item</a></p>
+      <!-- <p><a href='gifts/new'>Add a new item</a></p> -->
 <%else%>
         <% current_user_wishlist = current_user.wishlists[0] %>
          <% wishlist_gifts = current_user_wishlist.gifts %>
@@ -33,4 +33,3 @@
      </tbody>
     </table>
 <%end%>
-
