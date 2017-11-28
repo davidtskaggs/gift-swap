@@ -8,12 +8,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!/log/.keep
-!/tmp/.keep
+/tmp/cache/assets/sprockets/*
+/log/.keep
+/tmp/.keep
 /node_modules
 /yarn-error.log
 .byebug_history
 .env
-*.log
-*.tmp
-
