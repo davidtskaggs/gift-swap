@@ -1,10 +1,9 @@
+<div>
 <h1>Add a new gift</h1>
-
+</div>
 <%= render 'form', gift: @gift %>
 <div class="res" align="center" >
   <%= render partial: 'results' , locals: {results: @results} %>
 
 </div>
  <%= link_to 'Back to your wishlist', wishlists_path %>
-
-

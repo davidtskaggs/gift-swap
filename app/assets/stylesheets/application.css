@@ -16,7 +16,8 @@
 
  body {
    padding-top: 60px;
-   background: LightGray;
+   /*background: LightGray;*/
+   background: #f0f0f0;
    font-family: 'Open Sans', sans-serif;
  }
 
@@ -105,7 +106,7 @@ color: white;
 }
 
 .carousel-inner {
-  background-color: white;
+  background-color: #f0f0f0;
   border-radius: 20px;
 }
 
@@ -205,6 +206,3 @@ th {
 .results-item {
 border: 5px solid blue;
 }
-
-
-
